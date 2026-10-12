@@ -1,0 +1,6 @@
+[submodule "dsrl"]
+	path = dsrl
+	url = git@github.com:ajwagen/dsrl.git
+[submodule "dsrl_pi0"]
+	path = dsrl_pi0
+	url = git@github.com:nakamotoo/dsrl_pi0.git
