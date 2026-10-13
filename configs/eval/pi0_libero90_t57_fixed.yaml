@@ -1,0 +1,15 @@
+# Steerability demo (no RL): hold the noise fixed for a whole block of episodes, one block per noise seed.
+# A wide spread of success across seeds means the noise controls the outcome, i.e. there is something to steer.
+# 64 seeds x 10 episodes in one job (shard with --shard i/n or a Slurm array to split the seeds):
+#   sbatch slurm/eval.sbatch configs/eval/pi0_libero90_t57_fixed.yaml
+policy: pi0_libero
+env: libero
+suite: libero_90
+tasks: [57]
+episodes: 10
+replan_steps: 5
+noise: {mode: fixed, seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
+                             24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45,
+                             46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63], repeated: false}
+seed: 7
+videos_per_task: 1

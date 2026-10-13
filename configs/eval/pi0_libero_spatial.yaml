@@ -1,0 +1,10 @@
+# Pipeline check: pi0 on LIBERO-Spatial, official protocol (10 tasks x 50 fixed initial states).
+# Published (openpi README, pi0 @ 30k): 96.8 %. Anything more than ~2 points off means a setup problem.
+policy: pi0_libero
+env: libero
+suite: libero_spatial
+tasks: all
+episodes: 50
+noise: {mode: default}
+seed: 7
+videos_per_task: 1

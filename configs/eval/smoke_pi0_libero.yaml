@@ -1,0 +1,9 @@
+# Smoke test: 1 task x 2 episodes with videos. Checks rendering, checkpoint loading and the eval loop.
+policy: pi0_libero
+env: libero
+suite: libero_spatial
+tasks: [0]
+episodes: 2
+noise: {mode: default}
+seed: 7
+videos_per_task: 2

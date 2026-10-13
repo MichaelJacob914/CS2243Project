@@ -1,0 +1,14 @@
+# DSRL's LIBERO benchmark: libero_90 task 57, "pick up the cream cheese and put it in the tray".
+# pi0_libero was not fine-tuned on LIBERO-90, which leaves room to steer.
+# DSRL reports base pi0 ≈ 0.19 -> ≈ 1.0 after ~100k steps, but with its own protocol
+# (random initial states, 10 episodes, 400 steps, a new chunk every 20 actions). This config uses the
+# official openpi protocol (fixed initial states, chunk every 5); set replan_steps=20 to match DSRL.
+policy: pi0_libero
+env: libero
+suite: libero_90
+tasks: [57]
+episodes: 50
+replan_steps: 5
+noise: {mode: default}
+seed: 7
+videos_per_task: 4

@@ -1,0 +1,10 @@
+# DSRL's ALOHA benchmark: bimanual cube transfer. DSRL reports base pi0 ≈ 0.65 -> ≈ 0.95 after DSRL.
+# openpi publishes no success rate for this checkpoint. Needs the aloha venv: source env/fasrc.sh aloha
+policy: pi0_aloha_sim
+env: aloha
+task: gym_aloha/AlohaTransferCube-v0
+episodes: 50
+replan_steps: 10
+noise: {mode: default}
+seed: 0
+videos_per_task: 4
