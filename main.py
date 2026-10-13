@@ -11,8 +11,13 @@ def parse_arguments():
                         help='Text file: one component per row, mean followed by flattened covariance')
     parser.add_argument('-T', type=float, default=10., help='Maximum time for the SDE')
     parser.add_argument('--sde', type=str.upper, choices=['VESDE', 'VPSDE'], default='VPSDE')
+    parser.add_argument('--terminal-distribution', choices=['approximate', 'exact'],
+                        default='approximate',
+                        help='Initial sampling law: Gaussian prior or exact q_T (default: approximate)')
     parser.add_argument('-n', '--samples', type=int, default=100, help='Number of samples')
     parser.add_argument('--seed', type=int, default=None, help='Random seed')
+    parser.add_argument('--standardize', action='store_true',
+                        help='Transform q0 to zero mean and unit variance in each dimension')
     parser.add_argument('--end-time', type=float, default=0., help='Time to reverse to')
     parser.add_argument('-o', '--output', default='samples.npz', help='Output NumPy archive')
     parser.add_argument('--gif', default='output.gif', metavar='PATH', help='Save an animation of reverse sampling')
@@ -60,6 +65,17 @@ def load_parameters(path, ndim):
         except np.linalg.LinAlgError as exc:
             raise ValueError('Covariances must be positive definite') from exc
     return means, covs
+
+
+def standardize_parameters(means, covs):
+    """Standardize using exact moments of the equally weighted mixture."""
+    center = means.mean(axis=0)
+    centered = means - center
+    variance = (np.diagonal(covs, axis1=1, axis2=2) + centered**2).mean(axis=0)
+    if not np.all(np.isfinite(variance)) or np.any(variance <= 0):
+        raise ValueError('Mixture variances must be finite and positive')
+    scale = np.sqrt(variance)
+    return centered / scale, covs / scale[None, :, None] / scale[None, None, :], center, scale
 
 
 def _point_trajectory(model, times, x):
@@ -120,13 +136,26 @@ def marginal_density(points, means, covs):
                for mean, cov in zip(means, covs)) / len(means)
 
 
-def save_sampling_gif(path, times, trajectory, model, fps):
+def save_sampling_gif(path, times, trajectory, model, fps, center=None, scale=None):
     """Animate fixed point identities; project onto the first two dimensions."""
     from matplotlib.figure import Figure
     from matplotlib.backends.backend_agg import FigureCanvasAgg
     from matplotlib.animation import FuncAnimation, PillowWriter
 
     positions = trajectory[..., :2]
+    parameters = [marginal_parameters(model, t) for t in times]
+    if center is not None and scale is not None:
+        ndim = positions.shape[-1]
+        display_center = center[:ndim]
+        display_scale = scale[:ndim]
+        positions = positions * display_scale + display_center
+        # Transform both means and covariances so density values include
+        # the change-of-coordinates Jacobian through the Gaussian PDF.
+        parameters = [
+            (means * display_scale + display_center,
+             covs * display_scale[None, :, None] * display_scale[None, None, :])
+            for means, covs in parameters
+        ]
     if positions.shape[-1] == 1:
         positions = np.concatenate([positions, np.zeros_like(positions)], axis=-1)
     fig = Figure(figsize=(6, 6))
@@ -134,7 +163,6 @@ def save_sampling_gif(path, times, trajectory, model, fps):
     ax = fig.subplots()
     lower = positions.min(axis=(0, 1))
     upper = positions.max(axis=(0, 1))
-    parameters = [marginal_parameters(model, t) for t in times]
     for means, covs in parameters:
         spread = 3 * np.sqrt(np.diagonal(covs, axis1=1, axis2=2))
         ndim = means.shape[1]
@@ -191,27 +219,42 @@ def save_sampling_gif(path, times, trajectory, model, fps):
     animation.save(path, writer=PillowWriter(fps=fps))
 
 
+def sample_terminal(model, count, rng, distribution='approximate'):
+    """Draw from the diffusion Gaussian prior or the exact forward mixture."""
+    if distribution == 'approximate':
+        std = np.sqrt(model.T) if model.sde == 'VESDE' else 1.
+        return std * rng.standard_normal((count, model.ndim))
+    if distribution != 'exact':
+        raise ValueError('distribution must be approximate or exact')
+    components = rng.integers(len(model.means), size=count)
+    if model.sde == 'VESDE':
+        means = model.means
+        covs = model.covs + model.T * np.eye(model.ndim)
+    else:
+        decay = np.exp(-model.T)
+        means = decay * model.means
+        covs = decay**2 * model.covs + (-np.expm1(-2 * model.T)) * np.eye(model.ndim)
+    samples = np.empty((count, model.ndim))
+    for component in range(len(means)):
+        mask = components == component
+        samples[mask] = rng.multivariate_normal(
+            means[component], covs[component], size=int(mask.sum()),
+        )
+    return samples
+
+
 def main():
     args = parse_arguments()
     means, covs = load_parameters(args.params, args.dimensions)
+    standardization_data = {'standardized': args.standardize}
+    center = scale = None
+    if args.standardize:
+        means, covs, center, scale = standardize_parameters(means, covs)
+        standardization_data.update(standardization_mean=center, standardization_scale=scale)
     model = diffusion.Diffusion(means, covs, args.T, ndim=args.dimensions, sde=args.sde)
     rng = np.random.default_rng(args.seed)
 
-    # Sample the exact forward marginal q_T of the equally weighted mixture.
-    components = rng.integers(len(means), size=args.samples)
-    if args.sde == 'VESDE':
-        terminal_means = means
-        terminal_covs = covs + args.T * np.eye(args.dimensions)
-    else:
-        decay = np.exp(-args.T)
-        terminal_means = decay * means
-        terminal_covs = decay**2 * covs + (-np.expm1(-2 * args.T)) * np.eye(args.dimensions)
-    terminal_samples = np.empty((args.samples, args.dimensions))
-    for component in range(len(means)):
-        mask = components == component
-        terminal_samples[mask] = rng.multivariate_normal(
-            terminal_means[component], terminal_covs[component], size=int(mask.sum()),
-        )
+    terminal_samples = sample_terminal(model, args.samples, rng, args.terminal_distribution)
     animation_data = {}
     if args.gif:
         times, trajectory = sample_trajectory(
@@ -219,7 +262,7 @@ def main():
         )
         samples = trajectory[-1]
         animation_data = {'times': times, 'trajectory': trajectory}
-        save_sampling_gif(args.gif, times, trajectory, model, args.fps)
+        save_sampling_gif(args.gif, times, trajectory, model, args.fps, center, scale)
         print(f'Saved {args.steps + 1} animation frames to {args.gif}')
     else:
         _, trajectory = sample_trajectory(
@@ -232,7 +275,9 @@ def main():
             output, samples=samples, terminal_samples=terminal_samples,
             means=means, covs=covs, sde=args.sde,
             start_t=args.T, end_t=args.end_time,
+            terminal_distribution=args.terminal_distribution,
             **animation_data,
+            **standardization_data,
         )
     print(f'Saved {args.samples} samples at t={args.end_time:g} to {args.output}')
 

@@ -1,0 +1,4 @@
+# Two equally weighted 2D Gaussians.
+# Columns: mean_x mean_y cov_xx cov_xy cov_yx cov_yy
+-5 0 1 0 0 1
+ 5 0 1 0 0 1
