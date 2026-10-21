@@ -92,14 +92,17 @@ and SciPy, with no PyTorch, GPU, training loop or learned controller:
 
 ```bash
 python RL_finetune.py -p param.txt --target 5 0 --reward-std 1 \
-  --intervention-time 2.5 --strength 0.1 --epsilon 0.5 --standardize --workers 4
+  --intervention-time 2.5 --strength 0.1 --standardize --workers 4
 ```
 
 The reward is `r(x) = log N(x; target, reward_std² I)`. Target and reward width
 are specified in original coordinates, including when standardizing. The script
 computes the remaining sampler's sensitivity `J = dF_t/dx_t` by integrating its
 variational ODE, then applies one correction in the direction `Jᵀ grad r(F_t(x_t))`.
-Specifically, `u = strength D² Jᵀ grad r`, clipped to `||D⁻¹u||₂ <= epsilon`.
+Specifically, `u = strength D² Jᵀ grad r`, unbounded by default. Supply
+`--epsilon 0.5` to clip the correction to `||D⁻¹u||₂ <= 0.5`, or `--epsilon 0`
+to disable the correction. The Python API uses `epsilon=None` for unbounded
+corrections. Archives record `bounded` and a numeric `epsilon` (`inf` when unbounded).
 `D` contains standard deviations estimated from independent unguided calibration
 rollouts (`--calibration-samples`, default 64). The base diffusion is unchanged.
 
@@ -121,6 +124,12 @@ python RL_finetune.py --target 2 0 --intervention-times 0 1 2.5 5 \
 Times range from 0 (completed sample) to T (initial noise). Small strengths test
 local sensitivity; large corrections can switch modes and need not improve
 reward. The Gaussian reward can favor a distant component or a nearby target.
+In particular, near mode boundaries the remaining sampler's Jacobian can be
+large, so unbounded corrections can move a few points extremely far even if
+most rewards improve. Start with small strengths (for example 0.001), compare
+predicted versus actual gains, or opt into `--epsilon` for a finite budget.
+The CLI reports correction-norm quantiles and the fraction of improved rewards;
+archives also store `normalized_correction_norm` and `sampler_jacobian_norm`.
 
 Outputs default to `finetuned_before.npz` / `finetuned_after.npz` and matching
 GIFs. Sweeps add `t<index>_s<index>` to filenames. Both trajectories use identical

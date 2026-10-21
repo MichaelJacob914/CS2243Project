@@ -47,12 +47,34 @@ class GradientCorrectionTests(unittest.TestCase):
                    for x in [[0., 0.], [1., 2.], [-3., .5]]]
         np.testing.assert_allclose(offsets, np.repeat(offsets[0], 3), atol=1e-12)
 
+    def test_high_sensitivity_mode_boundary(self):
+        # Four standardized modes, matching the reported unstable experiment.
+        from main import standardize_parameters
+        means, covs, center, scale = standardize_parameters(
+            np.array([[-5., 0.], [5., 0.], [0., -5.], [0., 5.]]),
+            np.repeat(np.eye(2)[None], 4, axis=0))
+        model = Diffusion(means, covs, 2.)
+        x = np.array([-.59309113, .59289312])
+        endpoint, jacobian = reverse_with_jacobian(model, x, 1.)
+        h = 1e-6
+        numeric = np.column_stack([
+            (model.reverse(x + h*v, 1.) - model.reverse(x - h*v, 1.))/(2*h)
+            for v in np.eye(2)])
+        self.assertGreater(np.linalg.norm(jacobian, 2), 100.)
+        np.testing.assert_allclose(jacobian, numeric, rtol=2e-4, atol=1e-3)
+        objective = GaussianReward((np.array([5., 0.]) - center)/scale,
+                                   np.eye(2)/scale[:, None]/scale[None, :])
+        gradient = jacobian.T @ objective.gradient(endpoint)
+        # Infinitesimal ascent works even though a large step may overshoot.
+        direction = gradient / np.linalg.norm(gradient)
+        self.assertGreater(objective(model.reverse(x + 1e-7*direction, 1.)), objective(endpoint))
+
     def test_paired_trajectories_and_budget(self):
         model = self.model('VPSDE')
         objective = GaussianReward([1., 1.])
         for time in [0., .6, 1.]:
             experiment = GradientCorrection(objective, model, intervention_time=time,
-                                            strength=0., calibration_samples=3)
+                                            strength=0., epsilon=.5, calibration_samples=3)
             times, before, after, diagnostics = experiment.run(2, steps=2)
             np.testing.assert_array_equal(before, after)
             self.assertEqual(sum(np.diff(times) == 0), 1)
@@ -60,6 +82,22 @@ class GradientCorrectionTests(unittest.TestCase):
             residual, _, _, predicted = experiment.correction(np.array([.3, -.4]))
             self.assertLessEqual(np.linalg.norm(residual/experiment.scale), experiment.epsilon + 1e-12)
             self.assertGreaterEqual(predicted, 0.)
+
+    def test_unbounded_default_and_zero_budget(self):
+        experiment = GradientCorrection(GaussianReward([1., 1.]), self.model('VPSDE'),
+                                        intervention_time=0., strength=100., calibration_samples=3)
+        x = np.array([.3, -.4])
+        residual, _, gradient, _ = experiment.correction(x)
+        self.assertIsNone(experiment.epsilon)
+        np.testing.assert_allclose(residual, experiment.strength * experiment.scale**2 * gradient)
+        self.assertGreater(np.linalg.norm(residual / experiment.scale), .5)
+        experiment.epsilon = 0.
+        np.testing.assert_array_equal(experiment.correction(x)[0], np.zeros(2))
+
+    def test_invalid_budget(self):
+        for epsilon in [-1., np.nan, np.inf]:
+            with self.assertRaises(ValueError):
+                GradientCorrection(GaussianReward([1., 1.]), self.model('VPSDE'), epsilon=epsilon)
 
     def test_parallel_matches_serial(self):
         model = self.model('VESDE')

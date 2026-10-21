@@ -1,6 +1,7 @@
 """CPU-only single-intervention gradient experiment from the project proposal.
 
-Apply u = strength * D^2 * J^T grad r(F_t(x)), clipped to ||D^-1 u|| <= epsilon.
+Apply u = strength * D^2 * J^T grad r(F_t(x)), unbounded by default.
+Optionally clip to ||D^-1 u|| <= epsilon by supplying --epsilon.
 J is computed by a variational ODE alongside the frozen probability-flow ODE.
 The Gaussian reward gives an analytic exponentially tilted reference mixture;
 this single correction is a transport heuristic, not an exact tilted sampler.
@@ -129,14 +130,14 @@ def reverse_with_jacobian(model, x, start_t):
 
 
 class GradientCorrection:
-    """One gradient correction at time t, with a normalized perturbation budget.
+    """One gradient correction at time t, with an optional normalized budget.
 
     D uses empirical marginal standard deviations from independent unguided
     calibration rollouts, shared across strengths. Custom rewards must implement
     __call__(point) and gradient(point), both in diffusion coordinates.
     """
     def __init__(self, reward_fn, model, *, intervention_time=None, strength=.1,
-                 epsilon=.5, terminal_distribution='approximate', seed=0,
+                 epsilon=None, terminal_distribution='approximate', seed=0,
                  calibration_samples=64, workers=1):
         if not isinstance(workers, Integral) or workers < 0:
             raise ValueError('workers must be a nonnegative integer')
@@ -144,6 +145,8 @@ class GradientCorrection:
         self.reward_fn, self.model = reward_fn, model
         self.time = model.T / 2 if intervention_time is None else intervention_time
         for name, value in [('strength', strength), ('epsilon', epsilon)]:
+            if name == 'epsilon' and value is None:
+                continue
             if not np.isfinite(value) or value < 0:
                 raise ValueError(f'{name} must be finite and nonnegative')
         if not np.isfinite(self.time) or not 0 <= self.time <= model.T:
@@ -166,10 +169,10 @@ class GradientCorrection:
         if grad_reward.shape != (self.model.ndim,) or not np.all(np.isfinite(grad_reward)):
             raise ValueError('reward gradient must be a finite vector of shape (ndim,)')
         gradient = jacobian.T @ grad_reward
-        # Gradient ascent in coordinates z = D^-1 x, with an L2 budget.
+        # Gradient ascent in coordinates z = D^-1 x, with an optional L2 budget.
         normalized = self.strength * self.scale * gradient
         norm = np.linalg.norm(normalized)
-        if norm > self.epsilon:
+        if self.epsilon is not None and norm > self.epsilon:
             normalized *= self.epsilon / norm
         residual = self.scale * normalized
         return residual, jacobian, gradient, float(gradient @ residual)
@@ -207,6 +210,8 @@ class GradientCorrection:
         diagnostics = dict(residuals=residuals, jacobians=jacobians,
                            gradients=gradients, predicted_reward_gain=predicted,
                            predicted_displacement=np.einsum('nij,nj->ni', jacobians, residuals),
+                           normalized_correction_norm=np.linalg.norm(residuals / self.scale, axis=1),
+                           sampler_jacobian_norm=np.linalg.norm(jacobians, ord=2, axis=(1, 2)),
                            latent_scale=self.scale)
         before_rewards = np.array([self.reward_fn(x) for x in before[-1]])
         after_rewards = np.array([self.reward_fn(x) for x in after[-1]])
@@ -247,7 +252,8 @@ def main():
     parser.add_argument('--intervention-times', type=float, nargs='+', help='Sweep multiple intervention times')
     parser.add_argument('--strength', type=float, default=.1)
     parser.add_argument('--strengths', type=float, nargs='+', help='Sweep multiple correction strengths')
-    parser.add_argument('--epsilon', type=float, default=.5)
+    parser.add_argument('--epsilon', type=float, default=None,
+                        help='Opt into ||D^-1 u|| <= epsilon (default: unbounded)')
     parser.add_argument('--calibration-samples', type=int, default=64)
     parser.add_argument('--terminal-distribution', choices=['approximate', 'exact'], default='approximate')
     parser.add_argument('--standardize', action='store_true')
@@ -300,7 +306,9 @@ def main():
                                         trajectory=trajectory, times=frame_times, means=means, covs=covs,
                                         target=target, reward_cov=reward_cov, sde=args.sde, T=args.T,
                                         start_t=args.T, end_t=0., stage=stage, seed=args.seed,
-                                        intervention_time=time, strength=strength, epsilon=args.epsilon,
+                                        intervention_time=time, strength=strength,
+                                        epsilon=np.inf if args.epsilon is None else args.epsilon,
+                                        bounded=args.epsilon is not None,
                                         terminal_distribution=args.terminal_distribution, beta=args.beta,
                                         tilted_weights=weights, tilted_means=reference_means, tilted_covs=reference_covs,
                                         **metadata, **diagnostics)
@@ -311,6 +319,10 @@ def main():
             print(f"Mean reward: {diagnostics['before_rewards'].mean():.4f} -> "
                   f"{diagnostics['after_rewards'].mean():.4f}; "
                   f"mode switches: {diagnostics['mode_switch_frequency']:.1%}")
+            correction_sizes = np.quantile(diagnostics['normalized_correction_norm'], [.5, .99, 1.])
+            print('Normalized correction norm (median / p99 / max): '
+                  + ' / '.join(f'{value:.4g}' for value in correction_sizes)
+                  + f"; reward improved: {np.mean(diagnostics['actual_reward_gain'] > 0):.1%}")
 
 
 if __name__ == '__main__':
