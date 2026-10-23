@@ -1,0 +1,27 @@
+goal: end in the green lane (the counter-clockwise lane) of any route; fixed for all samples and steps
+no steering: 0.320
+test success of one nudge by step k (size tuned per k on the validation half):
+  k=20  0.566  (eps=1)
+  k=19  0.566  (eps=1)
+  k=18  0.567  (eps=1)
+  k=17  0.569  (eps=1)
+  k=16  0.580  (eps=1)
+  k=15  0.606  (eps=1)
+  k=14  0.641  (eps=1)
+  k=13  0.688  (eps=1)
+  k=12  0.728  (eps=1)
+  k=11  0.768  (eps=1)
+  k=10  0.797  (eps=1)
+  k= 9  0.829  (eps=1)
+  k= 8  0.845  (eps=1)
+  k= 7  0.836  (eps=1)
+  k= 6  0.791  (eps=1)
+  k= 5  0.677  (eps=1)
+  k= 4  0.614  (eps=0.3)
+  k= 3  0.611  (eps=0.3)
+  k= 2  0.585  (eps=0.3)
+  k= 1  0.513  (eps=0.3)
+  k= 0  0.411  (eps=0.3)
+demo uses early k=20, intermediate k=8, late k=0
+held-out samples where early fails, intermediate succeeds, late fails: 421 of 2000
+(and where early succeeds / intermediate fails / late succeeds: 1)
