@@ -1,0 +1,31 @@
+suite,task_id,task,noise,query_freq,episodes,success,mean_ep_len_success,env_steps,wall_s,pi0_calls,pi0_s_per_call,mean_batch,env_s,sim_s_per_step,env_steps_per_s,n_envs,gpu
+libero_90,60,pick up the black bowl on the left and put it in the tray,full,5,20,0.55,147.6,5224,64.0,80,0.5328,13.12,21.3,0.03133,81.7,20,NVIDIA H200
+libero_90,61,pick up the chocolate pudding and put it in the tray,full,5,20,1.0,162.1,3242,27.8,37,0.4205,17.73,12.2,0.03868,116.5,20,NVIDIA H200
+libero_90,62,pick up the salad dressing and put it in the tray,full,5,20,0.0,nan,8000,42.4,80,0.2458,20.0,22.7,0.03524,188.5,20,NVIDIA H200
+libero_90,63,stack the left bowl on the right bowl and place them in the tray,full,5,20,0.0,nan,8000,41.7,80,0.2465,20.0,21.9,0.03495,191.8,20,NVIDIA H200
+libero_90,64,stack the right bowl on the left bowl and place them in the tray,full,5,20,0.6,332.2,7186,41.5,80,0.2392,18.01,22.2,0.03405,173.4,20,NVIDIA H200
+libero_90,65,put the red mug on the left plate,full,5,20,0.0,nan,8000,40.4,80,0.2451,20.0,20.7,0.03118,197.8,20,NVIDIA H200
+libero_90,66,put the red mug on the right plate,full,5,20,0.0,nan,8000,40.2,80,0.2457,20.0,20.4,0.03136,199.1,20,NVIDIA H200
+libero_90,67,put the white mug on the left plate,full,5,20,1.0,101.0,2021,20.8,27,0.3633,15.22,10.9,0.03282,97.4,20,NVIDIA H200
+libero_90,68,put the yellow and white mug on the right plate,full,5,20,1.0,227.5,4550,39.1,55,0.4375,16.67,15.0,0.0311,116.2,20,NVIDIA H200
+libero_90,69,put the chocolate pudding to the left of the plate,full,5,20,0.05,253.0,7853,39.1,80,0.2466,19.64,19.2,0.02928,201.0,20,NVIDIA H200
+libero_90,70,put the chocolate pudding to the right of the plate,full,5,20,0.75,194.3,4914,32.3,80,0.1878,12.38,17.2,0.02756,152.1,20,NVIDIA H200
+libero_90,71,put the red mug on the plate,full,5,20,0.0,nan,8000,40.6,80,0.2458,20.0,20.8,0.03024,197.1,20,NVIDIA H200
+libero_90,72,put the white mug on the plate,full,5,20,1.0,119.2,2383,21.4,33,0.2021,14.67,14.7,0.029,111.3,20,NVIDIA H200
+libero_90,73,pick up the book and place it in the front compartment of the caddy,full,5,20,0.0,nan,8000,39.1,80,0.2531,20.0,18.7,0.03119,204.6,20,NVIDIA H200
+libero_90,74,pick up the book and place it in the left compartment of the caddy,full,5,20,0.05,288.0,7888,38.0,80,0.2479,19.73,18.0,0.03006,207.8,20,NVIDIA H200
+libero_90,75,pick up the book and place it in the right compartment of the caddy,full,5,20,0.0,nan,8000,38.2,80,0.2476,20.0,18.3,0.03077,209.5,20,NVIDIA H200
+libero_90,76,pick up the yellow and white mug and place it to the right of the caddy,full,5,20,0.0,nan,8000,38.5,80,0.2479,20.0,18.6,0.03191,207.6,20,NVIDIA H200
+libero_90,77,pick up the book and place it in the back compartment of the caddy,full,5,20,0.3,149.8,6499,36.6,80,0.2295,16.27,18.1,0.02993,177.7,20,NVIDIA H200
+libero_90,78,pick up the book and place it in the front compartment of the caddy,full,5,20,0.0,nan,8000,39.2,80,0.2474,20.0,19.3,0.03112,204.2,20,NVIDIA H200
+libero_90,79,pick up the book and place it in the left compartment of the caddy,full,5,20,0.4,303.1,7225,36.3,80,0.2337,18.11,17.5,0.03051,198.9,20,NVIDIA H200
+libero_90,80,pick up the book and place it in the right compartment of the caddy,full,5,20,0.0,nan,8000,39.2,80,0.2471,20.0,19.4,0.03134,204.0,20,NVIDIA H200
+libero_90,81,pick up the book and place it in the front compartment of the caddy,full,5,20,0.0,nan,8000,39.5,80,0.2476,20.0,19.6,0.03133,202.7,20,NVIDIA H200
+libero_90,82,pick up the book and place it in the left compartment of the caddy,full,5,20,0.25,269.2,7346,40.5,80,0.2395,18.39,21.2,0.03152,181.6,20,NVIDIA H200
+libero_90,83,pick up the book and place it in the right compartment of the caddy,full,5,20,0.0,nan,8000,38.8,80,0.2458,20.0,19.1,0.03178,206.0,20,NVIDIA H200
+libero_90,84,pick up the red mug and place it to the right of the caddy,full,5,20,0.0,nan,8000,42.2,80,0.2477,20.0,22.2,0.03221,189.8,20,NVIDIA H200
+libero_90,85,pick up the white mug and place it to the right of the caddy,full,5,20,0.0,nan,8000,39.1,80,0.2472,20.0,19.3,0.03223,204.4,20,NVIDIA H200
+libero_90,86,pick up the book in the middle and place it on the cabinet shelf,full,5,20,0.0,nan,8000,38.8,80,0.2478,20.0,18.9,0.02987,206.3,20,NVIDIA H200
+libero_90,87,pick up the book on the left and place it on top of the shelf,full,5,20,0.0,nan,8000,37.7,80,0.2469,20.0,17.8,0.02985,212.3,20,NVIDIA H200
+libero_90,88,pick up the book on the right and place it on the cabinet shelf,full,5,20,0.0,nan,8000,38.0,80,0.2475,20.0,18.1,0.03083,210.6,20,NVIDIA H200
+libero_90,89,pick up the book on the right and place it under the cabinet shelf,full,5,20,0.0,nan,8000,39.8,80,0.2468,20.0,19.9,0.02949,201.1,20,NVIDIA H200

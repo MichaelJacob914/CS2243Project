@@ -1,0 +1,232 @@
+None None | ω → 0 . 6 : a VLA That Learns From Experience Physical
+None None | W HAT F LOW -M ATCHING B RINGS TO TD-L EARNING
+None None | T IME O PTIMAL E XECUTION OF A CTION C HUNK P OLICIES B EYOND D EMONSTRATION S PEED
+None None | Steering Diffusion Policies with Value-Guided Denoising
+None None | Scaling Sim-to-Real VLA Reinforcement Learning with Generative 3D Worlds
+None None | R OBO R EWARD : A D ATASET AND B ENCHMARK FOR V ISION -L ANGUAGE R EWARD M ODELS IN R OBOTICS
+None None | Lightweight Adaptation of Pretrained Robot Manipulation Systems: Two Approaches
+None None | . 6 : a VLA That Learns From Experience Physical Intelligence
+231 
+2026 None | Reinforcement Learning for Diffusion Policies in Robotics: A Survey and State-Based Locomotion Reproduction
+2026 None | Latent MeanFlow Policy Optimization for Offline Reinforcement Learning
+2026 None | Chunk-Boundary Artifact in Action-Chunked Generative Policies: A Noise-Sensitive Failure Mechanism
+2026 None | A Multi-Obstacle Instruction-Following Benchmark with an Obstacle-Aware Manipulation Framework
+2026 None | Adaptation of Generalist Robot Policies with Minimal Data
+2026 2610.41354 | DiffWBC: Unlocking Steerable General Humanoid Motion Tracking via One-Step Diffusion Whole-Body Control
+2026 2610.39543 | From Reasoning to Action: Consequence-Grounded Alignment for Vision-Language-Action Models
+2026 2610.38266 | Recursive Self-Improvement in Physical AI: Mechanisms, Evidence, and Evaluation
+2026 2610.37393 | Learning Quality-Controllable Robot Policies with Iterative Hindsight Relabeling
+2026 2610.35607 | VaLoP: Value Gradient Lookahead and Pullback for Reward-Guided Diffusion
+2026 2610.35010 | JevVLA: Jev-Inspired Energy-Based Adaptation for Vision-Language-Action Policies
+2026 2610.28166 | Reasoning as a Distribution: Generative Plan Latents for Vision-Language-Action Models
+2026 2610.27736 | AWLS: Advantage-Weighted Latent Steering for One-Step Generative Robotic Manipulation Policies
+2026 2610.27280 | VPFlow: Value-Predictive Planning with Imperfect World Models for Offline Goal Reaching
+2026 2610.26455 | ALIGN: Aligning Condition Estimation and Expression in Advantage-Conditioned Behavior Cloning
+2026 2610.25632 | SteerAct: Unlocking Action Models through Few-Shot Temporal Steering
+2026 2610.22576 | Embodiment-Classifier Guidance: Transferring Frozen VLAs Across Robot Dynamics without Demonstrations
+2026 2610.22368 | Value as Memory: Online Value-Guided Post-training for General Robot Policies
+2026 2610.21125 | Noise-Space Reward Alignment for Few-Step Generative Models
+2026 2610.20604 | VITAL: From Visual Motion to Precise Action
+2026 2610.20504 | Graph-Reweighted Behavior Cloning with Human Interventions for Precise Robotic Manipulation
+2026 2610.19579 | Back on Track: Deployment-time Policy Improvement via World Model Planning
+2026 2610.19517 | VLRLA: Deployment-Time Adaptation of Vision-Language-Action Models through In-Context Reinforcement Learning
+2026 2610.19143 | Post-Training, Finetuning, and Steering:A Field Guide for Curating Training Data
+2026 2610.18711 | Steertuning Policies from a Few Human Videos
+2026 2610.18596 | ACCRUE: Continual Off-Policy Reinforcement Learning for Robot Foundation Models
+2026 2610.14885 | Verify, Act, Distill: Turning Test-Time Compute into Test-Time Adaptation for Vision-Language-Action Models
+2026 2610.14042 | Reinforcement Learning from Real-Robot Interaction without High-Quality State Estimates
+2026 2610.13943 | Noise Space Learning for VLA Adaptation
+2026 2610.13816 | Dream to Remember: Continual Steering of Generalist Robot Policies with World Models
+2026 2610.12848 | Reinforcement Learning via Fixed-point Flow Matching
+2026 2610.12407 | LeWAM: A JEPA World Action Model with Diffusion-Steering-Based MPC
+2026 2610.10437 | Q-Learning with Scalar Adjoint Matching
+2026 2610.09228 | Co-Evolving Robot Orchestrators and Policies through Deployment
+2026 2610.08989 | LASER: Latent Space Adjoint Matching for Support-Constrained Entropy-Regularized Offline RL
+2026 2610.08789 | QF3: Fast Flow RL with Filtered Q-Gradients
+2026 2610.08784 | PEARS: Physical-Prior-Guided Efficient Adaptation via Failure Reasoning and Diffusion Steering for Tactile Manipulation
+2026 2610.07527 | Task-Space Imitation Guidance for Efficient Reinforcement Learning
+2026 2610.05349 | Learning Conditional Source Distribution via Flow Reversal for Temporal Flow Matching
+2026 2610.04767 | Flow Policies as Actions of Skill-Level World Models: Learned and Symbolic Abstractions for Long-Horizon Planning
+2026 2610.02554 | Test-time Multi-agent Coordination by Decomposed Value Gradient Flow
+2026 2610.00913 | eRLT: Efficient VLA Reinforcement Learning via Action-Relevant Token Routing
+2026 2609.40165 | PrefPI: Preference-Guided Steering into Out-of-Distribution Behaviors
+2026 2609.40134 | Tactile Curiosity Drives Robot Interaction
+2026 2609.38178 | Skill-Space Shooting for Autonomous Robot Policy Improvement
+2026 2609.37398 | Direct Experience World-Model Optimization: Learning the World Beyond Action Imitation
+2026 2609.36872 | PreferenceFlow: Test-Time Guidance of Flow-Matching Robot Policies from Human Interventions
+2026 2609.36812 | Diffusion Policy Improvement with Proposal-Conditioned Refinement Flows
+2026 2609.36588 | Cooperative Multi-Agent Vision-Language-Action Models via Reinforced Fine Tuning
+2026 2609.36182 | Test-Time Adaptation of Manipulation Policies Under Actuator Degradation
+2026 2609.34599 | The Low-Rank Structure of VLA Reinforcement Learning
+2026 2609.34497 | QAMM: Adjoint MeanFlow Matching for Few-Step Offline Reinforcement Learning
+2026 2609.33765 | Principal Steering Subspaces for Online Adaptation of Frozen Generative Robot Policies
+2026 2609.32236 | RoboFFT: Finetuning generative robot policy via online reinforcement learning with forward process
+2026 2609.31577 | Generate, Track, Improve: Perceptive Multi-Skill Humanoid Locomotion with RL-Fine-Tuned Motion Generators
+2026 2609.31383 | Guiding End-to-End Driving Models with Endpoint-Constrained Trajectory Optimization
+2026 2609.27450 | BEE: Intervention-Adaptive Real-World Reinforcement Learning with Vision-Language-Action Models
+2026 2609.27070 | The Gaussian Is Enough: Flow-Matching Priors Do Not Help When Fine-Tuning Large Behavior Models
+2026 2609.27068 | HiRE: Hindsight Reward Editing for Policy Finetuning
+2026 2609.26467 | Generalists Act, Specialists Intervene: Modular Stage-Selective Reinforcement Learning for Vision-Language-Action Manipulation
+2026 2609.24033 | Imagine-RL: Residual-Confidence-Guided Cross-Attention for World-Model-Augmented VLA Reinforcement Learning
+2026 2609.21788 | From Pretraining to Proficiency: Real-World Subtask RL for Long-Horizon Manipulation with Minimal Human Intervention
+2026 2609.21220 | Safe Real-Time Policy Steering via Noise-Space Trajectory Optimization for One-Step Generative Policies
+2026 2609.19666 | Towards High-DoF Dexterous Manipulation through VLA Post-Training
+2026 2609.18374 | Decoupling Vision, Language, and Action for Efficient Multi-Task Robot Policies
+2026 2609.18207 | Reinforcement Learning for Real-Time Vision-Language-Action Policies
+2026 2609.11270 | Beyond Noise Steering: Dual-Latent Space Reinforcement Learning for Generative Robot Policy
+2026 2609.09148 | Proxy Policy Steering
+2026 2609.03681 | WISE: World-model-guided Imagination Scheduling for Efficient Post-training of Vision-Language-Action Models
+2026 2609.01596 | Facet-0: A Robotic Foundation Model for Contact-Rich Precise Manipulation
+2026 2609.00677 | ADAPT: Agile Diffusion Action Priors for Robust and Steerable Online Text-Driven Humanoid Control
+2026 2608.29768 | SmoothRL: Online Reinforcement Learning During Asynchronous Execution
+2026 2608.27406 | CLAP: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators
+2026 2608.23831 | Learning to Act While Waiting: RL Finetuning of Generalist Robot Policies Under Inference Latency
+2026 2608.21204 | Beyond Imitation: Self-Improving Robot Policies via Off-Policy Q-Planning
+2026 2608.19490 | Fine-Tuning VLAs with Self-Demonstrated Generative Control for Multi-Task Manipulation
+2026 2608.17163 | Q-Learning With World Models
+2026 2608.17027 | FetchMan: Learning Visual Humanoid Loco-Manipulation Policies from Simulated Experiences
+2026 2608.16837 | HAF: Adapting Generalist VLAs to Humanoid Whole-Body Loco-manipulation via Hierarchical Action Flow and Spectral Latent RL
+2026 2608.11363 | What Does It Take For A Generalist Robot Policy To Adapt Using Minimal Data?
+2026 2608.10473 | Critic-Free Pretraining for Efficient Online Reinforcement Learning Fine-Tuning
+2026 2608.09853 | RynnValue: Scaling Robotic Value Foundation Models with Temporal Distance
+2026 2608.06768 | Explore or Converge? Stage-Guided Per-Step Optimization for Diffusion Models
+2026 2608.05970 | SkillMemo: Expert-guided Skill Memory Framework for Compositional Embodied Manipulation
+2026 2607.29172 | CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning
+2026 2607.28560 | X-NavDP: Generalizing Navigation Diffusion Policy to Novel Behavior and Embodiments with Group Q-score Reweighted Matching
+2026 2607.26991 | RL2-VLA: Adaptive RL Latent Compositional Steering with Test-Time Scaling for Vision-Language-Action Models
+2026 2607.26460 | RLMM-Flow: A Flow-based Mobile Manipulation Framework with Latent-Space Reinforcement Learning
+2026 2607.13033 | DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation
+2026 2607.10369 | VINE: Taming Generative Control Policies for Reinforcement Learning
+2026 2607.10206 | Source-Lifted Flow Matching for Intervenable Multimodal Imitation
+2026 2607.08877 | FlowDAgger: Human-in-the-Loop Adaptation of Generative Robot Policies in Latent Space
+2026 2607.08837 | Prompt-Driven Exploration
+2026 2607.06262 | Optimal Transport Q-Learning for Flow Policy Steering and Acceleration
+2026 2607.05391 | LLM-as-a-Verifier: A General-Purpose Verification Framework
+2026 2607.02431 | WorldSample: Closed-loop Real-robot RL with World Modelling
+2026 2606.31993 | OopsieVerse: A Safety Benchmark with Damage-Aware Simulation for Robot Manipulation
+2026 2606.31958 | Adapting Generalist Robot Policies with Semantic Reinforcement Learning
+2026 2606.27475 | Support-Constrained RL Enables Real-World Policy Improvement without Real-World Experience
+2026 2606.26588 | Inference-Time Robot Behavior Steering through Physically-Aware Reconfiguration of Task-Structure
+2026 2606.24884 | InSight: Self-Guided Skill Acquisition via Steerable VLAs
+2026 2606.23640 | Learning Process Rewards via Success Visitation Matching for Efficient RL
+2026 2606.23420 | Flowing With Purpose: Latent Action Guided Flow Matching Policies For Robotic Manipulation
+2026 2606.22303 | FlowDPG: Deterministic Policy Gradient on Flow Matching Policies for Real-World Manipulation
+2026 2606.22027 | RARM: Confidence-Gated Progress Reward Modeling for RL in Manipulation
+2026 2606.19774 | Start Right, Arrive Right: Asynchronous Execution via Initial Noise Selection
+2026 2606.19656 | DF-ExpEnse: Diffusion Filtered Exploration for Sample Efficient Finetuning
+2026 2606.17551 | Reversal Q-Learning
+2026 2606.17408 | Where Should Action Generation Begin? A Learnable Source Prior for Generative Robot Policies
+2026 2606.17011 | ROVE: Unlocking Human Interventions for Humanoid Manipulation via Reinforcement Learning
+2026 2606.15021 | Steering Autoregressive Vision-Language-Action Policies via Action Token Intervention
+2026 2606.14801 | QPILOTS: Efficient Test-Time Q-Steering for Flow Policies
+2026 2606.14375 | Elastic Queries Reinforcement Learning: Self-Aware Policy Execution for VLA Models
+2026 2606.14084 | Self-Improving VLA Policies: Selected Diffusion Noise for Spurious-Robust Action Smoothing
+2026 2606.13795 | DiPOD: Diffusion Policy Optimization without Drifting Apart
+2026 2606.13675 | Improving Robotic Generalist Policies via Flow Reversal Steering
+2026 2606.12965 | EmbodiSteer: Steering Embodiment-Agnostic Visuomotor Policies with Joint-Space Guidance for Zero-Shot Cross-Embodiment Deployment
+2026 2606.12299 | Learning What to Say to Your VLA: Mostly Harmless Vision Language Action Model Steering
+2026 2606.11489 | Steering Multirobot Behavior via Closed-Loop Affine Activation Editing
+2026 2606.11408 | Dynamic Execution Horizon Prediction for Chunk-based Robot Policies
+2026 2606.10825 | MODIP: Efficient Model-Based Optimization for Diffusion Policies
+2026 2606.10305 | SARM2: Multi-Task Stage Aware Reward Modeling for Self Improving Robotic Manipulation
+2026 2606.10180 | Flow Control: Steering Vision-Language-Action Models with Simple Real-Time Inputs
+2026 2606.09615 | DexPIE: Stable Dexterous Policy Improvement from Real-World Experience
+2026 2606.09337 | TORL-VLA: Tactile Guided Online Reinforcement Learning for Contact-Rich Manipulation
+2026 2606.08743 | Guided Discovery of New Behaviors using Diffusion Policies
+2026 2606.02194 | Coherent Off-Policy Improvement of Large Behavior Models with Learned Rewards
+2026 2606.01151 | Lagrangian Perturbation Diffusion Steering: Latent Reinforcement Learning for Generative Policies
+2026 2606.00336 | From Noise to Control: Parameterized Diffusion Policies
+2026 2606.00269 | Closed-Loop Neural Activation Control in Vision-Language-Action Models
+2026 2606.00267 | StressDream: Steering Video World Models for Robust Policy Evaluation and Improvement
+2026 2606.00252 | HOIST: Humanoid Optimization with Imitation and Sample-efficient Tuning for Manipulating Suspended Loads
+2026 2605.30056 | Sample-Efficient Diffusion-based Reinforcement Learning with Critic Guidance
+2026 2605.27079 | Trust Region Q Adjoint Matching
+2026 2605.26552 | Aligning Few-Step Generative Models by Amortizing Sample-based Variational Inference
+2026 2605.26478 | Efficient On-policy Visual-RL via Stochastic Decoupled Policy Gradient
+2026 2605.25477 | EXPO-FT: Sample-Efficient Reinforcement Learning Finetuning for Vision-Language-Action Models
+2026 2605.20209 | NaP-Control: Navigating Diffusion Prior for Versatile and Fast Character Control
+2026 2605.19919 | Beyond Action Residuals: Real-World Robot Policy Steering via Bottleneck Latent Reinforcement Learning
+2026 2605.17144 | Contrastive Conceptor Activation Steering (COAST): Unlocking Vision-Language-Action Models through Hidden States
+2026 2605.13959 | WarmPrior: Straightening Flow-Matching Policies with Temporal Priors
+2026 2605.13925 | Towards Robotic Dexterous Hand Intelligence: A Survey
+2026 2605.12236 | TMRL: Diffusion Timestep-Modulated Pretraining Enables Exploration for Efficient Policy Finetuning
+2026 2605.11387 | Behavioral Mode Discovery for Fine-tuning Multimodal Generative Policies
+2026 2605.10821 | Unified Noise Steering for Efficient Human-Guided VLA Adaptation
+2026 2605.08804 | Constraint-Aware Diffusion Priors for High-Fidelity and Versatile Quadruped Locomotion
+2026 2605.06156 | Entropy-Regularized Adjoint Matching for Offline Reinforcement Learning
+2026 2605.05812 | Long-Horizon Q-Learning: Accurate Value Learning via n-Step Inequalities
+2026 2605.03065 | OGPO: Sample Efficient Full-Finetuning of Generative Control Policies
+2026 2605.00416 | Learning while Deploying: Fleet-Scale Reinforcement Learning for Generalist Robot Policies
+2026 2604.23121 | Breaking Lock-In: Preserving Steerability under Low-Data VLA Post-Training
+2026 2604.23073 | RL Token: Bootstrapping Online RL with Vision-Language-Action Models
+2026 2604.19730 | FASTER: Value-Guided Sampling for Fast RL
+2026 2604.10567 | Early Decisions Matter: Proximity Bias and Initial Trajectory Shaping in Non-Autoregressive Diffusion Language Models
+2026 2604.01860 | Posterior Optimization with Clipped Objective for Bridging Efficiency and Stability in Generative Policy Learning
+2026 2603.28730 | SOLE-R1: Video-Language Reasoning as the Sole Reward for On-Robot Reinforcement Learning
+2026 2603.26466 | Adapt as You Say: Online Interactive Bimanual Skill Adaptation via Human Language Feedback
+2026 2603.20659 | StageCraft: Execution Aware Mitigation of Distractor and Obstruction Failures in VLA Models
+2026 2603.18532 | Scaling Sim-to-Real VLA Reinforcement Learning with Generative 3D Worlds
+2026 2603.16978 | Rewarding DINO: Predicting Dense Rewards with Vision Foundation Models
+2026 2603.15956 | ExpertGen: Scalable Sim-to-Real Expert Policy Learning from Imperfect Behavior Priors
+2026 2603.15757 | You've Got a Golden Ticket: Improving Generative Robot Policies With A Single Noise Vector
+2026 2603.14245 | GoldenStart: Q-Guided Priors and Entropy Control for Distilling Flow Policies
+2026 2603.13395 | COT-FM: Cluster-wise Optimal Transport Flow Matching
+2026 2603.11653 | Simple Recipe Works: Vision-Language-Action Models are Natural Continual Learners with Reinforcement Learning
+2026 2603.11642 | Noise-Space Attribution and Control of Chunk-Boundary Artifact
+2026 2603.10282 | Update-Free On-Policy Steering via Verifiers
+2026 2603.10263 | From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL Finetuning
+2026 2603.10052 | OmniGuide: Universal Guidance Fields for Enhancing Generalist Robot Policies
+2026 2603.09030 | PlayWorld: Learning Robot World Models from Autonomous Play
+2026 2603.05296 | Latent Policy Steering through One-Step Flow Policies
+2026 2603.04333 | What Does Flow Matching Bring To TD Learning?
+2026 2603.02115 | Robometer: Scaling General-Purpose Robotic Reward Models via Trajectory Comparisons
+2026 2603.02083 | π-StepNFT: Wider Space Needs Finer Steps in Online RL for Flow-based VLAs
+2026 2603.00140 | Steering Away from Memorization: Reachability-Constrained Reinforcement Learning for Text-to-Image Diffusion
+2026 2602.20715 | IG-RFT: An Interaction-Guided RL Framework for VLA Models in Long-Horizon Robotic Manipulation
+2026 2602.19313 | TOPReward: Token Probabilities as Hidden Zero-Shot Rewards for Robotics
+2026 2602.13193 | Steerable Vision-Language-Action Policies for Embodied Reasoning and Hierarchical Control
+2026 2602.12628 | Beyond Imitation: Reinforcement Learning-Based Sim-Real Co-Training for VLA Models
+2026 2602.12281 | Scaling Verification Can Be More Effective than Scaling Policy Learning for Vision-Language-Action Alignment
+2026 2602.12063 | VLAW: Iterative Co-Improvement of Vision-Language-Action Policy and World Model
+2026 2602.11075 | RISE: Self-Improving Robot Policy with Compositional World Model
+2026 2602.10539 | What Makes Value Learning Efficient in Residual Reinforcement Learning?
+2026 2602.09021 | χ0: Resource-Aware Robust Manipulation via Taming Distributional Inconsistencies
+2026 2602.07541 | Differentiate-and-Inject: Enhancing VLAs via Functional Differentiation Induced by In-Parameter Structural Reasoning
+2026 2602.07322 | Action-to-Action Flow Matching
+2026 2602.05765 | RL-VLA$^3$: A Flexible and Asynchronous Reinforcement Learning Framework for VLA Training
+2026 2602.05051 | ReFORM: Reflected Flows for On-support Offline RL via Noise Manipulation
+2026 2602.03973 | VLS: Steering Pretrained Robot Policies via Vision-Language Models
+2026 2602.02831 | Adaptive Linear Path Model-Based Diffusion
+2026 2602.01789 | RFS: Reinforcement Learning with Residual Flow Steering for Dexterous Manipulation
+2026 2602.00919 | Green-VLA: Staged Vision-Language-Action Model for Generalist Robots
+2026 2601.20701 | OGPO: One-Step Generative Policy Optimization for Real-Time Robot Control
+2026 2601.14234 | Q-learning with Adjoint Matching
+2026 2601.00675 | RoboReward: General-Purpose Vision-Language Reward Models for Robotics
+2025 None | πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models
+2025 None | Multimodal Reinforcement Learning With Score-Based Policy
+2025 2601.00898 | Dichotomous Diffusion Policy Optimization
+2025 2512.16911 | Posterior Behavioral Cloning: Pretraining BC Policies for Efficient RL Finetuning
+2025 2512.11345 | Symmetry-Aware Steering of Equivariant Diffusion Policies: Benefits and Limits
+2025 2512.02581 | Training Diffusion Policies via Prior-Mapping Co-Evolution
+2025 2512.01801 | GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation
+2025 2511.14759 | π*0.6: a VLA That Learns From Experience
+2025 2511.14178 | Towards Deploying VLA Without Fine-Tuning: Plug-and-Play Inference-Time VLA Policy Steering via Embodied Evolutionary Diffusion
+2025 2511.11931 | MATT-Diff: Multimodal Active Target Tracking by Diffusion Policy
+2025 2511.07730 | Multistep Quasimetric Learning for Scalable Goal-conditioned Reinforcement Learning
+2025 2511.05005 | Multi-agent Coordination via Flow Matching
+2025 2510.23176 | TARC: Time-Adaptive Robotic Control
+2025 2510.15883 | FinFlowRL: An Imitation-Reinforcement Learning Framework for Adaptive Stochastic Control in Finance
+2025 2510.15388 | Iterative Refinement of Flow Policies in Probability Space for Online Reinforcement Learning
+2025 2510.14830 | RL-100: Performant Robotic Manipulation with Real-World Reinforcement Learning
+2025 2510.09976 | Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action Models
+2025 2510.07077 | Vision-Language-Action Models for Robotics: A Review Towards Real-World Applications
+2025 2510.06710 | RLinf-VLA: A Unified and Efficient Framework for Reinforcement Learning of Vision-Language-Action Models
+2025 2509.19301 | Residual Off-Policy RL for Finetuning Behavior Cloning Policies
+2025 2509.13774 | Dual-Actor Fine-Tuning of VLA Models: A Talk-and-Tweak Human-in-the-Loop Approach
+2025 2509.06863 | floq: Training Critics via Flow-Matching for Scaling Compute in Value-Based RL
+2025 2508.09968 | Noise Hypernetworks: Amortizing Test-Time Compute in Diffusion Models
+2025 2507.17846 | PinchBot: Long-Horizon Deformable Manipulation with Guided Diffusion Policy
+2025 2506.13922 | DynaGuide: Steering Diffusion Polices with Active Dynamic Guidance
+2025 2506.06658 | Self-Improving Loops for Visual Robotic Planning
+2025 2505.10911 | ReWiND: Language-Guided Rewards Teach Robot Policies without New Demonstrations
+2025 2505.10881 | Prior-Guided Diffusion Planning for Offline Reinforcement Learning

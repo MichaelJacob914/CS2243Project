@@ -1,0 +1,33 @@
+{
+ "task": "can",
+ "K": 8,
+ "n_episodes": 200,
+ "n_envs": 10,
+ "seed": 0,
+ "success": 0.375,
+ "se": 0.03423265984407288,
+ "mean_ep_len_success": 192.16,
+ "mean_a_minus_base": 0.0,
+ "eval_s": 194.57628417015076,
+ "total_s": 216.03662753105164,
+ "run_info": {
+  "git_commit": "a6bd481fcdb3278d4e108783c7ffc2b829fe0b1a",
+  "git_dirty": false,
+  "git_commit_dsrl": "8d21b9cf55459f022c0e769bca1343edd9d30e5a",
+  "git_commit_dppo": "86ce51834055c02f9013e60dd4c4275606d82df7",
+  "git_commit_sb3": "10e5d311b5c42fe571ff3eeb72f622ca616a149d",
+  "python": "3.9.25",
+  "torch": "2.4.0+cu121",
+  "cuda": "12.1",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "hostname": "holygpu8a13604.rc.fas.harvard.edu",
+  "slurm_job_id": "57494228",
+  "slurm_array_task_id": null,
+  "runs_per_gpu": 1.0,
+  "argv": [
+   "scripts/base_eval.py",
+   "--task",
+   "can"
+  ]
+ }
+}

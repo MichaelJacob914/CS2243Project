@@ -1,0 +1,34 @@
+{
+ "scene": "S06Finding1",
+ "duration": 38.30000000000017,
+ "captions": [
+  {
+   "t": 3.0,
+   "text": "Each dot is one state, coloured by task phase: the width of the policy's rise (up) against the control's (across). Below the diagonal, the policy decides faster."
+  },
+  {
+   "t": 7.0,
+   "text": "Widths here are measured on the log-SNR noise scale, not in steps: the distance from 10% to 90% decided."
+  },
+  {
+   "t": 17.2,
+   "text": "Action groups: 44 of 77 states have a clear window. Grippers: 60 and 71 of 319."
+  },
+  {
+   "t": 20.7,
+   "text": "'Clearly narrower' means the policy's 95% interval for the width lies wholly below the control's. Gripper dots appear only where the control's gripper ever flips."
+  },
+  {
+   "t": 26.2,
+   "text": "Run the same test with a second Gaussian in place of the policy and almost nothing passes (0 of 77 for action groups), so these are not false positives."
+  },
+  {
+   "t": 31.2,
+   "text": "The critic's value has no window: its dots sit on the diagonal, and only 11 of 319 states pass, which does not beat the control-vs-control rate by the 10 points the test required."
+  },
+  {
+   "t": 35.2,
+   "text": "So at many states the policy makes its discrete choices inside a narrow window. The critic's value has none."
+  }
+ ]
+}

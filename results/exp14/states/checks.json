@@ -1,0 +1,131 @@
+{
+ "demo_vs_env_raw_maxabs": 1.0,
+ "demo_vs_env_raw_maxabs_per_dim": [
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  1.0,
+  0.0
+ ],
+ "demo_vs_env_norm_maxabs": 1.9999979734420776,
+ "demo_vs_env_norm_p99": 2.384185791015625e-07,
+ "n_checked": 200,
+ "demo_obs_nearest_train_npz_maxabs_median": 2.8758024295250095e-08,
+ "train_npz_n": 195800,
+ "norm_obs_range_demo_states": [
+  -1.0,
+  0.9999979734420776
+ ],
+ "grip_replay_vs_live_maxabs": 0.0,
+ "n_substeps": 25,
+ "determinism_raw_maxabs": 4.0945025148175773e-13,
+ "determinism_state_maxabs": 1.9782800397827316e-11,
+ "determinism_without_grip_restore_raw_maxabs": 0.07442855834960938,
+ "save_restore_raw_maxabs": 0.0,
+ "action_layout": {
+  "dim6=+1": {
+   "g0_gap_change": -0.03787976535090953,
+   "g1_gap_change": -0.00048291853227155207,
+   "grip_state": [
+    -1.0,
+    1.0,
+    0.0,
+    0.0
+   ]
+  },
+  "dim13=+1": {
+   "g0_gap_change": -0.0004828732188883883,
+   "g1_gap_change": -0.03788839183666154,
+   "grip_state": [
+    0.0,
+    0.0,
+    -1.0,
+    1.0
+   ]
+  },
+  "dim0=+1": {
+   "eef0_disp": [
+    0.082,
+    0.0126,
+    0.01
+   ],
+   "eef1_disp": [
+    -0.0047,
+    -0.0131,
+    0.0104
+   ]
+  },
+  "dim7=+1": {
+   "eef0_disp": [
+    0.0152,
+    0.0131,
+    0.0096
+   ],
+   "eef1_disp": [
+    0.0617,
+    -0.0169,
+    0.013
+   ]
+  }
+ },
+ "sec_per_restore_plus_chunk": 0.29175490538279214,
+ "sec_per_policy_call_cpu": 0.0317732572555542,
+ "robot_action_dims": [
+  7,
+  7
+ ]
+}

@@ -1,0 +1,26 @@
+{
+ "scene": "S09Finding4",
+ "duration": 27.600000000000165,
+ "captions": [
+  {
+   "t": 1.0,
+   "text": "So far we trusted the critic. Now real outcomes: at 20 states, regenerate only the first chunk from step 4, 9, 12, 15 or 18 (32 noised chunks, 8 redraws each), then let the policy finish: 25,600 episodes."
+  },
+  {
+   "t": 8.5,
+   "text": "The success rate was 0.47\u20130.49 at every step, and the chunk drawn decided almost none of it (yellow, near 0)."
+  },
+  {
+   "t": 13.5,
+   "text": "Same split as before: between the 32 noised chunks against among their redraws, each run to the end. For the critic's value it is 17% to 87% (green)."
+  },
+  {
+   "t": 19.0,
+   "text": "The critic tells easy states from hard ones well (AUC 0.86), but ranks chunks within a state barely better than chance (0.57; 0.5 is chance)."
+  },
+  {
+   "t": 23.5,
+   "text": "Picking the critic's top quarter of chunks raised success by at most 3 points, and most at the earliest step."
+  }
+ ]
+}

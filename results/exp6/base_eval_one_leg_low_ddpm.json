@@ -1,0 +1,29 @@
+{
+ "task": "one_leg_low",
+ "n_envs": 1024,
+ "rounds": 1,
+ "chunks_per_episode": 88,
+ "set": [],
+ "act_steps": 8,
+ "gpu": "NVIDIA H100 80GB HBM3",
+ "per_k": {
+  "0": {
+   "success": 0.408203125,
+   "success_ci95": 0.030104442526973457,
+   "success_chunk": 0.40625,
+   "n_episodes": 1024,
+   "env_steps_per_s": 4802.113937856227,
+   "diffusion_ms_per_chunk": 97.16364199464971,
+   "sim_ms_per_chunk": 1608.751733194698
+  },
+  "20": {
+   "success": 0.41796875,
+   "success_ci95": 0.030210029598273354,
+   "success_chunk": 0.416015625,
+   "n_episodes": 1024,
+   "env_steps_per_s": 5230.324458115445,
+   "diffusion_ms_per_chunk": 19.007195125926625,
+   "sim_ms_per_chunk": 1547.2436303442175
+  }
+ }
+}

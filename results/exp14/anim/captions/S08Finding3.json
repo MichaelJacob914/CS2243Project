@@ -1,0 +1,26 @@
+{
+ "scene": "S08Finding3",
+ "duration": 25.80000000000015,
+ "captions": [
+  {
+   "t": 3.6,
+   "text": "Steering at step k can only change what is still undecided at k. Green: the share of the critic's value still open, median of 319 states."
+  },
+  {
+   "t": 9.2,
+   "text": "Yellow: gain in success rate from RL at that fixed step after about 6M env steps (0.6 means +60 points over no RL)."
+  },
+  {
+   "t": 12.7,
+   "text": "The two rank the eight steps almost the same way (Spearman \u03c1 = 0.95)."
+  },
+  {
+   "t": 16.7,
+   "text": "But the agreement comes from the late steps. From step 14 on, little is left to change, and the RL gain drops."
+  },
+  {
+   "t": 21.2,
+   "text": "Among steps 0\u201311 the RL gain barely changes (0.52 to 0.64). So this explains why late steering fails, but it does not pick a best early step."
+  }
+ ]
+}

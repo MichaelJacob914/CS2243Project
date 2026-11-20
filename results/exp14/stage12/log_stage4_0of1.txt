@@ -1,0 +1,22 @@
+=== stage12 Wed Nov 11 11:25:42 2026 {'states': 'results/exp14/states/states.npz', 'out_dir': 'results/exp14/stage12', 'act_dir': '/n/netscratch/olveczky_lab/Lab/charleszhang/exp14/actions', 'device': 'cpu', 'shard': '0/1', 'limit': None, 'mode': 'stage4', 'stage4_states': '3,6,8,22,60,74,76,85,123,126,135,144,185,190,195,204,256,258,261,264', 'stage4_ks': '4,9,12,15,18'} {'commit': 'a6bd481fcdb3278d4e108783c7ffc2b829fe0b1a', 'snapshot': '/n/netscratch/olveczky_lab/Lab/charleszhang/exp14/code_snapshot', 'snapshot_time': 'copied from exp13_phase0/code_snapshot (taken Tue Nov 10 17:17:34 EST 2026) at Tue Nov 10 21:35:58 EST 2026', 'host': 'holy8a24501.rc.fas.harvard.edu', 'slurm_job': '59755464'}
+critic x_T invariance: max |dQ| = 0.00e+00
+stage4 actions state 3: (5, 32, 8, 8, 14), q mean -307.9
+stage4 actions state 6: (5, 32, 8, 8, 14), q mean -335.0
+stage4 actions state 8: (5, 32, 8, 8, 14), q mean -294.1
+stage4 actions state 22: (5, 32, 8, 8, 14), q mean -327.9
+stage4 actions state 60: (5, 32, 8, 8, 14), q mean -254.0
+stage4 actions state 74: (5, 32, 8, 8, 14), q mean -219.3
+stage4 actions state 76: (5, 32, 8, 8, 14), q mean -304.1
+stage4 actions state 85: (5, 32, 8, 8, 14), q mean -339.7
+stage4 actions state 123: (5, 32, 8, 8, 14), q mean -290.4
+stage4 actions state 126: (5, 32, 8, 8, 14), q mean -340.0
+stage4 actions state 135: (5, 32, 8, 8, 14), q mean -374.5
+stage4 actions state 144: (5, 32, 8, 8, 14), q mean -260.0
+stage4 actions state 185: (5, 32, 8, 8, 14), q mean -210.0
+stage4 actions state 190: (5, 32, 8, 8, 14), q mean -211.5
+stage4 actions state 195: (5, 32, 8, 8, 14), q mean -224.9
+stage4 actions state 204: (5, 32, 8, 8, 14), q mean -239.6
+stage4 actions state 256: (5, 32, 8, 8, 14), q mean -51.5
+stage4 actions state 258: (5, 32, 8, 8, 14), q mean -91.4
+stage4 actions state 261: (5, 32, 8, 8, 14), q mean -48.8
+stage4 actions state 264: (5, 32, 8, 8, 14), q mean -91.6

@@ -1,0 +1,2 @@
+task,mode,seed,success,se,n,n_envs,K,eval_s
+can,tanh_k0,2,0.718,0.020123419192572618,500,10,8,675.1

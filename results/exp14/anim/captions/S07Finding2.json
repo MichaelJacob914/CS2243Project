@@ -1,0 +1,26 @@
+{
+ "scene": "S07Finding2",
+ "duration": 29.600000000000104,
+ "captions": [
+  {
+   "t": 2.0,
+   "text": "For every state we read off the step where each property is half decided, and group the states by task phase."
+  },
+  {
+   "t": 11.0,
+   "text": "White bars are phase medians. The discrete choices sit near step 5\u20136 in every phase. The critic value settles late, near step 16\u201317, also in every phase."
+  },
+  {
+   "t": 16.5,
+   "text": "To count as moving, two phases had to differ by more than one step, with p < 0.01 (both needed). Action groups: 0.42 steps; gripper arm 1: 0.62."
+  },
+  {
+   "t": 21.0,
+   "text": "Gripper arm 0 shows a 3.6-step gap, but it comes from the place phase, where only 3 states had a curve, and p = 0.044 misses the bar."
+  },
+  {
+   "t": 25.5,
+   "text": "So choosing the step by task phase has nothing to gain. States within a phase still spread out, so section 4 tests per-chunk choice directly."
+  }
+ ]
+}

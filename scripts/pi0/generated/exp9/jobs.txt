@@ -1,0 +1,9 @@
+t8_k0_lf3_abase_b2.5 59007654
+t8_k3_lf3_abase_b2.5 59007655
+t4_k0_lf3_abase_b2.5 59007656
+t4_k3_lf3_abase_b2.5 59007658
+t6_k0_lf3_abase_b2.5 59007659
+t6_k3_lf3_abase_b2.5 59007660
+t8_k0_wstruct_abase_b1.0 59007679
+t4_k0_wstruct_abase_b1.0 59007681
+t6_k0_wstruct_abase_b1.0 59007683

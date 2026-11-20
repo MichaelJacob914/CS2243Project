@@ -1,0 +1,55 @@
+=== sim_exec Wed Nov 11 11:45:23 2026 {'stage': 'stage4', 'states': 'results/exp14/states/states.npz', 'act_dir': '/n/netscratch/olveczky_lab/Lab/charleszhang/exp14/actions', 'out_dir': 'results/exp14/sim', 'n_workers': 112, 's3_points': 16, 's3_copies': 8, 's3_keys': 'a2a,a2a_null,a2b_plan', 'time_only': None} {'commit': 'a6bd481fcdb3278d4e108783c7ffc2b829fe0b1a', 'snapshot': '/n/netscratch/olveczky_lab/Lab/charleszhang/exp14/code_snapshot', 'snapshot_time': 'copied from exp13_phase0/code_snapshot (taken Tue Nov 10 17:17:34 EST 2026) at Tue Nov 10 21:35:58 EST 2026', 'host': 'holy8a28601.rc.fas.harvard.edu', 'slurm_job': '59759945'}
+3200 tasks to run
+=== sim_exec Wed Nov 11 20:22:36 2026 {'stage': 'stage4', 'states': 'results/exp14/states/states.npz', 'act_dir': '/n/netscratch/olveczky_lab/Lab/charleszhang/exp14/actions', 'out_dir': 'results/exp14/sim', 'n_workers': 48, 's3_points': 16, 's3_copies': 8, 's3_keys': 'a2a,a2a_null,a2b_plan', 'time_only': None} {'commit': 'a6bd481fcdb3278d4e108783c7ffc2b829fe0b1a', 'snapshot': '/n/netscratch/olveczky_lab/Lab/charleszhang/exp14/code_snapshot', 'snapshot_time': 'copied from exp13_phase0/code_snapshot (taken Tue Nov 10 17:17:34 EST 2026) at Tue Nov 10 21:35:58 EST 2026', 'host': 'holy8a27604.rc.fas.harvard.edu', 'slurm_job': '59859920'}
+3200 tasks to run
+64/3200 tasks, last 270.4s, elapsed 936s
+128/3200 tasks, last 308.8s, elapsed 1281s
+192/3200 tasks, last 318.8s, elapsed 1642s
+256/3200 tasks, last 293.5s, elapsed 2130s
+320/3200 tasks, last 263.5s, elapsed 2506s
+384/3200 tasks, last 250.1s, elapsed 2841s
+448/3200 tasks, last 347.8s, elapsed 3309s
+512/3200 tasks, last 309.6s, elapsed 3816s
+576/3200 tasks, last 323.5s, elapsed 4168s
+640/3200 tasks, last 330.0s, elapsed 4535s
+704/3200 tasks, last 216.8s, elapsed 4865s
+768/3200 tasks, last 236.0s, elapsed 5148s
+832/3200 tasks, last 49.3s, elapsed 5249s
+896/3200 tasks, last 50.7s, elapsed 5330s
+960/3200 tasks, last 57.7s, elapsed 5403s
+1024/3200 tasks, last 229.3s, elapsed 5871s
+1088/3200 tasks, last 261.3s, elapsed 6163s
+1152/3200 tasks, last 108.3s, elapsed 6362s
+1216/3200 tasks, last 110.0s, elapsed 6499s
+1280/3200 tasks, last 108.5s, elapsed 6640s
+1344/3200 tasks, last 292.3s, elapsed 7102s
+1408/3200 tasks, last 248.2s, elapsed 7398s
+1472/3200 tasks, last 456.1s, elapsed 7899s
+1536/3200 tasks, last 240.4s, elapsed 8284s
+1600/3200 tasks, last 256.6s, elapsed 8677s
+1664/3200 tasks, last 269.9s, elapsed 8987s
+1728/3200 tasks, last 259.5s, elapsed 9366s
+1792/3200 tasks, last 156.3s, elapsed 9629s
+1856/3200 tasks, last 211.2s, elapsed 9863s
+1920/3200 tasks, last 185.2s, elapsed 10062s
+1984/3200 tasks, last 92.6s, elapsed 10189s
+2048/3200 tasks, last 89.8s, elapsed 10318s
+2112/3200 tasks, last 56.5s, elapsed 10408s
+2176/3200 tasks, last 64.0s, elapsed 10481s
+2240/3200 tasks, last 59.4s, elapsed 10552s
+2304/3200 tasks, last 59.5s, elapsed 10622s
+2368/3200 tasks, last 75.8s, elapsed 10687s
+2432/3200 tasks, last 221.1s, elapsed 10926s
+2496/3200 tasks, last 194.9s, elapsed 11148s
+2560/3200 tasks, last 6.3s, elapsed 11301s
+2624/3200 tasks, last 10.3s, elapsed 11329s
+2688/3200 tasks, last 6.2s, elapsed 11351s
+2752/3200 tasks, last 16.4s, elapsed 11382s
+2816/3200 tasks, last 16.8s, elapsed 11411s
+2880/3200 tasks, last 18.7s, elapsed 11435s
+2944/3200 tasks, last 17.1s, elapsed 11461s
+3008/3200 tasks, last 43.3s, elapsed 11510s
+3072/3200 tasks, last 20.1s, elapsed 11538s
+3136/3200 tasks, last 19.1s, elapsed 11566s
+3200/3200 tasks, last 27.4s, elapsed 11601s
+=== stage4 done: 3200 tasks in 11601s with 48 workers

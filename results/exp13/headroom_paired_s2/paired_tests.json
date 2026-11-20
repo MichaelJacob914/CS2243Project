@@ -1,0 +1,22 @@
+{
+  "i_allk_N32_vs_ii_k0_N640": {
+    "x_only": 7,
+    "y_only": 13,
+    "p_exact_mcnemar": 0.26317596435546875
+  },
+  "i_allk_N32_vs_iii_stoch": {
+    "x_only": 20,
+    "y_only": 11,
+    "p_exact_mcnemar": 0.14961278438568115
+  },
+  "ii_k0_N640_vs_iii_stoch": {
+    "x_only": 22,
+    "y_only": 7,
+    "p_exact_mcnemar": 0.008130058646202087
+  },
+  "iii_stoch_vs_iv_det": {
+    "x_only": 16,
+    "y_only": 18,
+    "p_exact_mcnemar": 0.8641662404406816
+  }
+}

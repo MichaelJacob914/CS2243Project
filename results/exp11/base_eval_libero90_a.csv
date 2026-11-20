@@ -1,0 +1,31 @@
+suite,task_id,task,noise,query_freq,episodes,success,mean_ep_len_success,env_steps,wall_s,pi0_calls,pi0_s_per_call,mean_batch,env_s,sim_s_per_step,env_steps_per_s,n_envs,gpu
+libero_90,0,close the top drawer of the cabinet,full,5,20,0.1,277.5,7755,100.7,80,0.7234,19.4,42.7,0.03762,77.0,20,NVIDIA H200
+libero_90,1,close the top drawer of the cabinet and put the black bowl on top of it,full,5,20,0.0,nan,8000,42.9,80,0.2438,20.0,23.3,0.04066,186.5,20,NVIDIA H200
+libero_90,2,put the black bowl in the top drawer of the cabinet,full,5,20,0.85,236.8,5226,48.2,80,0.3553,13.15,19.7,0.03695,108.4,20,NVIDIA H200
+libero_90,3,put the butter at the back in the top drawer of the cabinet and close it,full,5,20,0.0,nan,8000,44.9,80,0.26,20.0,24.0,0.04092,178.0,20,NVIDIA H200
+libero_90,4,put the butter at the front in the top drawer of the cabinet and close it,full,5,20,0.0,nan,8000,43.2,80,0.2468,20.0,23.3,0.03992,185.3,20,NVIDIA H200
+libero_90,5,put the chocolate pudding in the top drawer of the cabinet and close it,full,5,20,0.0,nan,8000,43.8,80,0.2438,20.0,24.2,0.04058,182.8,20,NVIDIA H200
+libero_90,6,open the bottom drawer of the cabinet,full,5,20,0.0,nan,8000,41.6,80,0.2432,20.0,22.1,0.03823,192.2,20,NVIDIA H200
+libero_90,7,open the top drawer of the cabinet,full,5,20,0.0,nan,8000,42.6,80,0.2429,20.0,23.0,0.03813,187.9,20,NVIDIA H200
+libero_90,8,open the top drawer of the cabinet and put the bowl in it,full,5,20,0.0,nan,8000,43.2,80,0.2438,20.0,23.6,0.03716,185.2,20,NVIDIA H200
+libero_90,9,put the black bowl on the plate,full,5,20,1.0,126.2,2523,27.0,51,0.2621,10.04,13.5,0.03438,93.6,20,NVIDIA H200
+libero_90,10,put the black bowl on top of the cabinet,full,5,20,0.95,117.3,2628,25.1,80,0.1225,6.67,15.2,0.03391,104.9,20,NVIDIA H200
+libero_90,11,open the top drawer of the cabinet,full,5,20,0.0,nan,8000,49.0,80,0.2636,20.0,27.8,0.04659,163.3,20,NVIDIA H200
+libero_90,12,put the black bowl at the back on the plate,full,5,20,0.6,113.6,4563,36.9,80,0.1713,11.47,23.1,0.03669,123.6,20,NVIDIA H200
+libero_90,13,put the black bowl at the front on the plate,full,5,20,0.2,194.2,7177,45.2,80,0.241,17.95,25.9,0.0408,158.6,20,NVIDIA H200
+libero_90,14,put the middle black bowl on the plate,full,5,20,0.35,101.4,5910,45.5,80,0.2843,14.81,22.7,0.03825,129.9,20,NVIDIA H200
+libero_90,15,put the middle black bowl on top of the cabinet,full,5,20,0.0,nan,8000,45.6,80,0.2462,20.0,25.8,0.04445,175.6,20,NVIDIA H200
+libero_90,16,stack the black bowl at the front on the black bowl in the middle,full,5,20,0.0,nan,8000,46.5,80,0.2469,20.0,26.7,0.04378,171.9,20,NVIDIA H200
+libero_90,17,stack the middle black bowl on the back black bowl,full,5,20,0.0,nan,8000,46.6,80,0.2464,20.0,26.8,0.04326,171.5,20,NVIDIA H200
+libero_90,18,put the frying pan on the stove,full,5,20,0.1,340.5,7881,50.9,80,0.2448,19.71,31.3,0.06422,154.7,20,NVIDIA H200
+libero_90,19,put the moka pot on the stove,full,5,20,1.0,264.9,5299,38.6,62,0.2208,17.24,24.9,0.06275,137.1,20,NVIDIA H200
+libero_90,20,turn on the stove,full,5,20,0.95,84.6,2007,27.7,80,0.1011,5.1,19.5,0.05693,72.6,20,NVIDIA H200
+libero_90,21,turn on the stove and put the frying pan on it,full,5,20,0.0,nan,8000,51.5,80,0.2449,20.0,31.9,0.06416,155.2,20,NVIDIA H200
+libero_90,22,close the bottom drawer of the cabinet,full,5,20,0.95,225.9,4692,31.7,80,0.1691,11.84,18.1,0.03585,148.1,20,NVIDIA H200
+libero_90,23,close the bottom drawer of the cabinet and open the top drawer,full,5,20,0.0,nan,8000,43.3,80,0.2455,20.0,23.6,0.0383,184.6,20,NVIDIA H200
+libero_90,24,put the black bowl in the bottom drawer of the cabinet,full,5,20,1.0,140.4,2808,20.1,32,0.2278,17.81,12.8,0.03726,139.5,20,NVIDIA H200
+libero_90,25,put the black bowl on top of the cabinet,full,5,20,0.0,nan,8000,45.1,80,0.2455,20.0,25.3,0.03877,177.6,20,NVIDIA H200
+libero_90,26,put the wine bottle in the bottom drawer of the cabinet,full,5,20,0.0,nan,8000,46.5,80,0.2459,20.0,26.7,0.03644,172.1,20,NVIDIA H200
+libero_90,27,put the wine bottle on the wine rack,full,5,20,0.0,nan,8000,40.8,80,0.2456,20.0,21.1,0.03605,196.0,20,NVIDIA H200
+libero_90,28,close the top drawer of the cabinet,full,5,20,0.35,179.7,6458,40.1,80,0.2296,16.19,21.7,0.03433,160.9,20,NVIDIA H200
+libero_90,29,put the black bowl in the top drawer of the cabinet,full,5,20,0.8,165.2,4243,33.4,80,0.1682,10.7,19.9,0.03499,127.0,20,NVIDIA H200

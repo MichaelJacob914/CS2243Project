@@ -1,0 +1,28 @@
+# Environments and caches
+.venv*/
+__pycache__/
+*.pyc
+.libero/
+.claude/
+MUJOCO_LOG.TXT
+
+# Run outputs (live on scratch; see README "Where outputs go")
+logs/
+wandb/
+outputs/
+
+# Large result arrays. Small summaries (json/csv/npy < 1 MB) are force-added; add new ones with `git add -f`.
+results/
+
+# External code: install from the pinned sources listed in README
+third_party/furniture-bench/
+third_party/isaacgym/
+third_party/openpi_upstream/
+third_party/torch_extensions/
+
+# Report media that are too large for git (regenerate with scripts/render_rollouts.py, scripts/pi0/render_libero.py)
+report/assets/videos/
+report/assets/video/
+report/assets/anim/
+report/assets/figs/*.svg
+report/assets/figs/*.pdf

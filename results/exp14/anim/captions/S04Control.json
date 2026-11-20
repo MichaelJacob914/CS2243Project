@@ -1,0 +1,34 @@
+{
+ "scene": "S04Control",
+ "duration": 43.03333333333339,
+ "captions": [
+  {
+   "t": 1.0,
+   "text": "But the resolved fraction rises from 0 to 1 for any distribution, so a rise alone proves nothing."
+  },
+  {
+   "t": 5.0,
+   "text": "So we compare with a control: a Gaussian with the same mean and spread as the policy's chunks, run through the same sampler code. It has no two routes to choose between."
+  },
+  {
+   "t": 16.5,
+   "text": "The control's redraws fan out and settle gradually, and its curve rises slowly."
+  },
+  {
+   "t": 20.5,
+   "text": "A critical window is a rise clearly steeper than the control's. From 10% to 90% decided: about 8 steps for the policy, 15 for the control."
+  },
+  {
+   "t": 26.6,
+   "text": "Past the disc, no route is left to choose. The curve now tracks the chunk's main direction of variation; policy and control should match."
+  },
+  {
+   "t": 35.93,
+   "text": "They do: both settle gradually, and the two curves overlap."
+  },
+  {
+   "t": 38.93,
+   "text": "The method passed this toy check in 8 of 9 repeats with fresh random seeds, all run before any robot data were collected."
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "scene": "S10Recommend",
+ "duration": 33.60000000000021,
+ "captions": [
+  {
+   "t": 3.0,
+   "text": "Steer at one fixed early step, k \u2248 3\u20138: around the window, which sits at the same place in every phase, and where RL gains are high and flat."
+  },
+  {
+   "t": 9.5,
+   "text": "Drop the learned per-chunk choice of step. The window does not move, and the critic cannot tell an adaptive agent which step to use."
+  },
+  {
+   "t": 17.0,
+   "text": "Longer RL runs (8\u20139M env steps) agree: fixed k = 3 or 5 reach 0.91\u20130.92, against 0.87 for adaptive k (run before its entropy fix) and 0.82 at k = 0."
+  },
+  {
+   "t": 23.5,
+   "text": "The main limit: the simulator test changed only the first chunk. That full test has not been run."
+  }
+ ]
+}

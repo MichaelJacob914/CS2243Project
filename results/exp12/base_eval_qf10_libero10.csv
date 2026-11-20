@@ -1,0 +1,2 @@
+suite,task_id,task,noise,query_freq,episodes,success,mean_ep_len_success,env_steps,wall_s,pi0_calls,pi0_s_per_call,mean_batch,env_s,sim_s_per_step,env_steps_per_s,n_envs,gpu
+libero_10,8,put both moka pots on the stove,full,10,50,0.74,415.1,22120,157.7,104,0.7319,21.4,81.5,0.06735,140.3,25,NVIDIA H200

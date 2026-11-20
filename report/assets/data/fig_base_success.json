@@ -1,0 +1,37 @@
+{
+ "figure": "fig_base_success",
+ "description": "Base policy (deterministic DDIM from x_T ~ N(0, I)) success per task, pooled over eval seeds; SE is binomial. Same eval protocol as train_adsrl.py. Where results/base_recheck has a (task, K), its larger sample replaces the base_eval estimate (can: 1500 episodes, 3 seeds).",
+ "rows": [
+  {
+   "task": "can",
+   "K": 8,
+   "success": 0.42133333333333334,
+   "se": 0.01274915828739439,
+   "n": 1500,
+   "sources": [
+    "results/base_recheck/recheck_per_seed.csv"
+   ]
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "success": 0.505,
+   "se": 0.03535357124817803,
+   "n": 200,
+   "sources": [
+    "results/base_eval/square_K8/result.json"
+   ]
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "success": 0.195,
+   "se": 0.016174826119621812,
+   "n": 600,
+   "sources": [
+    "results/base_eval/transport_K20/result.json",
+    "results/base_eval_seed1/transport_K20/result.json"
+   ]
+  }
+ ]
+}

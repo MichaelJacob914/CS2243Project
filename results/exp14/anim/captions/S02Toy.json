@@ -1,0 +1,22 @@
+{
+ "scene": "S02Toy",
+ "duration": 24.66666666666695,
+ "captions": [
+  {
+   "t": 1.0,
+   "text": "First, a toy problem with a known choice. A point moves from the white dot to the star, going above or below the disc."
+  },
+  {
+   "t": 6.0,
+   "text": "A small diffusion policy, trained on such demos, outputs the next 8 moves as one chunk. These are chunks it produced: some go above, some below."
+  },
+  {
+   "t": 13.5,
+   "text": "How the policy makes a chunk: at step 0 the chunk is pure noise, and each denoising step removes some of it."
+  },
+  {
+   "t": 21.07,
+   "text": "Somewhere between step 0 and step 19, the policy decides: above or below. The question is where."
+  }
+ ]
+}

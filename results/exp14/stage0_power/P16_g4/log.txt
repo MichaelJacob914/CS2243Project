@@ -1,0 +1,18 @@
+=== toy start Tue Nov 10 21:49:43 2026 args={'out_dir': 'results/exp14/stage0_power/P16_g4', 'device': 'cpu', 'train_steps': 30000, 'n_demos': 6000, 'P': 16, 'M': 16, 'n_boot': 1000, 'seed': 0, 'gen_seed': 4, 'model_from': 'results/exp14/stage0/toy_model.pt'} {'commit': 'a6bd481fcdb3278d4e108783c7ffc2b829fe0b1a', 'snapshot': '/n/netscratch/olveczky_lab/Lab/charleszhang/exp14/code_snapshot', 'snapshot_time': 'copied from exp13_phase0/code_snapshot (taken Tue Nov 10 17:17:34 EST 2026) at Tue Nov 10 21:35:58 EST 2026', 'host': 'holy8a26102.rc.fas.harvard.edu', 'slurm_job': '59625978'}
+dataset (426000, 2) (426000, 8, 2) amin=[-0.0073145  -0.04871922] amax=[0.05888749 0.04852139]
+loaded trained toy model
+[start] lam_max=3.199 -ln(lam)=-1.16 clustered=True dbic=745.7 dip_p=0 top-check energy p=0.343 R_t99={'pc1': -0.01448419883837101, 'pc2': -0.021074927195671552, 'chunk_mean': -0.014790117443580766, 'cluster_label': -0.01365942500325225}
+   pc1            mid=-1.26 width=3.41 | null mid=-0.47 width=5.02 | CI pol=[2.69 4.92] null=[3.73 5.84] narrower=False | null-vs-null narrower=False | two-rise dBIC=-4.4 pref=False
+   pc2            mid=0.97 width=4.14 | null mid=1.63 width=4.09 | CI pol=[3.75 5.33] null=[3.51 5.28] narrower=False | null-vs-null narrower=False | two-rise dBIC=-7.7 pref=False
+   chunk_mean     mid=-1.22 width=3.46 | null mid=-0.40 width=5.28 | CI pol=[2.84 4.98] null=[4.04 6.03] narrower=False | null-vs-null narrower=False | two-rise dBIC=-5.1 pref=False
+   cluster_label  mid=-1.23 width=3.45 | null mid=0.18 width=6.01 | CI pol=[2.68 5.17] null=[3.92 8.89] narrower=False | null-vs-null narrower=False | two-rise dBIC=-4.3 pref=False
+[past_obstacle] lam_max=0.178 -ln(lam)=1.72 clustered=False dbic=-16.5 dip_p=0.933 top-check energy p=0.208 R_t99={'pc1': -0.01414310547822994, 'pc2': -0.010989798419975603, 'chunk_mean': -0.014099596322013352}
+   pc1            mid=1.66 width=4.42 | null mid=1.31 width=4.15 | CI pol=[3.35 5.62] null=[3.53 4.92] narrower=False | null-vs-null narrower=False | two-rise dBIC=-2.2 pref=False
+   pc2            mid=5.70 width=3.24 | null mid=6.11 width=nan | CI pol=[nan nan] null=[nan nan] narrower=False | null-vs-null narrower=False | two-rise dBIC=4.0 pref=False
+   chunk_mean     mid=1.66 width=4.44 | null mid=1.32 width=4.16 | CI pol=[3.37 5.53] null=[3.48 4.97] narrower=False | null-vs-null narrower=False | two-rise dBIC=-2.0 pref=False
+[first_leg_up] lam_max=0.207 -ln(lam)=1.57 clustered=False dbic=-17.3 dip_p=0.89 top-check energy p=0.766 R_t99={'pc1': -0.00015208458257586255, 'pc2': 0.03728938125480421, 'chunk_mean': -0.00017411302607697241}
+   pc1            mid=1.71 width=4.27 | null mid=1.67 width=4.40 | CI pol=[2.91 6.01] null=[3.25 5.57] narrower=False | null-vs-null narrower=False | two-rise dBIC=-1.0 pref=False
+   pc2            mid=5.76 width=2.76 | null mid=6.56 width=nan | CI pol=[nan nan] null=[nan nan] narrower=False | null-vs-null narrower=False | two-rise dBIC=-5.6 pref=False
+   chunk_mean     mid=1.72 width=4.29 | null mid=1.67 width=4.44 | CI pol=[2.92 5.72] null=[3.15 5.8 ] narrower=False | null-vs-null narrower=False | two-rise dBIC=-1.1 pref=False
+CRITERIA {"start_clustered": true, "a_label_narrower_than_null": false, "b_mid_near_speciation": true, "c_past_obstacle_matches_null": true, "top_check": true, "PASS": false}
+=== toy done Tue Nov 10 21:50:40 2026

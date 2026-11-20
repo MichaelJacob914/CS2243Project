@@ -1,0 +1,147 @@
+{
+ "run": {
+  "git_commit": "a6bd481fcdb3278d4e108783c7ffc2b829fe0b1a",
+  "git_dirty": false,
+  "git_commit_dsrl": "8d21b9cf55459f022c0e769bca1343edd9d30e5a",
+  "git_commit_dppo": "86ce51834055c02f9013e60dd4c4275606d82df7",
+  "git_commit_sb3": "10e5d311b5c42fe571ff3eeb72f622ca616a149d",
+  "python": "3.9.25",
+  "torch": "2.4.0+cu121",
+  "cuda": "12.1",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "hostname": "holygpu8a17302.rc.fas.harvard.edu",
+  "slurm_job_id": "57596695",
+  "slurm_array_task_id": null,
+  "runs_per_gpu": 5.0,
+  "argv": [
+   "train_adsrl.py",
+   "--config-name=can",
+   "seed=1",
+   "env.n_eval_envs=10",
+   "wandb.mode=offline",
+   "log_dir=/n/netscratch/olveczky_lab/Lab/charleszhang/adsrl_runs",
+   "resume=true",
+   "steer.mode=adaptive",
+   "steer.rho=0.5",
+   "name=adaptive_rho0.5_s1"
+  ]
+ },
+ "cfg": {
+  "name": "adaptive_rho0.5_s1",
+  "logdir": "/n/netscratch/olveczky_lab/Lab/charleszhang/adsrl_runs/adsrl/can/adaptive_rho0.5_s1",
+  "resume": true,
+  "base_policy_path": "/n/holylfs06/LABS/olveczky_lab/Users/charleszhang/CS2243Project/dsrl/dppo/log/robomimic-pretrain/can/can_pre_diffusion_mlp_ta4_td20/2024-06-28_13-29-54/checkpoint/state_5000.pt",
+  "offline_data_path": "/n/holylfs06/LABS/olveczky_lab/Users/charleszhang/CS2243Project/dsrl/dppo/log/robomimic/can_test/train_offline.npz",
+  "dppo_path": "/n/holylfs06/LABS/olveczky_lab/Users/charleszhang/CS2243Project/dsrl/dppo",
+  "normalization_path": "/n/holylfs06/LABS/olveczky_lab/Users/charleszhang/CS2243Project/dsrl/dppo/log/robomimic/can/normalization.npz",
+  "algorithm": "dsrl_na",
+  "seed": 1,
+  "device": "cuda:0",
+  "use_wandb": true,
+  "env_name": "can",
+  "log_dir": "/n/netscratch/olveczky_lab/Lab/charleszhang/adsrl_runs",
+  "obs_dim": 23,
+  "action_dim": 7,
+  "cond_steps": 1,
+  "act_steps": 4,
+  "load_offline_data": false,
+  "deterministic_eval": true,
+  "eval_interval": 3000,
+  "num_evals": 200,
+  "checkpoint_every_evals": 1,
+  "eval_dump_every": 1,
+  "steer": {
+   "mode": "adaptive",
+   "k": 0,
+   "rho": 0.5,
+   "k_ent_coef": "auto",
+   "freeze_k_uniform": false,
+   "k_subset": null,
+   "xT_inputs": "auto"
+  },
+  "env": {
+   "n_envs": 4,
+   "n_eval_envs": 10,
+   "name": "can",
+   "max_episode_steps": 300,
+   "reset_at_iteration": false,
+   "save_video": false,
+   "best_reward_threshold_for_success": 1,
+   "reward_offset": 1,
+   "wrappers": {
+    "robomimic_lowdim": {
+     "normalization_path": "/n/holylfs06/LABS/olveczky_lab/Users/charleszhang/CS2243Project/dsrl/dppo/log/robomimic/can/normalization.npz",
+     "low_dim_keys": [
+      "robot0_eef_pos",
+      "robot0_eef_quat",
+      "robot0_gripper_qpos",
+      "object"
+     ]
+    },
+    "multi_step": {
+     "n_obs_steps": 1,
+     "n_action_steps": 4,
+     "max_episode_steps": 300,
+     "reset_within_step": true
+    }
+   }
+  },
+  "wandb": {
+   "project": "adsrl",
+   "group": "robomimic-can",
+   "mode": "offline"
+  },
+  "train": {
+   "total_timesteps": 1000000,
+   "buffer_size": 300000,
+   "tf32": false,
+   "compile": false,
+   "compile_mode": "default",
+   "tau": 0.005,
+   "actor_lr": 0.0003,
+   "batch_size": 256,
+   "train_freq": 1,
+   "utd": 20,
+   "noise_critic_grad_steps": 10,
+   "use_layer_norm": true,
+   "layer_size": 2048,
+   "num_layers": 3,
+   "discount": 0.99,
+   "ent_coef": -1,
+   "target_ent": 0.0,
+   "init_rollout_steps": 1501,
+   "action_magnitude": 1.5,
+   "n_critics": 2,
+   "critic_backup_combine_type": "min"
+  },
+  "model": {
+   "_target_": "model.diffusion.diffusion_eval.DiffusionEval",
+   "ft_denoising_steps": 0,
+   "predict_epsilon": true,
+   "denoised_clip_value": 1.0,
+   "randn_clip_value": 3,
+   "network_path": "/n/holylfs06/LABS/olveczky_lab/Users/charleszhang/CS2243Project/dsrl/dppo/log/robomimic-pretrain/can/can_pre_diffusion_mlp_ta4_td20/2024-06-28_13-29-54/checkpoint/state_5000.pt",
+   "network": {
+    "_target_": "model.diffusion.mlp_diffusion.DiffusionMLP",
+    "time_dim": 16,
+    "mlp_dims": [
+     512,
+     512,
+     512
+    ],
+    "residual_style": true,
+    "cond_dim": 23,
+    "horizon_steps": 4,
+    "action_dim": 7
+   },
+   "horizon_steps": 4,
+   "obs_dim": 23,
+   "action_dim": 7,
+   "denoising_steps": 20,
+   "device": "cuda:0",
+   "use_ddim": true,
+   "ddim_steps": 8,
+   "controllable_noise": true
+  }
+ }
+}

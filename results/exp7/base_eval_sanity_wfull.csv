@@ -1,0 +1,5 @@
+suite,task_id,task,noise,query_freq,episodes,success,mean_ep_len_success,env_steps,wall_s,pi0_calls,pi0_s_per_call,mean_batch,env_s,sim_s_per_step,env_steps_per_s,n_envs,gpu
+libero_10,0,put both the alphabet soup and the tomato sauce in the basket,k2-full-wfull,20,50,0.86,268.9,15203,101.3,70,0.6,11.19,59.2,0.022,150.0,12,NVIDIA H100 80GB HBM3
+libero_10,0,put both the alphabet soup and the tomato sauce in the basket,k5-full-wfull,20,50,0.94,279.4,14690,75.3,70,0.2412,10.79,58.3,0.02207,195.1,12,NVIDIA H100 80GB HBM3
+libero_10,0,put both the alphabet soup and the tomato sauce in the basket,k8-full-wfull,20,50,0.94,275.6,14511,67.0,70,0.17,10.69,55.1,0.02193,216.4,12,NVIDIA H100 80GB HBM3
+libero_10,0,put both the alphabet soup and the tomato sauce in the basket,k9-full,20,50,0.8,329.6,18382,90.7,85,0.1868,10.99,74.7,0.0221,202.7,12,NVIDIA H100 80GB HBM3

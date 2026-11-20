@@ -1,0 +1,161 @@
+{
+ "figure": "can_results",
+ "description": "can, deterministic evals of 200 episodes. Final = mean of the last 3 evals per seed, then mean over finished seeds (fixed steps: 1 seed; adaptive rho=0.5, random k, residual beta=0.3: 3 seeds). No RL: w=0 at that k (results/base_eval_wk) for k>0; bounded noise tanh(N(0,I)) at k=0 (results/base_recheck). Fixed-noise search (CEM) has one eval at 576k steps.",
+ "base": {
+  "success": 0.42133333333333334,
+  "se": 0.01274915828739439,
+  "n": 1500
+ },
+ "rows": [
+  {
+   "label": "k=0  (DSRL)",
+   "method": "dsrl",
+   "k": 0,
+   "gap": false,
+   "final": 0.9316666666666666,
+   "per_seed": [
+    0.9316666666666666
+   ],
+   "n_seeds": 1,
+   "no_rl": 0.7047
+  },
+  {
+   "label": "k=1",
+   "method": "fixed",
+   "k": 1,
+   "gap": false,
+   "final": 0.9566666666666667,
+   "per_seed": [
+    0.9566666666666667
+   ],
+   "n_seeds": 1,
+   "no_rl": 0.815
+  },
+  {
+   "label": "k=2",
+   "method": "fixed",
+   "k": 2,
+   "gap": false,
+   "final": 0.9516666666666667,
+   "per_seed": [
+    0.9516666666666667
+   ],
+   "n_seeds": 1,
+   "no_rl": 0.76
+  },
+  {
+   "label": "k=3",
+   "method": "fixed",
+   "k": 3,
+   "gap": false,
+   "final": 0.9199999999999999,
+   "per_seed": [
+    0.9199999999999999
+   ],
+   "n_seeds": 1,
+   "no_rl": 0.735
+  },
+  {
+   "label": "k=4",
+   "method": "fixed",
+   "k": 4,
+   "gap": false,
+   "final": 0.9016666666666667,
+   "per_seed": [
+    0.9016666666666667
+   ],
+   "n_seeds": 1,
+   "no_rl": 0.615
+  },
+  {
+   "label": "k=5",
+   "method": "fixed",
+   "k": 5,
+   "gap": false,
+   "final": 0.8766666666666666,
+   "per_seed": [
+    0.8766666666666666
+   ],
+   "n_seeds": 1,
+   "no_rl": 0.615
+  },
+  {
+   "label": "k=6",
+   "method": "fixed",
+   "k": 6,
+   "gap": false,
+   "final": 0.84,
+   "per_seed": [
+    0.84
+   ],
+   "n_seeds": 1,
+   "no_rl": 0.545
+  },
+  {
+   "label": "k=7",
+   "method": "fixed",
+   "k": 7,
+   "gap": false,
+   "final": 0.7733333333333333,
+   "per_seed": [
+    0.7733333333333333
+   ],
+   "n_seeds": 1,
+   "no_rl": 0.53
+  },
+  {
+   "label": "Adaptive k (ours)",
+   "method": "adaptive",
+   "k": -1,
+   "gap": true,
+   "final": 0.9338888888888889,
+   "per_seed": [
+    0.9383333333333334,
+    0.9233333333333333,
+    0.9400000000000001
+   ],
+   "n_seeds": 3,
+   "no_rl": null
+  },
+  {
+   "label": "Random k",
+   "method": "uniform_k",
+   "k": -1,
+   "gap": false,
+   "final": 0.9244444444444445,
+   "per_seed": [
+    0.9316666666666666,
+    0.9133333333333334,
+    0.9283333333333333
+   ],
+   "n_seeds": 3,
+   "no_rl": null
+  },
+  {
+   "label": "Residual SAC",
+   "method": "residual_sac",
+   "k": -1,
+   "gap": true,
+   "final": 0.515,
+   "per_seed": [
+    0.5299999999999999,
+    0.5583333333333333,
+    0.4566666666666667
+   ],
+   "n_seeds": 3,
+   "no_rl": null
+  },
+  {
+   "label": "Fixed-noise search",
+   "method": "cem",
+   "k": -1,
+   "gap": false,
+   "final": 0.09,
+   "per_seed": [
+    0.09
+   ],
+   "n_seeds": 1,
+   "no_rl": null
+  }
+ ]
+}

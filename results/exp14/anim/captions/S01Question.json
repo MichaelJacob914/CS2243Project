@@ -1,0 +1,30 @@
+{
+ "scene": "S01Question",
+ "duration": 31.400000000000308,
+ "captions": [
+  {
+   "t": 4.8,
+   "text": "A diffusion policy controls the robot one action chunk at a time."
+  },
+  {
+   "t": 8.3,
+   "text": "Each chunk starts as random noise. The policy removes the noise in 20 denoising steps, numbered 0 to 19."
+  },
+  {
+   "t": 12.3,
+   "text": "DSRL trains an RL agent to steer the policy by choosing the noise it starts from, at step 0."
+  },
+  {
+   "t": 17.5,
+   "text": "Our variant runs the policy's own denoising up to a later step k, then swaps in the agent's noise there. The adaptive version picks k anew for every chunk."
+  },
+  {
+   "t": 22.8,
+   "text": "Picking k per chunk only helps if the best step to steer at changes from chunk to chunk."
+  },
+  {
+   "t": 26.8,
+   "text": "If the policy has such windows and they move between chunks, picking k per chunk makes sense. If they sit at one step, a fixed k is enough."
+  }
+ ]
+}

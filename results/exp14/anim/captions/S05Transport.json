@@ -1,0 +1,22 @@
+{
+ "scene": "S05Transport",
+ "duration": 20.10000000000004,
+ "captions": [
+  {
+   "t": 2.0,
+   "text": "Now the robot. The policy is the frozen diffusion policy for robomimic transport: two arms pass an object from one bin to another."
+  },
+  {
+   "t": 6.5,
+   "text": "We measured 319 robot states, from demos and policy rollouts, labelled by task phase."
+  },
+  {
+   "t": 12.5,
+   "text": "For each property we measured the resolved-fraction curve of the policy and of its Gaussian control: 128 chunks \u00d7 16 redraws at every step."
+  },
+  {
+   "t": 16.5,
+   "text": "The tests and their thresholds were written down before any robot data were collected."
+  }
+ ]
+}

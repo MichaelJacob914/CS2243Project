@@ -1,0 +1,42 @@
+{
+ "scene": "S03Measure",
+ "duration": 59.23333333333274,
+ "captions": [
+  {
+   "t": 1.0,
+   "text": "How do we find where it decides? Take a finished chunk (here, one that goes above the disc) ..."
+  },
+  {
+   "t": 5.1,
+   "text": "... add noise back to it, up to some step k (here k = 5), so it is partly undone ..."
+  },
+  {
+   "t": 9.4,
+   "text": "... and let the policy denoise it again, 32 times, from step k to the end."
+  },
+  {
+   "t": 13.4,
+   "text": "Redraws are coloured by where they end: orange above, blue below. If they disagree, the route was still open at step k; if all agree, it was decided."
+  },
+  {
+   "t": 30.3,
+   "text": "Noise back to step 0: the redraws split between the routes. Noise back to a late step: they keep the original route. (32 redraws, so the count is noisy.)"
+  },
+  {
+   "t": 35.3,
+   "text": "Now do this for many chunks, coloured by chunk (4 shown; the measurement uses 64), and ask how the variation in route splits up."
+  },
+  {
+   "t": 39.3,
+   "text": "The resolved fraction is the share of that variation that lies between chunks. 0: nothing is decided yet. 1: the route is fully decided."
+  },
+  {
+   "t": 44.77,
+   "text": "Sweep k from 0 to 19 and plot the resolved fraction at each step."
+  },
+  {
+   "t": 55.13,
+   "text": "For this policy, the route goes from 10% to 90% decided between steps 2 and 10."
+  }
+ ]
+}

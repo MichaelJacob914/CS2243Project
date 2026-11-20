@@ -1,0 +1,762 @@
+{
+ "figure": "pi0_final",
+ "description": "Final det success = mean of the last 3 det evals (150 episodes), \u00b11 binomial SE; start = det eval at env step 0 (before training, z=0), exp9 only.",
+ "rows": [
+  {
+   "task": 4,
+   "round": "exp7",
+   "method": "k0",
+   "label": "k=0 (DSRL)",
+   "run": "pi0_t4_k0_xtfull_s0",
+   "final": 0.8266666666666667,
+   "se": 0.030907268712379928,
+   "n_episodes": 150,
+   "last_evals": [
+    0.74,
+    0.92,
+    0.82
+   ],
+   "last_env_steps": [
+    902592,
+    951087,
+    1000007
+   ],
+   "start_success": null
+  },
+  {
+   "task": 4,
+   "round": "exp7",
+   "method": "k3",
+   "label": "k=3",
+   "run": "pi0_t4_k3_xtfull_s0",
+   "final": 0.1466666666666667,
+   "se": 0.028885469883150085,
+   "n_episodes": 150,
+   "last_evals": [
+    0.1,
+    0.14,
+    0.2
+   ],
+   "last_env_steps": [
+    904423,
+    951763,
+    1001638
+   ],
+   "start_success": null
+  },
+  {
+   "task": 4,
+   "round": "exp7",
+   "method": "k6",
+   "label": "k=6",
+   "run": "pi0_t4_k6_xtfull_s0",
+   "final": 0.3333333333333333,
+   "se": 0.03849001794597505,
+   "n_episodes": 150,
+   "last_evals": [
+    0.3,
+    0.36,
+    0.34
+   ],
+   "last_env_steps": [
+    900075,
+    954007,
+    1003188
+   ],
+   "start_success": null
+  },
+  {
+   "task": 4,
+   "round": "exp7",
+   "method": "k8",
+   "label": "k=8",
+   "run": "pi0_t4_k8_xtfull_s0",
+   "final": 0.3866666666666667,
+   "se": 0.039762256437946744,
+   "n_episodes": 150,
+   "last_evals": [
+    0.32,
+    0.34,
+    0.5
+   ],
+   "last_env_steps": [
+    900878,
+    954820,
+    1003175
+   ],
+   "start_success": null
+  },
+  {
+   "task": 4,
+   "round": "exp7",
+   "method": "adaptive",
+   "label": "adaptive k (before fix)",
+   "run": "pi0_t4_adaptive_rho0.5_xtfull_s0",
+   "final": 0.30000000000000004,
+   "se": 0.03741657386773942,
+   "n_episodes": 150,
+   "last_evals": [
+    0.34,
+    0.26,
+    0.3
+   ],
+   "last_env_steps": [
+    900505,
+    955252,
+    1004517
+   ],
+   "start_success": null
+  },
+  {
+   "task": 4,
+   "round": "exp8",
+   "method": "struct",
+   "label": "k=0 structured, b=1",
+   "run": "pi0_t4_k0_xtfull_wstruct_s0",
+   "final": 0.7866666666666667,
+   "se": 0.033448689283958714,
+   "n_episodes": 150,
+   "last_evals": [
+    0.82,
+    0.78,
+    0.76
+   ],
+   "last_env_steps": [
+    902931,
+    952158,
+    1002177
+   ],
+   "start_success": null
+  },
+  {
+   "task": 4,
+   "round": "exp8",
+   "method": "struct25",
+   "label": "k=0 structured, b=2.5",
+   "run": "pi0_t4_k0_xtfull_wstruct_b2.5_s0",
+   "final": 0.6533333333333333,
+   "se": 0.038857765323367814,
+   "n_episodes": 150,
+   "last_evals": [
+    0.66,
+    0.66,
+    0.64
+   ],
+   "last_env_steps": [
+    901708,
+    950178,
+    1000348
+   ],
+   "start_success": null
+  },
+  {
+   "task": 4,
+   "round": "exp8",
+   "method": "xtobs",
+   "label": "k=0 repeated + raw noise in obs",
+   "run": "pi0_t4_k0_xtfull_xtobs_s0",
+   "final": 0.21333333333333335,
+   "se": 0.03344868928395872,
+   "n_episodes": 150,
+   "last_evals": [
+    0.22,
+    0.28,
+    0.14
+   ],
+   "last_env_steps": [
+    903372,
+    950378,
+    1003434
+   ],
+   "start_success": null
+  },
+  {
+   "task": 4,
+   "round": "exp9",
+   "method": "k0",
+   "label": "k=0 low-freq",
+   "run": "pi0_t4_k0_xtfull_lf3_abase_b2.5_s0",
+   "final": 0.9333333333333332,
+   "se": 0.020367003088692635,
+   "n_episodes": 150,
+   "last_evals": [
+    0.94,
+    0.9,
+    0.96
+   ],
+   "last_env_steps": [
+    901557,
+    951134,
+    1000799
+   ],
+   "start_success": 0.86
+  },
+  {
+   "task": 4,
+   "round": "exp9",
+   "method": "k3",
+   "label": "k=3 low-freq",
+   "run": "pi0_t4_k3_xtfull_lf3_abase_b2.5_s0",
+   "final": 0.9333333333333332,
+   "se": 0.020367003088692635,
+   "n_episodes": 150,
+   "last_evals": [
+    0.98,
+    0.9,
+    0.92
+   ],
+   "last_env_steps": [
+    902184,
+    951326,
+    1002136
+   ],
+   "start_success": 0.82
+  },
+  {
+   "task": 4,
+   "round": "exp9",
+   "method": "adaptive",
+   "label": "adaptive k low-freq (k-entropy fix)",
+   "run": "pi0_t4_adaptive_rho0.5_xtfull_lf3_abase_kdetach_b2.5_s0",
+   "final": 0.9066666666666667,
+   "se": 0.02375180305046646,
+   "n_episodes": 150,
+   "last_evals": [
+    0.92,
+    0.9,
+    0.9
+   ],
+   "last_env_steps": [
+    901327,
+    950515,
+    1001375
+   ],
+   "start_success": 0.86
+  },
+  {
+   "task": 4,
+   "round": "exp9",
+   "method": "struct",
+   "label": "k=0 structured + plan obs, b=1",
+   "run": "pi0_t4_k0_xtfull_wstruct_abase_s0",
+   "final": 0.8466666666666667,
+   "se": 0.029419066631718307,
+   "n_episodes": 150,
+   "last_evals": [
+    0.78,
+    0.88,
+    0.88
+   ],
+   "last_env_steps": [
+    900365,
+    952434,
+    1002990
+   ],
+   "start_success": 0.8
+  },
+  {
+   "task": 6,
+   "round": "exp7",
+   "method": "k0",
+   "label": "k=0 (DSRL)",
+   "run": "pi0_t6_k0_xtfull_s0",
+   "final": 0.9666666666666667,
+   "se": 0.014656562175858798,
+   "n_episodes": 150,
+   "last_evals": [
+    0.94,
+    1.0,
+    0.96
+   ],
+   "last_env_steps": [
+    901869,
+    952325,
+    1000129
+   ],
+   "start_success": null
+  },
+  {
+   "task": 6,
+   "round": "exp7",
+   "method": "k3",
+   "label": "k=3",
+   "run": "pi0_t6_k3_xtfull_s0",
+   "final": 0.4533333333333333,
+   "se": 0.04064662529839529,
+   "n_episodes": 150,
+   "last_evals": [
+    0.36,
+    0.48,
+    0.52
+   ],
+   "last_env_steps": [
+    900665,
+    955434,
+    1000410
+   ],
+   "start_success": null
+  },
+  {
+   "task": 6,
+   "round": "exp7",
+   "method": "k6",
+   "label": "k=6",
+   "run": "pi0_t6_k6_xtfull_s0",
+   "final": 0.6266666666666666,
+   "se": 0.039493084251596554,
+   "n_episodes": 150,
+   "last_evals": [
+    0.5,
+    0.78,
+    0.6
+   ],
+   "last_env_steps": [
+    903894,
+    950265,
+    1000731
+   ],
+   "start_success": null
+  },
+  {
+   "task": 6,
+   "round": "exp7",
+   "method": "k8",
+   "label": "k=8",
+   "run": "pi0_t6_k8_xtfull_s0",
+   "final": 0.5933333333333334,
+   "se": 0.040107263588938506,
+   "n_episodes": 150,
+   "last_evals": [
+    0.56,
+    0.5,
+    0.72
+   ],
+   "last_env_steps": [
+    904271,
+    950153,
+    1001160
+   ],
+   "start_success": null
+  },
+  {
+   "task": 6,
+   "round": "exp7",
+   "method": "adaptive",
+   "label": "adaptive k (before fix)",
+   "run": "pi0_t6_adaptive_rho0.5_xtfull_s0",
+   "final": 0.6266666666666666,
+   "se": 0.039493084251596554,
+   "n_episodes": 150,
+   "last_evals": [
+    0.74,
+    0.52,
+    0.62
+   ],
+   "last_env_steps": [
+    900696,
+    952758,
+    1000889
+   ],
+   "start_success": null
+  },
+  {
+   "task": 6,
+   "round": "exp8",
+   "method": "struct",
+   "label": "k=0 structured, b=1",
+   "run": "pi0_t6_k0_xtfull_wstruct_s0",
+   "final": 0.8066666666666666,
+   "se": 0.03224443678688936,
+   "n_episodes": 150,
+   "last_evals": [
+    0.84,
+    0.8,
+    0.78
+   ],
+   "last_env_steps": [
+    904178,
+    951280,
+    1000090
+   ],
+   "start_success": null
+  },
+  {
+   "task": 6,
+   "round": "exp8",
+   "method": "struct25",
+   "label": "k=0 structured, b=2.5",
+   "run": "pi0_t6_k0_xtfull_wstruct_b2.5_s0",
+   "final": 0.8333333333333334,
+   "se": 0.030429030972509225,
+   "n_episodes": 150,
+   "last_evals": [
+    0.78,
+    0.84,
+    0.88
+   ],
+   "last_env_steps": [
+    903168,
+    951712,
+    1003187
+   ],
+   "start_success": null
+  },
+  {
+   "task": 6,
+   "round": "exp8",
+   "method": "xtobs",
+   "label": "k=0 repeated + raw noise in obs",
+   "run": "pi0_t6_k0_xtfull_xtobs_s0",
+   "final": 0.47333333333333333,
+   "se": 0.04076672571995359,
+   "n_episodes": 150,
+   "last_evals": [
+    0.46,
+    0.42,
+    0.54
+   ],
+   "last_env_steps": [
+    902994,
+    950136,
+    1000960
+   ],
+   "start_success": null
+  },
+  {
+   "task": 6,
+   "round": "exp9",
+   "method": "k0",
+   "label": "k=0 low-freq",
+   "run": "pi0_t6_k0_xtfull_lf3_abase_b2.5_s0",
+   "final": 0.9866666666666667,
+   "se": 0.009365025558091315,
+   "n_episodes": 150,
+   "last_evals": [
+    1.0,
+    0.96,
+    1.0
+   ],
+   "last_env_steps": [
+    900664,
+    951856,
+    1001143
+   ],
+   "start_success": 0.82
+  },
+  {
+   "task": 6,
+   "round": "exp9",
+   "method": "k3",
+   "label": "k=3 low-freq",
+   "run": "pi0_t6_k3_xtfull_lf3_abase_b2.5_s0",
+   "final": 0.98,
+   "se": 0.01143095213298817,
+   "n_episodes": 150,
+   "last_evals": [
+    0.98,
+    1.0,
+    0.96
+   ],
+   "last_env_steps": [
+    901997,
+    950682,
+    1002091
+   ],
+   "start_success": 0.92
+  },
+  {
+   "task": 6,
+   "round": "exp9",
+   "method": "adaptive",
+   "label": "adaptive k low-freq (k-entropy fix)",
+   "run": "pi0_t6_adaptive_rho0.5_xtfull_lf3_abase_kdetach_b2.5_s0",
+   "final": 0.9666666666666667,
+   "se": 0.014656562175858798,
+   "n_episodes": 150,
+   "last_evals": [
+    0.92,
+    0.98,
+    1.0
+   ],
+   "last_env_steps": [
+    900551,
+    951547,
+    1000605
+   ],
+   "start_success": 0.92
+  },
+  {
+   "task": 6,
+   "round": "exp9",
+   "method": "struct",
+   "label": "k=0 structured + plan obs, b=1",
+   "run": "pi0_t6_k0_xtfull_wstruct_abase_s0",
+   "final": 0.86,
+   "se": 0.028331372481167703,
+   "n_episodes": 150,
+   "last_evals": [
+    0.88,
+    0.86,
+    0.84
+   ],
+   "last_env_steps": [
+    900342,
+    951102,
+    1002516
+   ],
+   "start_success": 0.86
+  },
+  {
+   "task": 8,
+   "round": "exp7",
+   "method": "k0",
+   "label": "k=0 (DSRL)",
+   "run": "pi0_t8_k0_xtfull_s0",
+   "final": 0.8866666666666667,
+   "se": 0.025882927305966103,
+   "n_episodes": 150,
+   "last_evals": [
+    0.92,
+    0.8,
+    0.94
+   ],
+   "last_env_steps": [
+    903758,
+    952118,
+    1000837
+   ],
+   "start_success": null
+  },
+  {
+   "task": 8,
+   "round": "exp7",
+   "method": "k3",
+   "label": "k=3",
+   "run": "pi0_t8_k3_xtfull_s0",
+   "final": 0.08,
+   "se": 0.022150996967781535,
+   "n_episodes": 150,
+   "last_evals": [
+    0.1,
+    0.06,
+    0.08
+   ],
+   "last_env_steps": [
+    902592,
+    951544,
+    1005848
+   ],
+   "start_success": null
+  },
+  {
+   "task": 8,
+   "round": "exp7",
+   "method": "k6",
+   "label": "k=6",
+   "run": "pi0_t8_k6_xtfull_s0",
+   "final": 0.13333333333333333,
+   "se": 0.02775554665954844,
+   "n_episodes": 150,
+   "last_evals": [
+    0.12,
+    0.18,
+    0.1
+   ],
+   "last_env_steps": [
+    903988,
+    952999,
+    1001417
+   ],
+   "start_success": null
+  },
+  {
+   "task": 8,
+   "round": "exp7",
+   "method": "k8",
+   "label": "k=8",
+   "run": "pi0_t8_k8_xtfull_s0",
+   "final": 0.2933333333333334,
+   "se": 0.037174264295691525,
+   "n_episodes": 150,
+   "last_evals": [
+    0.32,
+    0.26,
+    0.3
+   ],
+   "last_env_steps": [
+    903983,
+    952108,
+    1000233
+   ],
+   "start_success": null
+  },
+  {
+   "task": 8,
+   "round": "exp7",
+   "method": "adaptive",
+   "label": "adaptive k (before fix)",
+   "run": "pi0_t8_adaptive_rho0.5_xtfull_s0",
+   "final": 0.2933333333333334,
+   "se": 0.037174264295691525,
+   "n_episodes": 150,
+   "last_evals": [
+    0.36,
+    0.2,
+    0.32
+   ],
+   "last_env_steps": [
+    904881,
+    951827,
+    1004787
+   ],
+   "start_success": null
+  },
+  {
+   "task": 8,
+   "round": "exp8",
+   "method": "struct",
+   "label": "k=0 structured, b=1",
+   "run": "pi0_t8_k0_xtfull_wstruct_s0",
+   "final": 0.7399999999999999,
+   "se": 0.03581433604950212,
+   "n_episodes": 150,
+   "last_evals": [
+    0.76,
+    0.76,
+    0.7
+   ],
+   "last_env_steps": [
+    901327,
+    952569,
+    1005248
+   ],
+   "start_success": null
+  },
+  {
+   "task": 8,
+   "round": "exp8",
+   "method": "struct25",
+   "label": "k=0 structured, b=2.5",
+   "run": "pi0_t8_k0_xtfull_wstruct_b2.5_s0",
+   "final": 0.6533333333333333,
+   "se": 0.038857765323367814,
+   "n_episodes": 150,
+   "last_evals": [
+    0.6,
+    0.72,
+    0.64
+   ],
+   "last_env_steps": [
+    904692,
+    954567,
+    1002225
+   ],
+   "start_success": null
+  },
+  {
+   "task": 8,
+   "round": "exp8",
+   "method": "xtobs",
+   "label": "k=0 repeated + raw noise in obs",
+   "run": "pi0_t8_k0_xtfull_xtobs_s0",
+   "final": 0.21333333333333335,
+   "se": 0.03344868928395872,
+   "n_episodes": 150,
+   "last_evals": [
+    0.18,
+    0.18,
+    0.28
+   ],
+   "last_env_steps": [
+    900611,
+    955806,
+    1004382
+   ],
+   "start_success": null
+  },
+  {
+   "task": 8,
+   "round": "exp9",
+   "method": "k0",
+   "label": "k=0 low-freq",
+   "run": "pi0_t8_k0_xtfull_lf3_abase_b2.5_s0",
+   "final": 0.9866666666666667,
+   "se": 0.009365025558091315,
+   "n_episodes": 150,
+   "last_evals": [
+    0.98,
+    1.0,
+    0.98
+   ],
+   "last_env_steps": [
+    903109,
+    950733,
+    1001897
+   ],
+   "start_success": 0.78
+  },
+  {
+   "task": 8,
+   "round": "exp9",
+   "method": "k3",
+   "label": "k=3 low-freq",
+   "run": "pi0_t8_k3_xtfull_lf3_abase_b2.5_s0",
+   "final": 0.9533333333333333,
+   "se": 0.017221863795553405,
+   "n_episodes": 150,
+   "last_evals": [
+    0.98,
+    0.92,
+    0.96
+   ],
+   "last_env_steps": [
+    902881,
+    951895,
+    1003425
+   ],
+   "start_success": 0.84
+  },
+  {
+   "task": 8,
+   "round": "exp9",
+   "method": "adaptive",
+   "label": "adaptive k low-freq (k-entropy fix)",
+   "run": "pi0_t8_adaptive_rho0.5_xtfull_lf3_abase_kdetach_b2.5_s0",
+   "final": 0.9466666666666667,
+   "se": 0.018346459947155818,
+   "n_episodes": 150,
+   "last_evals": [
+    0.92,
+    0.98,
+    0.94
+   ],
+   "last_env_steps": [
+    902291,
+    950687,
+    1001836
+   ],
+   "start_success": 0.72
+  },
+  {
+   "task": 8,
+   "round": "exp9",
+   "method": "struct",
+   "label": "k=0 structured + plan obs, b=1",
+   "run": "pi0_t8_k0_xtfull_wstruct_abase_s0",
+   "final": 0.8733333333333334,
+   "se": 0.027156610272297998,
+   "n_episodes": 150,
+   "last_evals": [
+    0.9,
+    0.86,
+    0.86
+   ],
+   "last_env_steps": [
+    901382,
+    954845,
+    1003104
+   ],
+   "start_success": 0.62
+  }
+ ]
+}

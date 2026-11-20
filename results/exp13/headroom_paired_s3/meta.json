@@ -1,0 +1,16 @@
+{
+  "ckpt": "/n/netscratch/olveczky_lab/Lab/charleszhang/exp13_phase0/uniformk_s3/checkpoint/final.pt",
+  "ckpt_env_steps": 6000000,
+  "K": 20,
+  "code_root": "/n/netscratch/olveczky_lab/Lab/charleszhang/exp13_phase0/code_snapshot",
+  "out_dir": "results/exp13/headroom_paired_s3",
+  "n_episodes": 200,
+  "n_envs": 20,
+  "n_states": 300,
+  "n_w": 32,
+  "n_cand": 32,
+  "arms": "iii,headroom,iv,i,ii",
+  "seed": 0,
+  "paired": true,
+  "device": "cuda:0"
+}

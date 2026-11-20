@@ -1,0 +1,51 @@
+suite,task_id,task,noise,query_freq,episodes,success,mean_ep_len_success,env_steps,wall_s,pi0_calls,pi0_s_per_call,mean_batch,env_s,sim_s_per_step,env_steps_per_s,n_envs,gpu
+libero_10,0,put both the alphabet soup and the tomato sauce in the basket,k2-full,20,50,0.3,366.3,23695,132.3,116,0.4933,10.28,75.1,0.01834,179.1,12,NVIDIA A100-SXM4-40GB
+libero_10,0,put both the alphabet soup and the tomato sauce in the basket,k5-full,20,50,0.34,371.1,23468,106.4,104,0.3621,11.38,68.7,0.01851,220.6,12,NVIDIA A100-SXM4-40GB
+libero_10,0,put both the alphabet soup and the tomato sauce in the basket,k8-full,20,50,0.46,344.2,21956,110.6,104,0.3392,10.64,75.2,0.01855,198.6,12,NVIDIA A100-SXM4-40GB
+libero_10,0,put both the alphabet soup and the tomato sauce in the basket,k5-tiled,20,50,0.34,398.9,23941,108.9,115,0.3118,10.47,73.0,0.01854,219.9,12,NVIDIA A100-SXM4-40GB
+libero_10,0,put both the alphabet soup and the tomato sauce in the basket,k8-tiled,20,50,0.32,358.4,23415,108.9,111,0.318,10.61,73.6,0.01852,215.0,12,NVIDIA A100-SXM4-40GB
+libero_10,1,put both the cream cheese box and the butter in the basket,k2-full,20,50,0.3,328.7,23130,111.8,113,0.3105,10.29,76.6,0.01828,207.0,12,NVIDIA A100-SXM4-40GB
+libero_10,1,put both the cream cheese box and the butter in the basket,k5-full,20,50,0.42,335.5,22126,110.4,104,0.3239,10.69,76.7,0.01826,200.4,12,NVIDIA A100-SXM4-40GB
+libero_10,1,put both the cream cheese box and the butter in the basket,k8-full,20,50,0.78,296.6,17289,91.8,84,0.3145,10.48,65.3,0.01827,188.3,12,NVIDIA A100-SXM4-40GB
+libero_10,1,put both the cream cheese box and the butter in the basket,k5-tiled,20,50,0.46,334.0,21722,99.0,104,0.3186,10.55,65.9,0.01825,219.4,12,NVIDIA A100-SXM4-40GB
+libero_10,1,put both the cream cheese box and the butter in the basket,k8-tiled,20,50,0.56,333.9,20789,100.8,95,0.3318,11.07,69.2,0.01823,206.3,12,NVIDIA A100-SXM4-40GB
+libero_10,2,turn on the stove and put the moka pot on it,k2-full,20,50,0.08,290.2,25081,82.6,117,0.3168,10.74,45.5,0.01417,303.5,12,NVIDIA A100-SXM4-40GB
+libero_10,2,turn on the stove and put the moka pot on it,k5-full,20,50,0.1,308.0,24940,83.2,117,0.3183,10.68,45.9,0.01419,299.7,12,NVIDIA A100-SXM4-40GB
+libero_10,2,turn on the stove and put the moka pot on it,k8-full,20,50,0.34,270.5,21758,80.3,104,0.3172,10.54,47.2,0.01419,271.1,12,NVIDIA A100-SXM4-40GB
+libero_10,2,turn on the stove and put the moka pot on it,k5-tiled,20,50,0.04,375.5,25711,85.6,125,0.3035,10.29,47.6,0.01422,300.4,12,NVIDIA A100-SXM4-40GB
+libero_10,2,turn on the stove and put the moka pot on it,k8-tiled,20,50,0.18,337.2,24355,85.5,117,0.3111,10.45,49.1,0.01423,284.8,12,NVIDIA A100-SXM4-40GB
+libero_10,3,put the black bowl in the bottom drawer of the cabinet and close it,k2-full,20,50,0.14,301.3,24469,94.4,115,0.3198,10.67,57.6,0.01524,259.1,12,NVIDIA A100-SXM4-40GB
+libero_10,3,put the black bowl in the bottom drawer of the cabinet and close it,k5-full,20,50,0.34,307.3,22384,92.1,104,0.3231,10.85,58.5,0.01528,243.0,12,NVIDIA A100-SXM4-40GB
+libero_10,3,put the black bowl in the bottom drawer of the cabinet and close it,k8-full,20,50,0.46,258.2,19979,84.8,92,0.3298,11.0,54.4,0.01538,235.5,12,NVIDIA A100-SXM4-40GB
+libero_10,3,put the black bowl in the bottom drawer of the cabinet and close it,k5-tiled,20,50,0.24,299.7,23356,92.2,109,0.3238,10.78,56.9,0.01534,253.3,12,NVIDIA A100-SXM4-40GB
+libero_10,3,put the black bowl in the bottom drawer of the cabinet and close it,k8-tiled,20,50,0.38,291.9,21666,90.6,104,0.3152,10.5,57.8,0.01533,239.1,12,NVIDIA A100-SXM4-40GB
+libero_10,4,put the white mug on the left plate and put the yellow and white mug on the right plate,k2-full,20,50,0.04,310.5,25581,96.8,120,0.3127,10.67,59.2,0.0166,264.4,12,NVIDIA A100-SXM4-40GB
+libero_10,4,put the white mug on the left plate and put the yellow and white mug on the right plate,k5-full,20,50,0.1,331.8,25059,103.8,119,0.3136,10.55,66.4,0.01659,241.4,12,NVIDIA A100-SXM4-40GB
+libero_10,4,put the white mug on the left plate and put the yellow and white mug on the right plate,k8-full,20,50,0.2,313.2,23932,100.0,115,0.3104,10.44,64.3,0.01657,239.2,12,NVIDIA A100-SXM4-40GB
+libero_10,4,put the white mug on the left plate and put the yellow and white mug on the right plate,k5-tiled,20,50,0.0,nan,26000,97.5,130,0.2967,10.0,58.9,0.01656,266.6,12,NVIDIA A100-SXM4-40GB
+libero_10,4,put the white mug on the left plate and put the yellow and white mug on the right plate,k8-tiled,20,50,0.06,334.0,25442,96.7,118,0.3161,10.79,59.3,0.01657,263.2,12,NVIDIA A100-SXM4-40GB
+libero_10,5,pick up the book and place it in the back compartment of the caddy,k2-full,20,50,0.14,228.9,23962,79.3,112,0.3204,10.74,43.3,0.01244,302.3,12,NVIDIA A100-SXM4-40GB
+libero_10,5,pick up the book and place it in the back compartment of the caddy,k5-full,20,50,0.22,256.2,23098,77.5,104,0.337,11.14,42.4,0.01246,298.0,12,NVIDIA A100-SXM4-40GB
+libero_10,5,pick up the book and place it in the back compartment of the caddy,k8-full,20,50,0.44,198.5,18928,74.4,95,0.3056,10.05,45.3,0.01252,254.3,12,NVIDIA A100-SXM4-40GB
+libero_10,5,pick up the book and place it in the back compartment of the caddy,k5-tiled,20,50,0.24,195.9,22111,75.9,104,0.3223,10.68,42.3,0.01247,291.4,12,NVIDIA A100-SXM4-40GB
+libero_10,5,pick up the book and place it in the back compartment of the caddy,k8-tiled,20,50,0.24,190.6,22047,76.1,104,0.324,10.67,42.4,0.01246,289.6,12,NVIDIA A100-SXM4-40GB
+libero_10,6,put the white mug on the plate and put the chocolate pudding to the right of the plate,k2-full,20,50,0.08,329.5,25238,91.4,118,0.3159,10.71,54.1,0.01433,276.0,12,NVIDIA A100-SXM4-40GB
+libero_10,6,put the white mug on the plate and put the chocolate pudding to the right of the plate,k5-full,20,50,0.12,331.8,24871,91.3,118,0.3159,10.56,53.9,0.01439,272.5,12,NVIDIA A100-SXM4-40GB
+libero_10,6,put the white mug on the plate and put the chocolate pudding to the right of the plate,k8-full,20,50,0.3,332.7,23190,92.2,106,0.3308,11.03,57.0,0.01442,251.6,12,NVIDIA A100-SXM4-40GB
+libero_10,6,put the white mug on the plate and put the chocolate pudding to the right of the plate,k5-tiled,20,50,0.06,413.3,25680,91.8,125,0.3039,10.29,53.8,0.01441,279.7,12,NVIDIA A100-SXM4-40GB
+libero_10,6,put the white mug on the plate and put the chocolate pudding to the right of the plate,k8-tiled,20,50,0.08,351.0,25324,88.8,119,0.3146,10.66,51.3,0.01441,285.3,12,NVIDIA A100-SXM4-40GB
+libero_10,7,put both the alphabet soup and the cream cheese box in the basket,k2-full,20,50,0.16,314.1,24353,90.9,116,0.3121,10.53,54.7,0.01446,267.8,12,NVIDIA A100-SXM4-40GB
+libero_10,7,put both the alphabet soup and the cream cheese box in the basket,k5-full,20,50,0.32,357.2,23395,94.8,109,0.3237,10.79,59.5,0.01453,246.8,12,NVIDIA A100-SXM4-40GB
+libero_10,7,put both the alphabet soup and the cream cheese box in the basket,k8-full,20,50,0.62,330.6,20128,88.0,99,0.3099,10.32,57.2,0.01455,228.8,12,NVIDIA A100-SXM4-40GB
+libero_10,7,put both the alphabet soup and the cream cheese box in the basket,k5-tiled,20,50,0.18,321.3,24212,91.1,113,0.3182,10.75,55.2,0.0145,265.7,12,NVIDIA A100-SXM4-40GB
+libero_10,7,put both the alphabet soup and the cream cheese box in the basket,k8-tiled,20,50,0.32,310.2,22644,89.4,104,0.3324,10.95,54.8,0.01451,253.4,12,NVIDIA A100-SXM4-40GB
+libero_10,8,put both moka pots on the stove,k2-full,20,50,0.0,nan,26000,88.2,130,0.3063,10.0,48.3,0.01497,294.9,12,NVIDIA A100-SXM4-40GB
+libero_10,8,put both moka pots on the stove,k5-full,20,50,0.02,413.0,25893,87.1,130,0.2964,9.96,48.5,0.01501,297.2,12,NVIDIA A100-SXM4-40GB
+libero_10,8,put both moka pots on the stove,k8-full,20,50,0.04,426.5,25813,86.8,126,0.3028,10.25,48.6,0.01504,297.4,12,NVIDIA A100-SXM4-40GB
+libero_10,8,put both moka pots on the stove,k5-tiled,20,50,0.04,467.5,25895,89.1,130,0.2982,9.97,50.3,0.01504,290.5,12,NVIDIA A100-SXM4-40GB
+libero_10,8,put both moka pots on the stove,k8-tiled,20,50,0.02,511.0,25991,86.7,130,0.2965,10.0,48.1,0.01507,299.7,12,NVIDIA A100-SXM4-40GB
+libero_10,9,put the yellow and white mug in the microwave and close it,k2-full,20,50,0.02,403.0,25883,86.9,130,0.2956,9.96,48.5,0.01407,297.7,12,NVIDIA A100-SXM4-40GB
+libero_10,9,put the yellow and white mug in the microwave and close it,k5-full,20,50,0.04,312.0,25584,87.2,121,0.3106,10.58,49.6,0.01404,293.3,12,NVIDIA A100-SXM4-40GB
+libero_10,9,put the yellow and white mug in the microwave and close it,k8-full,20,50,0.22,338.9,24008,90.5,113,0.3176,10.67,54.6,0.01415,265.2,12,NVIDIA A100-SXM4-40GB
+libero_10,9,put the yellow and white mug in the microwave and close it,k5-tiled,20,50,0.04,334.0,25628,87.6,124,0.3047,10.35,49.8,0.01415,292.7,12,NVIDIA A100-SXM4-40GB
+libero_10,9,put the yellow and white mug in the microwave and close it,k8-tiled,20,50,0.04,433.0,25826,89.7,127,0.3006,10.17,51.5,0.01416,287.8,12,NVIDIA A100-SXM4-40GB

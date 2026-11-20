@@ -1,0 +1,269 @@
+<title>Critical Windows in Transport</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,650&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* Layout: one reading column (~68ch) with figures allowed to run wider; findings as numbered questions because the rules were fixed in that order before the data. */
+:root {
+  --bg: #fbfcfc; --surface: #eef3f3; --ink: #1b2428; --ink2: #56656b; --rule: #d3dcdd;
+  --accent: #1c6f70; --control: #9a5a2c; --fig-bg: #ffffff;
+  --f-display: "Literata", Georgia, "Times New Roman", serif;
+  --f-body: "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121819; --surface: #1b2426; --ink: #e3eaeb; --ink2: #9fb0b3; --rule: #2e3a3c;
+  --accent: #5fb9b9; --control: #e09a66; --fig-bg: #f4f6f6; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121819; --surface: #1b2426; --ink: #e3eaeb; --ink2: #9fb0b3; --rule: #2e3a3c;
+  --accent: #5fb9b9; --control: #e09a66; --fig-bg: #f4f6f6; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font: 17px/1.6 var(--f-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+main { max-width: 980px; margin: 0 auto; padding-block: 48px 72px; display: grid; gap: 56px; }
+.col { max-width: 68ch; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 650; text-wrap: balance; line-height: 1.2; margin: 0; }
+h1 { font-size: clamp(30px, 5vw, 42px); }
+h2 { font-size: 26px; }
+h3 { font-size: 19px; font-weight: 500; }
+p { margin: 0; }
+section { display: grid; gap: 18px; }
+.eyebrow { font: 600 12px/1 var(--f-body); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.lede { font-size: 20px; line-height: 1.5; }
+.muted { color: var(--ink2); }
+.mono, code { font-family: var(--f-mono); font-size: .86em; }
+.answer { border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; display: grid; gap: 10px; }
+ul { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; }
+.q { display: grid; gap: 14px; padding-top: 28px; border-top: 1px solid var(--rule); }
+.q header { display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; }
+.qnum { font: 500 15px var(--f-mono); color: var(--accent); }
+.verdict { font: 600 13px var(--f-body); letter-spacing: .04em; padding: 3px 10px; border-radius: 999px; background: var(--surface); }
+.verdict.yes { color: var(--accent); } .verdict.no { color: var(--control); }
+figure { margin: 0; display: grid; gap: 10px; }
+figure .img { background: var(--fig-bg); border: 1px solid var(--rule); border-radius: 6px; padding: 10px; overflow-x: auto; }
+figure img { display: block; width: 100%; height: auto; max-width: 100%; }
+figure.narrow .img { max-width: 560px; }
+figure video { display:block; width:100%; height:auto; border-radius:4px; }
+figcaption { font-size: 15px; line-height: 1.55; color: var(--ink2); max-width: 78ch; }
+figcaption b { color: var(--ink); }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; font-size: 15px; font-variant-numeric: tabular-nums; min-width: 520px; }
+th, td { text-align: right; padding: 6px 12px; border-bottom: 1px solid var(--rule); }
+th:first-child, td:first-child { text-align: left; }
+th { font-weight: 600; color: var(--ink2); font-size: 13px; }
+.diagram { background: var(--surface); border-radius: 8px; padding: 18px; overflow-x: auto; }
+.diagram svg { display: block; min-width: 640px; width: 100%; height: auto; }
+.diagram text { font-family: var(--f-body); fill: var(--ink); }
+details { border-top: 1px solid var(--rule); padding-top: 18px; }
+summary { cursor: pointer; font: 500 19px var(--f-display); }
+summary:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+details > div { display: grid; gap: 14px; margin-top: 16px; }
+a { color: var(--accent); }
+footer { font-size: 14px; color: var(--ink2); border-top: 1px solid var(--rule); padding-top: 18px; }
+</style>
+
+<main>
+  <header class="col" style="display:grid;gap:16px">
+    <div class="eyebrow">Adaptive-step DSRL · robomimic transport · exp14</div>
+    <h1>Where does the transport policy make its decisions during denoising?</h1>
+    <p class="lede">The frozen transport diffusion policy makes its discrete choices, such as which kind of action to take and whether to open or close a gripper, in a short stretch of denoising around DDIM step 5–6 of 20. That stretch is in the same place in every phase of the task. So choosing the steering step per chunk has nothing to gain over steering at one fixed early step.</p>
+  </header>
+
+  <section class="col">
+    <div class="answer">
+      <p><b>What this means for the project.</b> Adaptive-step DSRL rests on the idea that the best step to steer at changes from chunk to chunk. This experiment checked that idea on the base policy itself, with no RL. The policy does commit at a particular step, but it commits at the same step everywhere, and the trained critic does not favour steering there. We recommend steering at one fixed early step (k ≈ 3–8) and dropping the learned step choice.</p>
+      <p class="muted">This agrees with the RL results so far: at 8–9M env steps, fixed k = 3 and k = 5 reach 0.91–0.92 success, against 0.87 for adaptive k (before the entropy fix) and 0.82 for k = 0.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="col" style="display:grid;gap:10px">
+      <div class="eyebrow">Video</div>
+      <h2>The experiment in five minutes</h2>
+      <p>This video walks through the question, the measurement, the toy check, the four findings and the recommendation. It has on-screen captions and no sound.</p>
+    </div>
+    <figure>
+      <div class="img"><video controls preload="metadata" playsinline src="video/critical_windows_explainer.mp4"></video></div>
+    </figure>
+  </section>
+
+  <section class="col">
+    <div class="eyebrow">Background</div>
+    <h2>The question</h2>
+    <p>A diffusion policy builds its action chunk by starting from random noise and removing it over 20 DDIM steps. DSRL steers the policy by choosing the starting noise (step 0). Our variant injects the RL agent's noise at a later step k instead, and the adaptive version lets the agent pick k for each chunk.</p>
+    <p>Work on image diffusion models has found that a model often commits to a coarse choice, such as which class of image to draw, within a narrow range of noise levels. People call this range a <i>critical window</i>. If the transport policy had such windows, and they sat at different steps in different parts of the task, that would be a direct reason to choose k per chunk. If the windows sit at one step, a fixed k is enough.</p>
+  </section>
+
+  <section>
+    <div class="col" style="display:grid;gap:18px">
+      <div class="eyebrow">Method</div>
+      <h2>How we measured when a decision is made</h2>
+      <p>The idea is to take a finished action, partly undo it, and see how much of it comes back the same.</p>
+    </div>
+    <div class="diagram" role="img" aria-label="Diagram: a clean action chunk is noised back to DDIM step k, then denoised 16 times; if the 16 results agree, the property was already decided at step k.">
+      <svg viewBox="0 0 820 200" xmlns="http://www.w3.org/2000/svg">
+        <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+        <g style="color: var(--ink2)">
+          <rect x="10" y="70" width="150" height="60" rx="6" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.5"/>
+          <text x="85" y="96" text-anchor="middle" font-size="15" font-weight="600">clean action</text>
+          <text x="85" y="116" text-anchor="middle" font-size="13" style="fill:var(--ink2)">sampled by the policy</text>
+          <line x1="162" y1="100" x2="268" y2="100" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar)"/>
+          <text x="215" y="88" text-anchor="middle" font-size="13" style="fill:var(--ink2)">add noise</text>
+          <text x="215" y="120" text-anchor="middle" font-size="13" style="fill:var(--ink2)">back to step k</text>
+          <rect x="272" y="70" width="150" height="60" rx="6" fill="var(--bg)" stroke="var(--ink2)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <text x="347" y="96" text-anchor="middle" font-size="15" font-weight="600">noisy action</text>
+          <text x="347" y="116" text-anchor="middle" font-size="13" style="fill:var(--ink2)">at step k</text>
+          <line x1="424" y1="100" x2="520" y2="40" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"/>
+          <line x1="424" y1="100" x2="520" y2="80" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"/>
+          <line x1="424" y1="100" x2="520" y2="120" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"/>
+          <line x1="424" y1="100" x2="520" y2="160" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"/>
+          <text x="462" y="190" text-anchor="middle" font-size="13" style="fill:var(--ink2)">denoise 16 times</text>
+          <g font-size="13">
+            <rect x="524" y="28" width="96" height="24" rx="4" fill="var(--bg)" stroke="var(--rule)"/><text x="572" y="45" text-anchor="middle">result 1</text>
+            <rect x="524" y="68" width="96" height="24" rx="4" fill="var(--bg)" stroke="var(--rule)"/><text x="572" y="85" text-anchor="middle">result 2</text>
+            <rect x="524" y="108" width="96" height="24" rx="4" fill="var(--bg)" stroke="var(--rule)"/><text x="572" y="125" text-anchor="middle">…</text>
+            <rect x="524" y="148" width="96" height="24" rx="4" fill="var(--bg)" stroke="var(--rule)"/><text x="572" y="165" text-anchor="middle">result 16</text>
+          </g>
+          <line x1="624" y1="100" x2="660" y2="100" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar)"/>
+          <text x="740" y="80" text-anchor="middle" font-size="14" font-weight="600">Do they agree?</text>
+          <text x="740" y="102" text-anchor="middle" font-size="13" style="fill:var(--accent)">yes: decided before k</text>
+          <text x="740" y="122" text-anchor="middle" font-size="13" style="fill:var(--control)">no: still open at k</text>
+        </g>
+      </svg>
+    </div>
+    <div class="col" style="display:grid;gap:14px">
+      <p>We repeat this for 128 clean actions per state and for all 20 steps. At each step we split the variation in a property of the action into two parts: the part that differs between the 128 starting actions, and the part that differs among the 16 redraws of the same action. The first part's share is the <b>resolved fraction</b>. It is 0 at pure noise, where nothing has been decided, and 1 at the clean action, where everything has.</p>
+      <p>The resolved fraction rises from 0 to 1 for any distribution, so its rise alone proves nothing. We compare it with a <b>Gaussian control</b>: a Gaussian with the same mean and spread as the policy's actions at that state, run through the same sampler code. A Gaussian has no discrete choices to make, so its curve shows what a smooth, choice-free rise looks like. A <b>window</b> is a rise that is clearly steeper than the control's. We measure its width as the distance between 10% and 90% resolved, on the log signal-to-noise scale, which runs from about −5.5 at step 0 to +7.4 at step 19.</p>
+      <p>We measured four properties of each action chunk:</p>
+      <ul>
+        <li><b>Action cluster</b>: at states where the policy's actions fall into 2–3 distinct groups (77 of 319 states), which group the action belongs to.</li>
+        <li><b>Gripper, arm 0</b> and <b>gripper, arm 1</b>: whether each gripper is commanded open or closed over the chunk.</li>
+        <li><b>Critic value Q</b>: the score that a trained transport critic gives the action (from the random-k agent at 6M steps).</li>
+      </ul>
+      <p>We used 330 states, 165 from demos and 165 from base-policy rollouts, labelled by task phase: before contact, open &amp; grasp, trash, handover, place, and 30 episode starts. At 11 states the sampler diverged, which leaves 319. Before collecting any transport data, we wrote down three tests and the thresholds each had to pass.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="col" style="display:grid;gap:18px">
+      <div class="eyebrow">Check</div>
+      <h2>The method finds a window where one exists</h2>
+      <p>Before running transport, we tested the method on a toy policy with a known choice in it. A point mass goes around a disc to reach a goal, taking the upper or lower route at random. At the start the route is an open choice; past the obstacle it is not.</p>
+    </div>
+    <figure>
+      <div class="img"><video autoplay loop muted playsinline poster="anim/exp14_toy_window_poster.png" aria-label="Animated toy check: as the re-noising step increases, the policy's redraws stop switching routes much sooner than the Gaussian control's."><source src="anim/exp14_toy_window.webm" type="video/webm"><source src="anim/exp14_toy_window.mp4" type="video/mp4"></video></div>
+      <figcaption><b>Toy check.</b> How the re-noise-and-redraw test finds a decision in a toy policy. At the start state we take two action chunks from the diffusion policy (thick lines: orange goes above the obstacle, blue below), add noise back to denoising step k, and let the policy redraw the rest 32 times (thin lines). With noise added back to an early step, the redraws split between the two routes; from about step 10 on, they keep their chunk's route. The curve below is the full measurement (64 chunks × 16 redraws per step; 0 means the redraws keep the route only as often as chance). It rises from 0.1 to 0.9 within about 8 steps for the policy, against about 15 for a Gaussian fitted to the policy's chunks and run through the same sampler. Later on the route, past the obstacle, the two behave alike. In log-SNR units, the policy's width is 3.1 against 5.5 for the control. The method passed this check in 8 of 9 repeats before any transport data were collected.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <div class="col" style="display:grid;gap:10px">
+      <div class="eyebrow">Results</div>
+      <h2>Four findings</h2>
+    </div>
+
+    <div class="q">
+      <header><span class="qnum">1</span><h3>Does the policy decide anything inside a narrow window?</h3><span class="verdict yes">Yes, for its discrete choices</span></header>
+      <div class="col" style="display:grid;gap:14px">
+        <p>At 44 of the 77 states with distinct action groups, the policy picks its group over a clearly narrower range than the Gaussian control. When we run the same test with a second Gaussian in place of the policy, 0 of 77 states pass, so this is not a false positive of the test (Fisher exact test, p = 9e-18). Gripper commands also show windows, at 60 and 71 of 319 states.</p>
+        <p>The critic value has no window. It settles as gradually as its control does, and only 11 of 319 states pass, which is below the 10-point margin over the control that the test required.</p>
+      </div>
+      <figure>
+        <div class="img"><img src="figs/exp14_width_vs_null.png" alt="Scatter plots of window width, policy against Gaussian control, for four action properties." loading="lazy"></div>
+        <figcaption><b>Window width, policy against the Gaussian control.</b> Each dot is one state, coloured by task phase. Dots below the diagonal are states where the policy decides over a narrower range than the control. The action cluster and both grippers sit well below the diagonal; the critic value sits on it. The count in each title in parentheses is the same test with a second Gaussian in place of the policy, which shows the false-positive rate.</figcaption>
+      </figure>
+      <figure>
+        <div class="img"><img src="figs/exp14_example_curves.png" alt="Resolved fraction against log signal-to-noise for one example state in each task phase." loading="lazy"></div>
+        <figcaption><b>Example curves, one state per phase.</b> Solid lines are the policy, dashed lines the Gaussian control, shading the 95% bootstrap interval. The action cluster (red) and grippers (blue, orange) rise steeply near log-SNR −1 to 0, ahead of their controls. The critic value (green) rises slowly and follows its control. Some curves are missing where a property never varies at that state, for example a gripper that is closed in every sample.</figcaption>
+      </figure>
+    </div>
+
+    <div class="q">
+      <header><span class="qnum">2</span><h3>Does the window move between task phases?</h3><span class="verdict no">No</span></header>
+      <div class="col" style="display:grid;gap:14px">
+        <p>We placed each window by the step where the property is half resolved. For the action cluster and both grippers, this step is about 5–6 in every phase. The test needed a gap of more than one step between two phases, with p &lt; 0.01. The largest gaps were 0.42 steps for the action cluster and 0.62 for gripper 1. Gripper 0 showed a 3.6-step gap, but with p = 0.044, and it comes from the place phase, where only 3 states had a defined gripper-0 curve. The critic value settles late, around step 16–17, also in every phase.</p>
+        <p>So choosing the step by task phase has nothing to gain. This does not yet rule out a per-chunk choice, because states within a phase still spread out; finding 4 tests per-chunk choice directly.</p>
+      </div>
+      <figure>
+        <div class="img"><img src="figs/exp14_midpoints_by_phase.png" alt="Step at which each property is half resolved, grouped by task phase." loading="lazy"></div>
+        <figcaption><b>Where the window sits, by task phase.</b> Each dot is one state; black bars are phase medians. The y axis is the DDIM step at which the property is half resolved. Discrete choices sit near step 5–6 in every phase; the critic value sits near step 16–17. The p-values come from 10,000 random shuffles of the phase labels.</figcaption>
+      </figure>
+    </div>
+
+    <div class="q">
+      <header><span class="qnum">3</span><h3>Does the amount still undecided at a step predict the RL gain at that step?</h3><span class="verdict yes">Yes, but only by separating late steps from early ones</span></header>
+      <div class="col" style="display:grid;gap:14px">
+        <p>We took the share of the critic value that can still change at each step and compared it with the RL gain we measured when training with a fixed k at that step (success at about 6M env steps minus success with no RL). The two rank the eight trained steps almost identically (Spearman ρ = 0.95, one-sided exact p = 5.7e-4).</p>
+        <p>The agreement comes from the late steps. From step 14 on, little of the outcome is left to change, and RL gains drop. Among steps 0–11 both measures are nearly flat. So the measurement explains why late steering fails, but it does not pick a best early step.</p>
+      </div>
+      <div class="tablewrap col">
+        <table>
+          <thead><tr><th>Steering step k</th><th>0</th><th>3</th><th>5</th><th>8</th><th>11</th><th>14</th><th>16</th><th>19</th></tr></thead>
+          <tbody>
+            <tr><td>Share of critic value still undecided</td><td>0.95</td><td>0.90</td><td>0.85</td><td>0.78</td><td>0.69</td><td>0.57</td><td>0.44</td><td>0.04</td></tr>
+            <tr><td>RL gain in success over no RL</td><td>+0.61</td><td>+0.64</td><td>+0.60</td><td>+0.59</td><td>+0.52</td><td>+0.22</td><td>+0.30</td><td>−0.01</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <figure>
+        <div class="img"><img src="figs/exp14_open_vs_rlgain.png" alt="Left: share of critic value undecided at each step. Right: that share against the RL gain at each step." loading="lazy"></div>
+        <figcaption><b>Undecided share against RL gain.</b> Left: median over 319 states of the share of the critic value still undecided at each DDIM step, with the interquartile range shaded. The two lines are two ways of reopening the action: adding noise to the clean action (blue), or keeping the original starting noise and injecting new noise at step k as RL steering does (orange). They agree. Right: the blue curve at each trained step against the RL gain for that step, seed 1, mean of the evals at 5.56–6.0M env steps.</figcaption>
+      </figure>
+    </div>
+
+    <div class="q">
+      <header><span class="qnum">4</span><h3>In the simulator, does changing one chunk inside the window change success?</h3><span class="verdict no">No, and the critic cannot tell good chunks from bad ones</span></header>
+      <div class="col" style="display:grid;gap:14px">
+        <p>The first three findings use the critic's opinion of an action. This test uses real outcomes instead. We picked 20 rollout states, four per phase, where the critic's scores varied most. At each one we regenerated the first chunk from step 4, 9, 12, 15 or 18 and then ran the base policy to the end of the episode: 25,600 episodes in all.</p>
+        <p>Success stayed at 0.47–0.49 at every step. Which regenerated chunk the policy produced barely changed whether the episode succeeded; what mattered was the state and the rest of the episode. The critic separates easy states from hard ones well, but within a state it ranks chunks barely better than chance. Picking the critic's top quarter of chunks raised success by at most 3 points, and most at the earliest steps, not inside a late window.</p>
+      </div>
+      <div class="tablewrap col">
+        <table>
+          <thead><tr><th>Step where the first chunk is regenerated</th><th>4</th><th>9</th><th>12</th><th>15</th><th>18</th></tr></thead>
+          <tbody>
+            <tr><td>Success rate</td><td>0.485</td><td>0.479</td><td>0.474</td><td>0.471</td><td>0.472</td></tr>
+            <tr><td>Share of success decided by the chunk</td><td>0.00</td><td>0.01</td><td>0.01</td><td>0.01</td><td>0.00</td></tr>
+            <tr><td>Share of critic value decided by the chunk</td><td>0.17</td><td>0.41</td><td>0.54</td><td>0.63</td><td>0.87</td></tr>
+            <tr><td>Critic's chunk ranking within a state (AUC)</td><td>0.57</td><td>0.52</td><td>0.55</td><td>0.54</td><td>0.54</td></tr>
+            <tr><td>Success gain from the critic's top quarter</td><td>+0.032</td><td>+0.027</td><td>+0.020</td><td>+0.020</td><td>+0.005</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <figure class="narrow">
+        <div class="img"><img src="figs/exp14_stage4_success_vs_value.png" alt="Share decided by the chunk, for episode success and for the critic value, at five steps." loading="lazy"></div>
+        <figcaption><b>Share of the outcome decided by one chunk.</b> For each state, the variation across regenerated chunks is split as in the method above; the y axis is the share that the chunk decides, averaged over 20 states. For episode success (blue) it is about 0 at every step. For the critic's value of the same chunks (orange) it rises from 0.17 to 0.87. The critic ranks states by success with AUC 0.86, but chunks within a state only with AUC 0.57. An AUC of 0.5 is chance.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="col">
+    <div class="eyebrow">Conclusion</div>
+    <h2>What we recommend</h2>
+    <ul>
+      <li><b>Steer at one fixed early step, around the window (k ≈ 3–8).</b> The policy's discrete choices are half made by step 5–6 in every phase, and RL gains are high and flat across this range.</li>
+      <li><b>Drop the learned or phase-dependent step choice.</b> The window does not move, and the critic gives an adaptive agent no reliable signal for which step to use. This matches exp13, where the critic's choice of step did no better than picking the best of 640 noises at step 0.</li>
+    </ul>
+    <h3 style="margin-top:8px">Limits of this experiment</h3>
+    <ul>
+      <li>The simulator test changes only the first chunk, while an RL agent steers every chunk. A small effect per chunk could add up over an episode. The direct test is to steer every chunk with the critic at fixed k = 4, 9 and 15 and compare success. It has not been run.</li>
+      <li>The gripper results rest on the 80–100 states where the Gaussian control's gripper command actually varies. At the other states the control never flips the gripper, so no comparison is possible.</li>
+      <li>We also tested short-horizon effects in the simulator (how far objects move after one chunk). These were almost never decided in a narrow window (6, 0 and 0 of 97 states), but that test used a 16-action subsample with low statistical power.</li>
+      <li>The critic values the trained random-k agent's continuation (0.79 success at 6M), not the base policy's.</li>
+    </ul>
+  </section>
+
+  <details class="col">
+    <summary>Methods in more detail</summary>
+    <div>
+      <p><b>Policy.</b> DPPO diffusion MLP (3 × 2048, residual) on low-dimensional observations, trained with 100 DDPM steps and a cosine schedule. Action chunk 8 × 14. Steering and evaluation use DDIM with 20 steps; step k starts at DDPM index t = 95 − 5k.</p>
+      <p><b>Resolved fraction.</b> At each state, 128 clean actions from the stochastic sampler, each noised once to step k with one noise draw that is reused at every step, then 16 stochastic redraws from step k. The resolved fraction is the one-way ANOVA intraclass correlation, (S − W/16) / (S − W/16 + W), with S the variance between the 128 per-action means and W the mean variance among the 16 redraws. Vector properties use traces. The curve is made monotone before reading off the 10%, 50% and 90% crossings. Bootstrap intervals come from 1,000 resamples of the 128 actions.</p>
+      <p><b>Gaussian control.</b> A Gaussian fitted to 256 policy actions at the state, with its exact noise predictor plugged into the same sampler code, including the same discretization. A second, independent Gaussian provides the false-positive rate for every test. A test written first confirmed that policy and control code paths agree when both use the Gaussian predictor.</p>
+      <p><b>Undecided share (finding 3).</b> Deterministic DDIM-20 as used in evaluation: 8 base actions per state, each reopened at step k with 32 noise draws. The share is the variance across those draws divided by the variance across 256 fresh samples at the state.</p>
+      <p><b>Tests fixed in advance.</b> (1) A window exists at a state when the upper end of the policy width's 95% interval is below the lower end of the control's; it holds for the population when the share of such states beats the control-versus-control share by at least 10 points with Fisher p &lt; 0.01. (2) Windows move when two phase medians differ by more than one step with permutation p &lt; 0.01. (3) The undecided share is useful when it ranks the eight trained steps like the RL gains with Spearman ρ ≥ 0.7 and exact p &lt; 0.05.</p>
+      <p><b>Other checks.</b> Reopening from the very top of the chain gives a resolved fraction of at most 0.034, as it should. Regenerated actions are no closer to the training data at late steps than at early ones (nearest-chunk distance 0.57–0.59 at all steps tested), so the policy is not copying demos. Keeping the 11 diverged states gives the same outcome on every test.</p>
+      <p><b>Compute.</b> About 0.8 GPU-hours and 315 CPU core-hours.</p>
+      <p class="muted">Full design, every design change and its reason, and the progress log: <span class="mono">exp_14_critical_windows_2026-11-10.md</span>. Analysis code: <span class="mono">scripts/exp14/</span>. Numbers: <span class="mono">results/exp14/analysis/analysis.json</span>.</p>
+    </div>
+  </details>
+
+  <footer class="col">Part of the adaptive-step DSRL project. Data as of 12 November 2026.</footer>
+</main>

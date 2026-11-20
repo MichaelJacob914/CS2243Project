@@ -1,0 +1,4010 @@
+{
+ "figure": "app_k_entropy",
+ "description": "Stochastic evals of adaptive runs. alpha_k is only logged to wandb, so it is not drawn.",
+ "rows": [
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 0,
+   "value": 2.0247890949249268
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 72016,
+   "value": 0.7381118535995483
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 120016,
+   "value": 0.710530161857605
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 168016,
+   "value": 0.7285718321800232
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 216016,
+   "value": 0.5485338568687439
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 264016,
+   "value": 0.6904709339141846
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 312016,
+   "value": 0.6981133818626404
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 360016,
+   "value": 0.6882032155990601
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 408016,
+   "value": 0.6539538502693176
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 456016,
+   "value": 0.6457897424697876
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 504016,
+   "value": 0.6736883521080017
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 552016,
+   "value": 0.5703147649765015
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 600016,
+   "value": 0.7620042562484741
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 648016,
+   "value": 0.7263557314872742
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 696016,
+   "value": 0.6362447738647461
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 744016,
+   "value": 0.6080940961837769
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 792016,
+   "value": 0.616214394569397
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 840016,
+   "value": 0.7101670503616333
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 888016,
+   "value": 0.6704712510108948
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 936016,
+   "value": 0.7134647369384766
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 984016,
+   "value": 0.7031418085098267
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1000000,
+   "value": 0.6047264337539673
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 0,
+   "value": 2.024783134460449
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 72016,
+   "value": 1.29853618144989
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 120016,
+   "value": 1.3103413581848145
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 168016,
+   "value": 1.2106778621673584
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 216016,
+   "value": 1.3675528764724731
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 264016,
+   "value": 1.3077703714370728
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 312016,
+   "value": 1.2325674295425415
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 360016,
+   "value": 1.24394428730011
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 408016,
+   "value": 1.3321664333343506
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 456016,
+   "value": 1.33279287815094
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 504016,
+   "value": 1.308821201324463
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 552016,
+   "value": 1.299805760383606
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 600016,
+   "value": 1.250967264175415
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 648016,
+   "value": 1.3033596277236938
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 696016,
+   "value": 1.2373497486114502
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 744016,
+   "value": 1.2752991914749146
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 792016,
+   "value": 1.2594794034957886
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 840016,
+   "value": 1.287195086479187
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 888016,
+   "value": 1.2395504713058472
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 936016,
+   "value": 1.2191826105117798
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 984016,
+   "value": 1.2332797050476074
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1000000,
+   "value": 1.2672078609466553
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 0,
+   "value": 2.027494192123413
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 72016,
+   "value": 1.3009612560272217
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 120016,
+   "value": 1.274898648262024
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 168016,
+   "value": 1.203350305557251
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 216016,
+   "value": 1.325406193733215
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 264016,
+   "value": 1.215473175048828
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 312016,
+   "value": 1.3190252780914309
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 360016,
+   "value": 1.2626711130142212
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 408016,
+   "value": 1.2626420259475708
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 456016,
+   "value": 1.2987648248672483
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 504016,
+   "value": 1.2269705533981323
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 552016,
+   "value": 1.321793794631958
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 600016,
+   "value": 1.2817003726959229
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 648016,
+   "value": 1.3422951698303225
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 696016,
+   "value": 1.2582658529281616
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 744016,
+   "value": 1.28981351852417
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 792016,
+   "value": 1.303390622138977
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 840016,
+   "value": 1.2204899787902832
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 888016,
+   "value": 1.2808746099472046
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 936016,
+   "value": 1.2653721570968628
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 984016,
+   "value": 1.3492426872253418
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1000000,
+   "value": 1.2714877128601074
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 0,
+   "value": 2.0248255729675293
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 72016,
+   "value": 1.3213422298431396
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 120016,
+   "value": 1.32283616065979
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 168016,
+   "value": 1.3592885732650757
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 216016,
+   "value": 1.286523699760437
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 264016,
+   "value": 1.330612063407898
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 312016,
+   "value": 1.30996572971344
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 360016,
+   "value": 1.214188575744629
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 408016,
+   "value": 1.2680153846740725
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 456016,
+   "value": 1.2208102941513062
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 504016,
+   "value": 1.3761918544769287
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 552016,
+   "value": 1.213070273399353
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 600016,
+   "value": 1.2948776483535769
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 648016,
+   "value": 1.3296846151351929
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 696016,
+   "value": 1.2498043775558472
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 744016,
+   "value": 1.3146016597747805
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 792016,
+   "value": 1.284138321876526
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 840016,
+   "value": 1.3260624408721924
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 888016,
+   "value": 1.3394644260406494
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 936016,
+   "value": 1.2017830610275269
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 984016,
+   "value": 1.2408732175827026
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1000000,
+   "value": 1.3174468278884888
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 0,
+   "value": 2.0748384546308536
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 72016,
+   "value": 1.8015085695925632
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 120016,
+   "value": 1.865185152596996
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 168016,
+   "value": 1.9124416851571828
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 216016,
+   "value": 1.70961704738761
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 264016,
+   "value": 1.8033480967725792
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 312016,
+   "value": 1.835919502648938
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 360016,
+   "value": 1.8310685177372537
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 408016,
+   "value": 1.8475673895161615
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 456016,
+   "value": 1.8849900385904916
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 504016,
+   "value": 1.9250087484107643
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 552016,
+   "value": 1.7410484570336604
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 600016,
+   "value": 1.9282549859096567
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 648016,
+   "value": 1.865268570761391
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 696016,
+   "value": 1.9542815909293296
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 744016,
+   "value": 1.8875514722037616
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 792016,
+   "value": 1.800770833871299
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 840016,
+   "value": 1.8734453661561328
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 888016,
+   "value": 1.7671930326184255
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 936016,
+   "value": 1.9970840058506825
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 984016,
+   "value": 1.8644630828098108
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.25_s1",
+   "metric": "k_entropy",
+   "env_steps": 1000000,
+   "value": 1.7761636350772103
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 0,
+   "value": 2.074108248550784
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 72016,
+   "value": 1.9853417671497675
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 120016,
+   "value": 1.973299551264963
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 168016,
+   "value": 1.9640792623818863
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 216016,
+   "value": 1.9704227249728417
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 264016,
+   "value": 1.98359302106667
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 312016,
+   "value": 1.876479788009202
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 360016,
+   "value": 1.890252220610941
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 408016,
+   "value": 1.982793486585183
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 456016,
+   "value": 1.9860383347986792
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 504016,
+   "value": 1.99563713224998
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 552016,
+   "value": 2.0071644792980723
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 600016,
+   "value": 1.880743526145371
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 648016,
+   "value": 1.944657386794824
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 696016,
+   "value": 1.971872299237413
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 744016,
+   "value": 1.8456935536502768
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 792016,
+   "value": 1.922451347552236
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 840016,
+   "value": 1.97341490558128
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 888016,
+   "value": 1.9271771577593968
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 936016,
+   "value": 1.9510394344591733
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 984016,
+   "value": 1.9554752275381664
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1000000,
+   "value": 1.911983077434138
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 0,
+   "value": 2.074057887961524
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 72016,
+   "value": 1.9787312330510467
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 120016,
+   "value": 1.9528902109695223
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 168016,
+   "value": 1.9393646419390371
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 216016,
+   "value": 2.037357159643846
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 264016,
+   "value": 1.9736781547247872
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 312016,
+   "value": 1.9918142287045668
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 360016,
+   "value": 1.876791766999236
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 408016,
+   "value": 1.9452000595032457
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 456016,
+   "value": 1.9733796286466248
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 504016,
+   "value": 1.9019430795639372
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 552016,
+   "value": 1.9611283747906123
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 600016,
+   "value": 1.9383619655762263
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 648016,
+   "value": 1.962053379285701
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 696016,
+   "value": 1.953892608414911
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 744016,
+   "value": 1.8941598431539133
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 792016,
+   "value": 1.9157077464244336
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 840016,
+   "value": 1.9501998866331955
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 888016,
+   "value": 1.9090139404906352
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 936016,
+   "value": 1.9722238461116304
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 984016,
+   "value": 1.947751705976836
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1000000,
+   "value": 1.8500410471981523
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 0,
+   "value": 2.0715125677480337
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 72016,
+   "value": 1.9883801032574115
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 120016,
+   "value": 2.0065372618901893
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 168016,
+   "value": 2.003799401699086
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 216016,
+   "value": 1.9188562383619443
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 264016,
+   "value": 1.9758067422477836
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 312016,
+   "value": 1.960361828463731
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 360016,
+   "value": 1.8939628506235648
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 408016,
+   "value": 1.9349796261270744
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 456016,
+   "value": 1.959476290958734
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 504016,
+   "value": 1.9982272602806392
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 552016,
+   "value": 1.8747129086942649
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 600016,
+   "value": 1.9237530352001604
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 648016,
+   "value": 2.0263240276901606
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 696016,
+   "value": 1.9664417397351104
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 744016,
+   "value": 1.952699277334752
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 792016,
+   "value": 1.9355721156002188
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 840016,
+   "value": 1.975092364705867
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 888016,
+   "value": 1.9414500284237497
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 936016,
+   "value": 1.8993929488173056
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 984016,
+   "value": 1.973177154983229
+  },
+  {
+   "task": "can",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1000000,
+   "value": 2.0283623566297524
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 0,
+   "value": 2.025908946990967
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 96016,
+   "value": 0.952621579170227
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 160016,
+   "value": 1.149488091468811
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 224016,
+   "value": 1.1975919008255005
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 288016,
+   "value": 1.135657548904419
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 352016,
+   "value": 1.2439558506011963
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 416016,
+   "value": 1.2981823682785034
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 480016,
+   "value": 1.2866261005401611
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 544016,
+   "value": 1.3188446760177612
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 608016,
+   "value": 1.1918507814407349
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 672016,
+   "value": 1.3137787580490112
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 736016,
+   "value": 1.2457939386367798
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 800016,
+   "value": 1.289459228515625
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 864016,
+   "value": 1.2504149675369265
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 928016,
+   "value": 1.2417603731155396
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 992016,
+   "value": 1.268123745918274
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1056016,
+   "value": 1.2629929780960083
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1120016,
+   "value": 1.2509844303131104
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1184016,
+   "value": 1.325761318206787
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1248016,
+   "value": 1.2724844217300415
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1312016,
+   "value": 1.3220864534378052
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1376016,
+   "value": 1.2204794883728027
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1440016,
+   "value": 1.2546124458312988
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1504016,
+   "value": 1.2712894678115845
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1568016,
+   "value": 1.2387564182281494
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1632016,
+   "value": 1.2336512804031372
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1696016,
+   "value": 1.2907025814056396
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1760016,
+   "value": 1.183100938796997
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1824016,
+   "value": 1.2734555006027222
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1888016,
+   "value": 1.2545175552368164
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1952016,
+   "value": 1.261978268623352
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 2000000,
+   "value": 1.2107696533203125
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 0,
+   "value": 2.035294532775879
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 96016,
+   "value": 1.1239674091339111
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 160016,
+   "value": 1.1761242151260376
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 224016,
+   "value": 1.1044572591781616
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 288016,
+   "value": 1.1696105003356934
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 352016,
+   "value": 1.1278278827667236
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 416016,
+   "value": 1.2675105333328247
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 480016,
+   "value": 1.1475898027420044
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 544016,
+   "value": 1.269216537475586
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 608016,
+   "value": 1.223865032196045
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 672016,
+   "value": 1.2066020965576172
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 736016,
+   "value": 1.3321146965026855
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 800016,
+   "value": 1.1943868398666382
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 864016,
+   "value": 1.289520263671875
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 928016,
+   "value": 1.2863993644714355
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 992016,
+   "value": 1.237769365310669
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1056016,
+   "value": 1.1775296926498413
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1120016,
+   "value": 1.2493243217468262
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1184016,
+   "value": 1.2382299900054932
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1248016,
+   "value": 1.2347326278686523
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1312016,
+   "value": 1.29521381855011
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1376016,
+   "value": 1.2625820636749268
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1440016,
+   "value": 1.2145987749099731
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1504016,
+   "value": 1.2475167512893677
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1568016,
+   "value": 1.1498560905456543
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1632016,
+   "value": 1.2334251403808594
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1696016,
+   "value": 1.3096272945404053
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1760016,
+   "value": 1.3290647268295288
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1824016,
+   "value": 1.2050001621246338
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1888016,
+   "value": 1.2576344013214111
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1952016,
+   "value": 1.269976019859314
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 2000000,
+   "value": 1.2112202644348145
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 0,
+   "value": 2.031263589859009
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 96016,
+   "value": 1.2329202890396118
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 160016,
+   "value": 1.1618425846099854
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 224016,
+   "value": 1.211577296257019
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 288016,
+   "value": 1.2061705589294434
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 352016,
+   "value": 1.287672996520996
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 416016,
+   "value": 1.1774340867996216
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 480016,
+   "value": 1.2244296073913574
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 544016,
+   "value": 1.079946756362915
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 608016,
+   "value": 1.2790743112564087
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 672016,
+   "value": 1.2897664308547974
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 736016,
+   "value": 1.237307071685791
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 800016,
+   "value": 1.2866193056106567
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 864016,
+   "value": 1.2307612895965576
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 928016,
+   "value": 1.190031886100769
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 992016,
+   "value": 1.2914308309555054
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1056016,
+   "value": 1.1922047138214111
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1120016,
+   "value": 1.1604849100112915
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1184016,
+   "value": 1.2699490785598757
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1248016,
+   "value": 1.1423990726470947
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1312016,
+   "value": 1.155146837234497
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1376016,
+   "value": 1.2750394344329834
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1440016,
+   "value": 1.282487154006958
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1504016,
+   "value": 1.2849175930023191
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1568016,
+   "value": 1.247220158576965
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1632016,
+   "value": 1.1654856204986572
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1696016,
+   "value": 1.2296053171157837
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1760016,
+   "value": 1.262770175933838
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1824016,
+   "value": 1.0736554861068726
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1888016,
+   "value": 1.1556166410446167
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1952016,
+   "value": 1.210883855819702
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 2000000,
+   "value": 1.19839608669281
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 0,
+   "value": 2.077589174583484
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 96016,
+   "value": 1.7329062894420866
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 160016,
+   "value": 1.974642995477673
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 224016,
+   "value": 2.0574566392693887
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 288016,
+   "value": 1.9994532817729145
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 352016,
+   "value": 1.966632105269148
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 416016,
+   "value": 1.9687890690558367
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 480016,
+   "value": 2.030966322375335
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 544016,
+   "value": 1.9715017387422649
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 608016,
+   "value": 1.876679081599378
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 672016,
+   "value": 1.962312707935606
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 736016,
+   "value": 1.892498643180833
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 800016,
+   "value": 1.933778473675824
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 864016,
+   "value": 1.9362533844017855
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 928016,
+   "value": 1.9231177956198904
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 992016,
+   "value": 1.940934354372139
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1056016,
+   "value": 1.835177089760911
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1120016,
+   "value": 1.9004079559613885
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1184016,
+   "value": 1.9079837307360337
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1248016,
+   "value": 1.8906967088944189
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1312016,
+   "value": 1.9280246117595217
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1376016,
+   "value": 1.8785793326993208
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1440016,
+   "value": 1.8793271679492023
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1504016,
+   "value": 1.9343887242448343
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1568016,
+   "value": 1.9080939523461384
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1632016,
+   "value": 1.770662055141308
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1696016,
+   "value": 1.8847450643792196
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1760016,
+   "value": 1.8544925693254304
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1824016,
+   "value": 1.867219528343499
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1888016,
+   "value": 1.8710473806841463
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1952016,
+   "value": 1.9132210467276216
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 2000000,
+   "value": 1.87200965929111
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 0,
+   "value": 2.078298368057092
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 96016,
+   "value": 1.8366549309099651
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 160016,
+   "value": 1.946131375831467
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 224016,
+   "value": 1.9049239844230152
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 288016,
+   "value": 1.99340672618814
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 352016,
+   "value": 1.8978447848810889
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 416016,
+   "value": 2.03740929230994
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 480016,
+   "value": 1.8719341128803424
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 544016,
+   "value": 2.0213343615339108
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 608016,
+   "value": 1.96653066911772
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 672016,
+   "value": 1.9322610878226805
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 736016,
+   "value": 1.976729871564634
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 800016,
+   "value": 1.8768977137435063
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 864016,
+   "value": 1.9211476841167816
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 928016,
+   "value": 1.902801004293051
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 992016,
+   "value": 1.8371251137352989
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1056016,
+   "value": 1.8617339680025748
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1120016,
+   "value": 1.915558062775468
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1184016,
+   "value": 1.882321663129626
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1248016,
+   "value": 1.8920166073104976
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1312016,
+   "value": 1.943845691775276
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1376016,
+   "value": 1.8936152412463017
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1440016,
+   "value": 1.86907337514258
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1504016,
+   "value": 1.8817892878558369
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1568016,
+   "value": 1.8154870518806567
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1632016,
+   "value": 1.9155814440943408
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1696016,
+   "value": 1.932180578663667
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1760016,
+   "value": 1.9371845310154
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1824016,
+   "value": 1.8745221751585968
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1888016,
+   "value": 1.943160285175895
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1952016,
+   "value": 1.9420541339193955
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 2000000,
+   "value": 1.8273942984119445
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 0,
+   "value": 2.0757111498014247
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 96016,
+   "value": 2.005981894956095
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 160016,
+   "value": 1.9275867992277456
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 224016,
+   "value": 2.013629468591289
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 288016,
+   "value": 1.9810633794737196
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 352016,
+   "value": 2.0122632787388857
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 416016,
+   "value": 1.960074433233866
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 480016,
+   "value": 1.9731860230620568
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 544016,
+   "value": 1.894336075732778
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 608016,
+   "value": 1.9166217902347784
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 672016,
+   "value": 1.944178596063024
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 736016,
+   "value": 1.9233550858429027
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 800016,
+   "value": 1.868147336092277
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 864016,
+   "value": 1.898355708034056
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 928016,
+   "value": 1.8290279615054823
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 992016,
+   "value": 1.937249383618316
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1056016,
+   "value": 1.9009155809302225
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1120016,
+   "value": 1.7761442244569017
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1184016,
+   "value": 1.863016984746872
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1248016,
+   "value": 1.8295079760261976
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1312016,
+   "value": 1.725105556548998
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1376016,
+   "value": 1.8789322422310544
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1440016,
+   "value": 1.8189755324941383
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1504016,
+   "value": 1.8277567578763163
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1568016,
+   "value": 1.9168368147387864
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1632016,
+   "value": 1.677294536822434
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1696016,
+   "value": 1.864642988582865
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1760016,
+   "value": 1.800514479208452
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1824016,
+   "value": 1.6558024238935314
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1888016,
+   "value": 1.8515565014151971
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1952016,
+   "value": 1.807813718980113
+  },
+  {
+   "task": "square",
+   "run": "adaptive_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 2000000,
+   "value": 1.8622649457031293
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 0,
+   "value": 2.9346156120300293
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 896032,
+   "value": 1.6790649890899658
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1152032,
+   "value": 1.644435167312622
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1408032,
+   "value": 1.6407259702682495
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1664032,
+   "value": 1.6171904802322388
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 1920032,
+   "value": 1.7335644960403442
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 2176032,
+   "value": 1.562587022781372
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 2432032,
+   "value": 1.6867945194244385
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 2688032,
+   "value": 1.6081867218017578
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 2944032,
+   "value": 1.6188454627990725
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 3000000,
+   "value": 1.7250713109970093
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 3256000,
+   "value": 1.7711129188537598
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 3512000,
+   "value": 1.7075436115264893
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 3768000,
+   "value": 1.7271229028701782
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 4024000,
+   "value": 1.7541310787200928
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 4280000,
+   "value": 1.8574285507202148
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 4536000,
+   "value": 1.7698763608932495
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 4792000,
+   "value": 1.831974029541016
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 5048000,
+   "value": 1.8314671516418457
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 5304000,
+   "value": 1.7983955144882202
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 5560000,
+   "value": 1.9034947156906128
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 5816000,
+   "value": 1.821481823921204
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 6072000,
+   "value": 1.8108351230621336
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 6328000,
+   "value": 1.9159880876541135
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 6584000,
+   "value": 1.8978207111358645
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 6840000,
+   "value": 1.9267868995666504
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 7096000,
+   "value": 1.8366154432296755
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 7491616,
+   "value": 1.69170880317688
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 7747616,
+   "value": 1.8592149019241333
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 8003616,
+   "value": 1.8101179599761963
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 8259616,
+   "value": 1.7784167528152466
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 8515616,
+   "value": 1.8160558938980105
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 8771616,
+   "value": 1.7366578578948977
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "pi_k_entropy",
+   "env_steps": 9000000,
+   "value": 1.6550458669662476
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 0,
+   "value": 2.9262828826904297
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 896032,
+   "value": 1.603126049041748
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1152032,
+   "value": 1.607659935951233
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1408032,
+   "value": 1.5821740627288818
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1664032,
+   "value": 1.5953335762023926
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 1920032,
+   "value": 1.61712384223938
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 2176032,
+   "value": 1.63898766040802
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 2432032,
+   "value": 1.7555387020111084
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 2688032,
+   "value": 1.6507387161254885
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 2944032,
+   "value": 1.6913312673568726
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 3000000,
+   "value": 1.6925413608551023
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 3256000,
+   "value": 1.695878267288208
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 3512000,
+   "value": 1.7794642448425293
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 3768000,
+   "value": 1.7253509759902954
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 4024000,
+   "value": 1.8087931871414185
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 4280000,
+   "value": 1.7802082300186155
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 4536000,
+   "value": 1.7451900243759155
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 4792000,
+   "value": 1.7475135326385498
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 5048000,
+   "value": 1.753700613975525
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 5304000,
+   "value": 1.7697408199310305
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 5560000,
+   "value": 1.838937878608704
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 5816000,
+   "value": 1.8549963235855105
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 6072000,
+   "value": 1.7695012092590332
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 6328000,
+   "value": 1.787079095840454
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 6584000,
+   "value": 1.8032814264297483
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 6840000,
+   "value": 1.8268617391586304
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 7096000,
+   "value": 1.870967984199524
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 7491680,
+   "value": 1.8326635360717771
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 7747680,
+   "value": 1.7228630781173706
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 8003680,
+   "value": 1.7769144773483276
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 8259680,
+   "value": 1.6719080209732056
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 8515680,
+   "value": 1.7695410251617432
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 8771680,
+   "value": 1.641011357307434
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "pi_k_entropy",
+   "env_steps": 9000000,
+   "value": 1.7046452760696411
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 0,
+   "value": 2.9321796894073486
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 896032,
+   "value": 1.8350472450256348
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1152032,
+   "value": 1.6493982076644895
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1408032,
+   "value": 1.5931533575057983
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1664032,
+   "value": 1.5504465103149414
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 1920032,
+   "value": 1.6297204494476318
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 2176032,
+   "value": 1.564370036125183
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 2432032,
+   "value": 1.7389906644821167
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 2688032,
+   "value": 1.6455097198486328
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 2944032,
+   "value": 1.537609577178955
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 3000000,
+   "value": 1.6440937519073486
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 3256000,
+   "value": 1.8658477067947388
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 3512000,
+   "value": 1.7429094314575195
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 3768000,
+   "value": 1.715718150138855
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 4024000,
+   "value": 1.773077130317688
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 4280000,
+   "value": 1.7997117042541504
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 4536000,
+   "value": 1.752316951751709
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 4792000,
+   "value": 1.7469236850738523
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 5048000,
+   "value": 1.8112671375274656
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 5304000,
+   "value": 1.79061758518219
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 5560000,
+   "value": 1.788585901260376
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 5816000,
+   "value": 1.7363808155059814
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 6072000,
+   "value": 1.826465487480164
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 6328000,
+   "value": 1.922609806060791
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 6584000,
+   "value": 1.82284414768219
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 6840000,
+   "value": 1.9410085678100584
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 7096000,
+   "value": 1.827087163925171
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 7492128,
+   "value": 1.8026955127716064
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 7748128,
+   "value": 1.801164627075195
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 8004128,
+   "value": 1.73546040058136
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 8260128,
+   "value": 1.732611894607544
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 8516128,
+   "value": 1.837674617767334
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 8772128,
+   "value": 1.6307779550552368
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "pi_k_entropy",
+   "env_steps": 9000000,
+   "value": 1.735687494277954
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 0,
+   "value": 2.9908209030543014
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 896032,
+   "value": 2.8628179637282067
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1152032,
+   "value": 2.891318987507866
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1408032,
+   "value": 2.8499672635134194
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1664032,
+   "value": 2.860753921131497
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 1920032,
+   "value": 2.9006958961537723
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 2176032,
+   "value": 2.77239666101608
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 2432032,
+   "value": 2.8188242961833563
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 2688032,
+   "value": 2.7709280557383487
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 2944032,
+   "value": 2.6807517975947377
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 3000000,
+   "value": 2.709288780644627
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 3256000,
+   "value": 2.6966348406525675
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 3512000,
+   "value": 2.681781220506465
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 3768000,
+   "value": 2.682135882610362
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 4024000,
+   "value": 2.694899012474337
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 4280000,
+   "value": 2.741837943921284
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 4536000,
+   "value": 2.7450730138990407
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 4792000,
+   "value": 2.7354355793726453
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 5048000,
+   "value": 2.80338972355836
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 5304000,
+   "value": 2.777323021281123
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 5560000,
+   "value": 2.844316939153559
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 5816000,
+   "value": 2.775727519264961
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 6072000,
+   "value": 2.8557137409943394
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 6328000,
+   "value": 2.9203617464402347
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 6584000,
+   "value": 2.9158133650277405
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 6840000,
+   "value": 2.9409258481921894
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 7096000,
+   "value": 2.945045291954357
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 7491616,
+   "value": 2.931165531461064
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 7747616,
+   "value": 2.878020951162956
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 8003616,
+   "value": 2.8657242697976684
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 8259616,
+   "value": 2.916341970316946
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 8515616,
+   "value": 2.87726699726173
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 8771616,
+   "value": 2.9061152210298795
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s1",
+   "metric": "k_entropy",
+   "env_steps": 9000000,
+   "value": 2.893489615338919
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 0,
+   "value": 2.984915620338932
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 896032,
+   "value": 2.632620602599567
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1152032,
+   "value": 2.7903745663570314
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1408032,
+   "value": 2.809308043858094
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1664032,
+   "value": 2.605011486202037
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 1920032,
+   "value": 2.74528843953376
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 2176032,
+   "value": 2.726620643624244
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 2432032,
+   "value": 2.815148949135729
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 2688032,
+   "value": 2.7353214974717788
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 2944032,
+   "value": 2.730681475310485
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 3000000,
+   "value": 2.796386163137659
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 3256000,
+   "value": 2.7635510495805296
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 3512000,
+   "value": 2.7811928008717
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 3768000,
+   "value": 2.748926127710953
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 4024000,
+   "value": 2.7840805905004364
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 4280000,
+   "value": 2.7730248695440376
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 4536000,
+   "value": 2.7868746525953303
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 4792000,
+   "value": 2.8403895219230493
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 5048000,
+   "value": 2.770263322633064
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 5304000,
+   "value": 2.8325639243977294
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 5560000,
+   "value": 2.853348931499356
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 5816000,
+   "value": 2.881770091772196
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 6072000,
+   "value": 2.8833753580807606
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 6328000,
+   "value": 2.858294604000014
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 6584000,
+   "value": 2.885860598026306
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 6840000,
+   "value": 2.847071512613619
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 7096000,
+   "value": 2.9203262219783084
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 7491680,
+   "value": 2.8541454784117444
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 7747680,
+   "value": 2.83546449848261
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 8003680,
+   "value": 2.893152056134155
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 8259680,
+   "value": 2.884521818024795
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 8515680,
+   "value": 2.9084841651157705
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 8771680,
+   "value": 2.8592986718816653
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s2",
+   "metric": "k_entropy",
+   "env_steps": 9000000,
+   "value": 2.866264241974915
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 0,
+   "value": 2.98831285885331
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 896032,
+   "value": 2.9360181272075367
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1152032,
+   "value": 2.8876139457999432
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1408032,
+   "value": 2.8661129209316623
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1664032,
+   "value": 2.874947292850305
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 1920032,
+   "value": 2.9280414915603514
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 2176032,
+   "value": 2.838805205026768
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 2432032,
+   "value": 2.847776478205592
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 2688032,
+   "value": 2.8441133960607305
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 2944032,
+   "value": 2.739023875098955
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 3000000,
+   "value": 2.7813365504800203
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 3256000,
+   "value": 2.890051098988295
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 3512000,
+   "value": 2.815825700538829
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 3768000,
+   "value": 2.775778738664192
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 4024000,
+   "value": 2.806297810947432
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 4280000,
+   "value": 2.8232732796501216
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 4536000,
+   "value": 2.871709156937098
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 4792000,
+   "value": 2.821617301785765
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 5048000,
+   "value": 2.833420733729916
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 5304000,
+   "value": 2.852069109283817
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 5560000,
+   "value": 2.8524369236687326
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 5816000,
+   "value": 2.801913775262079
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 6072000,
+   "value": 2.8750267189376597
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 6328000,
+   "value": 2.8294490886817547
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 6584000,
+   "value": 2.867439878822492
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 6840000,
+   "value": 2.8592621360156563
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 7096000,
+   "value": 2.867073769100152
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 7492128,
+   "value": 2.8690205420956185
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 7748128,
+   "value": 2.885017795073724
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 8004128,
+   "value": 2.914296104163011
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 8260128,
+   "value": 2.893017930245513
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 8516128,
+   "value": 2.858096368287996
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 8772128,
+   "value": 2.873427081883862
+  },
+  {
+   "task": "transport",
+   "run": "adaptivedetach_rho0.5_s3",
+   "metric": "k_entropy",
+   "env_steps": 9000000,
+   "value": 2.8646359631742864
+  }
+ ]
+}

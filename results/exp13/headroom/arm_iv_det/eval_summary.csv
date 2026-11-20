@@ -1,0 +1,2 @@
+env_steps,mode,wall_s,gpu_s,success,reward,mean_ep_len_success,mean_a_minus_base,k_entropy,pi_k_entropy,episodes
+6000000,det,336.2,336.2,0.81,-4.1456,333.87654320987656,1.1411082744598389,2.995403736635473,2.995732545852661,200

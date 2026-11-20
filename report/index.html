@@ -1,0 +1,460 @@
+<title>Adaptive-Step DSRL</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: lab-notebook column (~70ch) for prose, widening to a full-bleed grid for figures and the rollout matrix. */
+:root {
+  --bg: #f7f7f5;
+  --surface: #ffffff;
+  --fg: #1d1f21;
+  --muted: #5d6166;
+  --rule: #dcddd9;
+  --accent: #e8590c;        /* adaptive-k, same orange as the figures */
+  --accent-soft: #fbe6d9;
+  --good: #2b8a3e;
+  --good-soft: #e3f3e6;
+  --bad: #c92a2a;
+  --bad-soft: #fbe4e4;
+  --wait: #6b6f76;
+  --wait-soft: #ececea;
+  --plate: #ffffff;         /* figures are rendered on white */
+  --font-display: "Spectral", Georgia, "Times New Roman", serif;
+  --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151617; --surface: #1d1f21; --fg: #e8e8e5; --muted: #a2a6ab; --rule: #34373a;
+    --accent: #ff7a33; --accent-soft: #3a2518; --good: #69c27a; --good-soft: #1c3021;
+    --bad: #ff6b6b; --bad-soft: #3a1d1d; --wait: #a2a6ab; --wait-soft: #2a2c2e; --plate: #f4f4f1;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151617; --surface: #1d1f21; --fg: #e8e8e5; --muted: #a2a6ab; --rule: #34373a;
+  --accent: #ff7a33; --accent-soft: #3a2518; --good: #69c27a; --good-soft: #1c3021;
+  --bad: #ff6b6b; --bad-soft: #3a1d1d; --wait: #a2a6ab; --wait-soft: #2a2c2e; --plate: #f4f4f1;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font: 15px/1.6 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 80px;
+}
+.wrap { max-width: 1100px; margin: 0 auto; display: grid; gap: 56px; }
+.prose { max-width: 70ch; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; line-height: 1.2; }
+h1 { font-size: clamp(2rem, 5vw, 2.8rem); letter-spacing: -0.01em; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.15rem; }
+p { margin: 0; }
+.stack { display: grid; gap: 14px; }
+.eyebrow { font: 500 0.75rem/1 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.mono { font-family: var(--font-mono); font-size: 0.86em; }
+.muted { color: var(--muted); }
+a { color: var(--accent); }
+section { display: grid; gap: 20px; }
+section > header { display: grid; gap: 8px; border-top: 1px solid var(--rule); padding-top: 20px; }
+
+/* status pills */
+.pill { display: inline-flex; align-items: center; gap: 6px; font: 500 0.75rem/1 var(--font-mono); padding: 5px 9px; border-radius: 999px; white-space: nowrap; }
+.pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.pill.done { color: var(--good); background: var(--good-soft); }
+.pill.fail { color: var(--bad); background: var(--bad-soft); }
+.pill.run { color: var(--accent); background: var(--accent-soft); }
+.pill.wait { color: var(--wait); background: var(--wait-soft); }
+
+/* phase timeline */
+.phases { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.phase { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 12px 14px; display: grid; gap: 8px; align-content: start; }
+.phase .name { font-weight: 600; font-size: 0.92rem; }
+.phase .note { font-size: 0.82rem; color: var(--muted); }
+
+/* callout for blockers */
+.findings { display: grid; gap: 12px; max-width: 80ch; margin: 0; padding-left: 1.2em; }
+.findings li { padding-left: 4px; }
+.wip { display: inline-block; font: 600 0.72rem/1 var(--font-mono); letter-spacing: 0.08em; color: var(--accent); background: var(--accent-soft); padding: 5px 9px; border-radius: 4px; }
+.callout { border-left: 3px solid var(--bad); background: var(--surface); padding: 16px 18px; border-radius: 0 6px 6px 0; display: grid; gap: 10px; max-width: 80ch; }
+
+/* claims */
+.claims { display: grid; gap: 12px; counter-reset: claim; }
+.claim { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: start; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.claim .n { font: 600 1.4rem/1 var(--font-display); color: var(--muted); width: 1.4em; }
+.claim .body { min-width: 0; display: grid; gap: 4px; }
+.claim .body b { font-weight: 600; }
+
+/* figures */
+.figgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 24px; }
+figure { margin: 0; display: grid; gap: 10px; align-content: start; min-width: 0; }
+figure .plate { background: var(--plate); border-radius: 6px; padding: 12px; border: 1px solid var(--rule); }
+figure img { display: block; width: 100%; height: auto; }
+figcaption { display: grid; gap: 6px; font-size: 0.88rem; }
+figcaption .t { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+figcaption .t b { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; }
+.pending { border: 1px dashed var(--rule); border-radius: 6px; padding: 28px 18px; display: grid; gap: 6px; place-content: center; text-align: center; color: var(--muted); font-size: 0.85rem; min-height: 180px; background: var(--surface); }
+.pending .need { font-family: var(--font-mono); font-size: 0.78rem; }
+
+/* method key */
+.key { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 0.85rem; }
+.key span { display: inline-flex; align-items: center; gap: 7px; }
+.swatch { width: 18px; height: 3px; border-radius: 2px; }
+
+/* rollouts */
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.tabs button { font: 500 0.85rem/1 var(--font-body); padding: 9px 14px; border-radius: 6px; border: 1px solid var(--rule); background: var(--surface); color: var(--fg); cursor: pointer; }
+.tabs button[aria-selected="true"] { border-color: var(--fg); background: var(--fg); color: var(--bg); }
+.tabs button:focus-visible, video:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.methods { display: grid; gap: 28px; }
+.mrow { display: grid; gap: 10px; }
+.mrow .mhead { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.mrow .mhead h3 { font-size: 1.05rem; }
+.clips { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+.clip { display: grid; gap: 6px; min-width: 0; }
+.clip video { width: 100%; height: auto; aspect-ratio: 512 / 304; background: #000; border-radius: 4px; display: block; }
+.clip .meta { display: flex; gap: 10px; flex-wrap: wrap; font-size: 0.8rem; color: var(--muted); align-items: center; }
+.clip .meta .dl { margin-left: auto; color: var(--accent); background: none; border: 0; padding: 0; font: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.clip .meta .dl[hidden] { display: none; }
+.tag { font: 500 0.72rem/1 var(--font-mono); padding: 4px 7px; border-radius: 4px; }
+.tag.s { color: var(--good); background: var(--good-soft); }
+.tag.f { color: var(--bad); background: var(--bad-soft); }
+.clip-pending { border: 1px dashed var(--rule); border-radius: 4px; aspect-ratio: 512 / 304; display: grid; place-content: center; text-align: center; color: var(--muted); font-size: 0.82rem; padding: 12px; background: var(--surface); }
+
+footer { font-size: 0.82rem; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 16px; display: grid; gap: 6px; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+
+  <header class="stack">
+    <div class="eyebrow">CS2243 project · experiment report · updated <span class="mono">2026-11-04</span></div>
+    <div><span class="wip">WORK IN PROGRESS · CAN ONLY · 1 SEED</span></div>
+    <h1>Adaptive-Step DSRL</h1>
+    <p class="prose muted">DSRL steers a frozen diffusion policy by having an RL agent choose the starting noise of the sampler. We test whether steering later in the denoising chain (at step <i>k</i>) works better, and whether a policy that picks <i>k</i> for each action chunk beats any fixed choice. The base policies are DPPO robomimic checkpoints on can, square and transport.</p>
+  </header>
+
+  <section aria-labelledby="status-h">
+    <header><div class="eyebrow">Where things stand</div><h2 id="status-h">Status</h2></header>
+    <div class="phases">
+      <div class="phase"><span class="pill done">done</span><div class="name">Setup, base eval, regression</div><div class="note">k=0 matches upstream DSRL</div></div>
+      <div class="phase"><span class="pill done">done</span><div class="name">Can: all methods, seed 1</div><div class="note">13 runs, 1M env steps each</div></div>
+      <div class="phase"><span class="pill done">done</span><div class="name">Square; transport fixed steps</div><div class="note">fixed-k sweeps (seed 1); square adaptive, random-k, residual (3 seeds)</div></div>
+      <div class="phase"><span class="pill run">running</span><div class="name">Transport extended to 6M steps</div><div class="note">fixed steps at 4.8M (done ~1:00 Nov 7); adaptive and random k at 4.0M (done ~15:00 Nov 7)</div></div>
+      <div class="phase"><span class="pill done">done</span><div class="name">Can seeds 2–3; noise-bound sweep</div><div class="note">adaptive, random-k, residual; k ∈ {0,4,6,7} × bound ±1.5/2/3</div></div>
+      <div class="phase"><span class="pill wait">deferred</span><div class="name">Ablations, extra seeds</div><div class="note">until this report is out</div></div>
+    </div>
+    <div class="callout" style="border-left-color: var(--accent)">
+      <h3>What we know so far (updated Nov 6; transport still training toward 6M steps)</h3>
+      <ol class="findings">
+        <li><b>Transport had not converged at 3M steps, so we are extending it to 6M.</b> Steps 3 and 5 learn faster than DSRL (k=0), but DSRL is catching up: at 4.8M, steps 0, 3 and 5 are at 0.77, 0.75 and 0.77 (mean of the last 3 evals, one seed). Steps 8 and 11 keep rising (0.67, 0.59); steps 14–19 stay at 0.17–0.35, near the base policy's 0.195. Every transport run first dropped to 1–10% success around 0.9–1.4M env steps and recovered after about 1.6M.</li>
+        <li><b>On transport, random step choice matches the best fixed step; learned choice does not yet.</b> At 4.0M steps, where every run can be compared, random k averages 0.70 (0.63, 0.77, 0.70 over three seeds) and the best fixed step 0.77, while adaptive averages 0.61 (0.49, 0.76, 0.59), the same as DSRL (0.61). Adaptive and random k reach 6M on Nov 7.</li>
+        <li><b>Square saturates like can.</b> Steps 0–6, adaptive (0.96, three seeds) and random k (0.96) all end at 0.93–0.97; only step 7 lags at 0.81. Can seeds 2–3 confirm seed 1: adaptive 0.92 and 0.94, random k 0.91 and 0.93.</li>
+        <li><b>A wider noise bound gives later steps back their success.</b> In the trained sweep on can (Bound b), step 4 rises from 0.90 to 0.97 at ±2, step 6 from 0.84 to 0.92 at ±3, and step 7 from 0.77 to 0.85 at ±3. Step 0 gains nothing and collapses to 0 at ±3. So each step has its own best bound; one seed.</li>
+        <li><b>Every steering method saturates on can.</b> All runs at steps 0–4 and both adaptive runs end at 0.90–0.96 success, against 0.42 for the base policy. Differences among them are about the noise of a single eval (±1.5 points), so can does not separate the methods. Square and transport are the real test.</li>
+        <li><b>Late steps end lower.</b> Steps 5, 6 and 7 end at 0.88, 0.84 and 0.77. They move the action least (Fig 3a), and a policy that can only nudge the base action gets less out of RL.</li>
+        <li><b>Steering at a late step helps even without RL.</b> Restarting denoising from the model's clean-action estimate with zero added noise scores 0.81 at step 1 on can, with no training. So part of each step's advantage comes from the change of sampler. The RL gain at step k should be measured against that step's no-RL score, not the base policy. The same holds at step 0: feeding the base policy smaller, bounded noise (tanh of a Gaussian, the shape DSRL's untrained actor outputs) raises it from 0.42 to 0.71 without RL. This base policy simply does better with less noise.</li>
+        <li><b>Re-checked base success on can: 0.421 ± 0.013</b> (1,500 episodes, 3 seeds). The earlier 0.375 came from 200 episodes and was low by sampling noise. Figures and text now use 0.421.</li>
+        <li><b>Adaptive gets close to the best fixed step without a sweep,</b> but random step choice is almost as good (0.93 vs 0.94). On can, learning which step to use adds at most a couple of points beyond mixing steps at random.</li>
+        <li><b>Two baselines are weak.</b> Residual RL in action space ends at about 0.5 on can and fails on square (0.01–0.10) and transport (0.00); it starts near zero there and is likely under-tuned. Searching for one fixed noise vector reaches only 0.09, because this base policy needs fresh noise for each action chunk.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section aria-labelledby="claims-h">
+    <header><div class="eyebrow">What the results need to show</div><h2 id="claims-h">Claims</h2></header>
+    <div class="claims">
+      <div class="claim"><div class="n">1</div><div class="body"><b>Where you steer matters, and the best step depends on the task.</b><span class="muted">Can and square: steps 0–4/0–6 tie at the ceiling, the last steps are worse. Transport: steps 3 and 5 learn faster than DSRL, but at 4.8M DSRL has caught up (0.77 vs 0.75–0.77); steps 14–19 stay near the base level. One seed.</span></div><span class="pill run">partial</span></div>
+      <div class="claim"><div class="n">2</div><div class="body"><b>The reason is a tradeoff between control and staying close to the base policy.</b><span class="muted">Control falls steadily with k on all three tasks (Fig 3a). On can, success is highest at intermediate control (Fig 3c), one seed.</span></div><span class="pill run">partial</span></div>
+      <div class="claim"><div class="n">3</div><div class="body"><b>Picking the step per chunk matches or beats the best fixed step, and the choice follows the task phase.</b><span class="muted">Can and square: adaptive ties the best fixed step, and so does random k. Transport at 4.0M: random k (0.70) is close to the best fixed step (0.77); adaptive (0.61) is behind both. Phase structure not yet analyzed.</span></div><span class="pill run">partial</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="base-h">
+    <header><div class="eyebrow">Step 2</div><h2 id="base-h">Base policies</h2>
+      <p class="prose muted">Deterministic DDIM from <i>x<sub>T</sub></i> ~ N(0, I), same eval protocol as training. Transport uses 20 DDIM steps instead of 100: it loses 1.5 ± 2.3 points and makes every critic update 5× cheaper.</p></header>
+    <div class="figgrid">
+      <figure data-fig="fig_base_success"></figure>
+      <figure data-fig="app_transport_ddim"></figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="can-h">
+    <header><div class="eyebrow">Wave 0</div><h2 id="can-h">Can: every method, one seed</h2>
+      <p class="prose muted">Deterministic eval, 200 episodes per eval. "Final" is the mean of the last 3 evals (984k–1M env steps). "No-RL" is the frozen base policy steered at that step with zero noise and no training. Base policy: 0.421 ± 0.013 (1,500 episodes). Zero noise at step 1, re-checked on 1,500 episodes: 0.826 ± 0.010.</p></header>
+    <figure data-fig="can_results"></figure>
+  </section>
+
+  <section aria-labelledby="norl-h">
+    <header><div class="eyebrow">No training</div><h2 id="norl-h">Steering with zero noise, per step</h2>
+      <p class="prose muted">Success of the frozen base policy when denoising is restarted at step k from the model's clean-action estimate with zero added noise. 200 episodes for can and square, 600 for transport (SE about 0.035 and 0.018). Zero noise at step 0 means one constant starting noise, which fails on every task. At later steps it beats the base policy on can and transport, but not on square at steps 1–3.</p></header>
+    <figure data-fig="norl_per_k"></figure>
+  </section>
+
+  <section aria-labelledby="bound-h">
+    <header><div class="eyebrow">Caveat check</div><h2 id="bound-h">Does a wider noise bound give late steps back their control?</h2>
+      <p class="prose muted">The policy's noise is bounded at ±1 per dimension at every step, a setting inherited from DSRL and never tuned per step. The figure below measures control (the spread of the final action over random noise, 500 dataset states) with the bound widened to ±1.5, ±2 and ±3. Filled markers match or exceed the control that step 0 has at the current ±1 bound; hollow markers fall short. On can and square, middle steps catch up at ±1.5–2. The last step comes closest on can at ±3 (0.083 against 0.084) and stays well short on square and transport. A wider bound also pushes the partly denoised action further from anything the model saw in training, so more control does not have to mean better actions. No training was run; this is a measurement only.</p></header>
+    <figure data-fig="bound_sweep"></figure>
+    <p class="prose muted">We then trained steps 0, 4, 6 and 7 on can at each wider bound (one seed, 1M env steps). The result is below.</p>
+    <figure data-fig="bound_train"></figure>
+  </section>
+
+  <section aria-labelledby="figs-h">
+    <header><div class="eyebrow">Main figures</div><h2 id="figs-h">Results</h2>
+      <p class="prose muted">Generated from whatever runs have finished. Square and transport panels fill in as their runs progress. Panels with only a step-0 point come from runs that just started.</p></header>
+    <div class="key" id="key"></div>
+    <div class="figgrid" id="main-figs"></div>
+  </section>
+
+  <section aria-labelledby="pi0-h">
+    <header><div class="eyebrow">π0 on LIBERO</div><h2 id="pi0-h">Steering π0 on LIBERO tasks 4, 6 and 8</h2>
+      <p class="prose muted">A SAC agent steers a frozen π0 (10 denoising steps) by choosing the noise injected at denoising step k; k=0 is standard DSRL, and the adaptive agent also picks k for each 50-step action chunk (one seed, 1M env steps per run). In exp7 the agent chose one 32-number noise vector that was repeated over all 50 steps of the chunk, and the k&gt;0 runs also saw the raw 50×32 noise in their observation. Exp8 tried structured noise, where the agent sets only each action channel's time-average and the rest stays a fresh Gaussian draw. Exp9 lets the agent set three smooth, low-frequency components per action dimension, shows it π0's own planned actions instead of the raw noise, and fixes the adaptive loss so the noise-entropy term no longer pushes the choice of k (the "k-entropy fix").</p></header>
+    <div class="figgrid" id="pi0-figs"></div>
+  </section>
+
+  <section aria-labelledby="seeds-h">
+    <header><div class="eyebrow">Three seeds</div><h2 id="seeds-h">Seed repeats: π0.5 and π0 on LIBERO, and transport</h2>
+      <p class="prose muted">The same three methods (k=0, k=3, and adaptive k with the k-entropy fix), now with three seeds each: π0.5 on four LIBERO tasks, π0 on LIBERO-10 tasks 4, 6 and 8, and the robomimic transport task. Thin lines are single seeds and thick lines their mean; hollow dots mark runs still training. Data as of Nov 10, 12:27; rerun <span class="mono">scripts/plots_seeds.py</span> to refresh.</p></header>
+    <div class="figgrid" id="seeds-figs"></div>
+  </section>
+
+  <section aria-labelledby="x13-h">
+    <header><div class="eyebrow">Follow-ups on transport (exp13)</div><h2 id="x13-h">Headroom for a learned step, the early dip, and equal control strength</h2>
+      <ul class="prose">
+        <li><b>A learned step choice has little room to help.</b> Using the critic of the uniform-random-k agent (trained to 6M), picking the best step and noise per chunk out of 20 steps × 32 noises scores 0.878. Picking the best of 640 noises at k=0, with the same number of critic calls, scores 0.873 (paired test p = 0.83, 600 episodes per arm). Both beat the agent's own actor (0.825–0.828). The step the critic prefers for a given state also did not repeat across seeds.</li>
+        <li><b>None of the three fixes removes the early dip.</b> All arms drop in success during the first 64k learning steps after the warm start, at k=0 and k=3 alike. The noise trust region recovers slightly earlier than the baseline, but stays within the noise of three seeds. The kick parameterization with a zero-initialised actor starts exactly at the base policy (0.19 at k=0) and still collapses, and it recovers slowest. The runs were stopped at 1.66M once the comparison was clear.</li>
+        <li><b>Equal control strength (one seed).</b> Later steps move the action less, mainly the gripper. These runs scale the noise per action dimension so that steps 3, 5 and 8 move the action as much as step 0 does. At step 8 this changes the picture: the run reached 0.87 by 4.2M, while k=0 and standard-noise k=8 were at 0.61 and 0.53 at 4.0M. At 9M, the mean of the last 3 evals is 0.85 at step 8 (standard noise stopped at 0.82 at 6M), 0.88 at step 3 (standard 0.91) and 0.91 at step 5 (standard 0.90). So part of what makes step 8 worse is lost control strength rather than the step itself. This is one seed. Adaptive k at equal strength is still training (0.93 at 7.0M, level with the standard-noise run) and picks steps 0–5 in two thirds of chunks.</li>
+      </ul></header>
+    <div class="figgrid" id="x13-figs"></div>
+  </section>
+
+  <section aria-labelledby="cw-h">
+    <header><div class="eyebrow">Critical windows (exp14)</div><h2 id="cw-h">Where in denoising does the policy decide?</h2>
+      <p class="prose">Without any RL, we measured at which DDIM step the frozen transport policy commits to each part of its action. It makes its discrete choices (which kind of action, whether to open or close a gripper) in a short stretch around step 5–6 of 20, and that stretch is in the same place in every task phase. In the simulator, changing one chunk at any step left success unchanged, and the trained critic could not tell good chunks from bad ones within a state. So a per-chunk choice of step has nothing to exploit; we recommend steering at one fixed early step (k ≈ 3–8).</p>
+      <p class="prose">The method, figures and full results are in a separate report: <a href="https://claude.ai/artifact/VdSKNEctHZ2TFxf2jVcY7g">Critical Windows in Transport</a>.</p></header>
+  </section>
+
+  <section aria-labelledby="roll-h">
+    <header><div class="eyebrow">Rollouts</div><h2 id="roll-h">Videos by method</h2>
+      <p class="prose muted">Every method is rolled out from the same seeds, so the same seed shows the same starting scene across methods. The overlay shows the chunk index, the step k used for that chunk, and for adaptive runs the policy's probabilities over k. Left camera is agentview; right is the wrist camera (can, square) or frontview (transport). All trained clips use seed 1 of each method. Transport clips come from checkpoints taken while training continues toward 6M steps (fixed steps at about 4.8M, adaptive and random k at about 4.0M); the best fixed step is k=1 on can and square and k=5 on transport. Each method rolled out only 10 episodes for the videos, so success counts in the clips are not a measure of performance.</p></header>
+    <div class="tabs" role="tablist" id="task-tabs"></div>
+    <p class="prose muted" id="task-cap" hidden></p>
+    <div class="methods" id="methods"></div>
+  </section>
+
+  <section aria-labelledby="app-h">
+    <header><div class="eyebrow">Appendix</div><h2 id="app-h">Supporting figures</h2></header>
+    <div class="figgrid" id="app-figs"></div>
+  </section>
+
+  <footer>
+    <div>Figures: <span class="mono">scripts/plots.py</span>. Videos: <span class="mono">scripts/render_rollouts.py</span>. Running logs: <span class="mono">exp_0_setup_pilot</span>, <span class="mono">exp_1_regression_base_eval</span>, <span class="mono">exp_2_wave0_can</span>, <span class="mono">exp_3_wave1_square_transport</span>.</div>
+    <div>Pilot throughput (can, H100): 45 env steps/s per run, 15.7 ms per gradient step; about 1.7 GPU-h per 1M-step run when packed 6 per GPU.</div>
+  </footer>
+</div>
+
+<script>
+const METHODS = [
+  { id: "base",      label: "Base policy",          color: "#8a8d91", dash: true },
+  { id: "dsrl",      label: "DSRL (k=0)",           color: "#2e2e2c" },
+  { id: "best_k",    label: "Best fixed k",         color: "#1c7c7d" },
+  { id: "uniform_k", label: "Random k",             color: "#b5b7ba", dash: true },
+  { id: "adaptive",  label: "Adaptive k (ours)",    color: "#e8590c" },
+  { id: "residual",  label: "Residual SAC",         color: "#8e4585" },
+  { id: "cem",       label: "Fixed-noise search",   color: "#6b6f76", dash: true }
+];
+const TASKS = [
+  { id: "can", label: "Can" }, { id: "square", label: "Square" }, { id: "transport", label: "Transport" },
+  { id: "libero8", label: "LIBERO-10 #8" }
+];
+// LIBERO rollouts (scripts/pi0/render_libero.py) have their own methods; `note` names the checkpoint.
+const ROLL_METHODS = {
+  libero8: [
+    { id: "pi05_base",     label: "π0.5 base (no RL)",       note: "plain π0.5 sampling, replanning every 10 steps · success 0.74 (50 episodes)" },
+    { id: "pi05_k3",       label: "π0.5 steered, k=3",       note: "exp12 pi05_libero_10_t8_qf10_k3_xtfull_lf3_abase_b2.5_s2 · final success 0.98" },
+    { id: "pi05_adaptive", label: "π0.5 steered, adaptive k", note: "exp12 pi05_libero_10_t8_qf10_adaptive_rho0.5_xtfull_lf3_abase_kdetach_b2.5_s0 · final success 0.93" },
+    { id: "pi0_k0",        label: "π0 steered, k=0",         note: "exp9 pi0_t8_k0_xtfull_lf3_abase_b2.5_s0 · final success 0.99" }
+  ]
+};
+const ROLL_CAPTIONS = {
+  libero8: "LIBERO-10 task 8, “put both moka pots on the stove”: deterministic rollouts (argmax k, mean noise) from benchmark init states 0–9 (0–19 for the base policy) of π0.5 steered at k=3 (exp12 seed 2, final success 0.98), π0.5 with adaptive k (exp12 seed 0, 0.93), π0 steered at k=0 (exp9 seed 0, 0.99) and the untrained π0.5 base policy (0.74), with agentview on the left and the wrist camera on the right; 10 episodes per method is far too few to measure success, so the clips only show what the policies do."
+};
+const MAIN_FIGS = [
+  { id: "fig2_sweep", num: "Fig 2", title: "Success vs steering step", what: "Final success (last eval) and env steps to reach 80% of the best success, for each fixed step. On can and square there is one seed per step, and every step but the last ties near the ceiling. On transport, k=0, 3 and 5 have three seeds (grey dots) and are read at their 9M budget; k=8 to 19 are one seed each, read at their 6M budget. Step 5 leads (0.92 mean over seeds), then k=3 (0.88), k=8 (0.88) and k=0 (0.85); success falls off from k=11 (0.75) to k=19 (0.20, the base policy level). Steps-to-80% on transport are late for most steps because of the early drop and recovery.", need: "Fixed-k sweep" },
+  { id: "fig3a_authority", num: "Fig 3a", title: "Control strength vs k", what: "How much the final action moves with the noise (left) and how far it lands from the unsteered base action (right), measured on 500 dataset states per task. Both fall steadily with k. Can drops most after k=0; square's last step has almost no control.", need: "" },
+  { id: "fig3bc_distance", num: "Fig 3b–c", title: "Control vs success", what: "Distance from the base policy at convergence, and success against control strength for each (task, k).", need: "Fixed-k sweep eval rollouts" },
+  { id: "fig4_curves", num: "Fig 4", title: "Learning curves", what: "Success vs env steps for every method. Best fixed k is chosen per task on final success. Methods with three seeds are drawn as the mean (band ±1 SE). On transport, every method shown has finished at 9M; the adaptive runs from before the fix and the exp13 variants are left out. For context only, not plotted: full fine-tuning of the base policy (DPPO) reports about 0.95 on can at 1M env steps under its own eval protocol, read off the DPPO paper's figure.", need: "Wave 1" },
+  { id: "train_curves", num: "Fig 4b", title: "Training reward and success", what: "Training-time return (top) and training success (bottom) against env steps for every method and task, read from the offline wandb logs. Return is the mean over the episodes that finished in each log window; reward is −1 per step until success, so a higher return means faster success. Success is the fraction of training environments that succeeded in the window. Curves are a rolling mean over 4% of each panel's step range (at least 5 log points). Where a method has three seeds the line is their mean and the band ±1 SE. Runs that have covered less than half of the longest run on that panel are left out. Can and square have finished; transport is still running toward 9M (residual SAC stopped at its 3M budget). On can, training success ranks the methods the same way the evals do: steps 0–3, adaptive and random k reach 0.9–0.96, later fixed steps climb more slowly, and residual SAC stays below 0.6.", need: "Offline wandb runs", wide: true },
+  { id: "fig5_summary", num: "Fig 5", title: "Summary and compute", what: "Final success and area under the curve per method and task, plus success vs GPU-hours. On transport, each run is read at its last eval up to 9M: fixed steps and random k at 9M, adaptive k (the version with the k-entropy fix) also at 9M; residual SAC is read at its 3M budget and k=8–19 at their 6M budget. Area under the curve on transport is computed over the full 9M: k=5 0.62 and random k 0.62, adaptive k 0.57, k=0 (DSRL) 0.52. Adaptive k costs about twice the GPU-hours of a fixed step (49 vs 22–25 per run).", need: "Waves 1–2" },
+  { id: "fig6_k_usage", num: "Fig 6", title: "What the adaptive policy picks", what: "How the choice of k shifts during training and how it tracks the phase of the task.", need: "Adaptive runs" },
+  { id: "fig7_ablations", num: "Fig 7", title: "Ablations", what: "Top-3-k restriction, noise trust region, best-of-N at eval, entropy target for k.", need: "Wave 2" }
+];
+const APP_FIGS = [
+  { id: "app_perk_curves", num: "A1", title: "Per-k learning curves", what: "The full sweep data behind Fig 2.", need: "Fixed-k sweep" },
+  { id: "app_k_entropy", num: "A2", title: "Entropy of the k choice", what: "Stability of the categorical head over training.", need: "Adaptive runs" },
+  { id: "app_stability", num: "A3", title: "Per-seed stability", what: "Per-seed curves and runs that fall more than 20 points below their peak.", need: "Waves 1–2" },
+  { id: "app_ep_len", num: "A4", title: "Episode length when successful", what: "How fast each method completes the task.", need: "" }
+];
+const PI0_FIGS = [
+  { id: "pi0_curves", num: "π0 a", title: "Learning curves", wide: true, what: "Deterministic eval success against env steps, 50 episodes per eval (one per initial state), one seed per line. Solid lines are exp9, with a light band of ±1 binomial SE for 50 episodes (up to ±0.07). Faded dashed lines are exp7, with the repeated noise vector. The dotted line and grey band are plain π0 (200 episodes, ±1 SE): 0.76, 0.78 and 0.655 on tasks 4, 6 and 8. Exp9 runs have an eval before training at env step 0; exp7 runs have their first eval near 50k. In exp9, low-frequency k=0, k=3 and adaptive all climb to 0.9–1.0 on every task. On task 8, k=0 and k=3 first collapse to 0.02 and 0.00 at the 50k eval and recover by 100k. In exp7 only k=0 learned, and its curve is noisy: on task 4 it falls from 0.82 to 0.48 at 800k. Exp7 k=3 and adaptive stay below plain π0 at almost every eval; the one exception is a single 0.86 for adaptive on task 6." },
+  { id: "pi0_final", num: "π0 b", title: "Final success, every run", wide: true, what: "Final deterministic success for every π0 run, the mean of the last 3 evals (150 episodes, at about 0.9–1.0M env steps), with ±1 binomial SE. Rows are grouped by round, one seed each. Hollow circles are the exp9 eval at env step 0, before any training, when the agent's noise output is zero; exp7 and exp8 have no step-0 eval. On task 6 the structured run's hollow circle sits under its final point (0.86 both). The dotted line and grey band are plain π0 (200 episodes, ±1 SE). In exp9, low-frequency k=0, k=3 and adaptive end at 0.91–0.99, within about 2 SE of each other on each task. Their step-0 evals are already above plain π0 (0.82–0.92 on tasks 4 and 6, 0.72–0.84 on task 8), so part of the gain over plain π0 comes from the noise layout before any RL. On task 4, RL adds only 0.05–0.11 on top of that start. In exp7, k=3, 6, 8 and adaptive all end below plain π0 (0.08–0.63), and k=0 ends at 0.83, 0.97 and 0.89. In exp8, structured k=0 ends at 0.65–0.83, below exp7 k=0 on every task. Adding the raw noise to the observation of the exp7 k=0 setup drops it to 0.21–0.47." },
+  { id: "pi0_adaptive_k", num: "π0 c", title: "Which step the adaptive agent picks", what: "For each adaptive run, the fraction of training chunks that chose each denoising step k, over the roughly 50k env steps before each eval (about 2,500 chunks per column; k sampled during training). Left: exp7, before the k-entropy fix. Right: exp9, with it. The colour saturates at 0.5; choosing uniformly would give 0.1. Before the fix, the choice drifts to the last step: k=9 takes 41–55% of chunks at the end of training, and up to 61% on task 6. With the fix, no step takes more than 19% at any eval, k=9 ends at 1–5%, and steps 0–4 take 59–73% of chunks at the end. The deterministic eval picks are sharper than these training samples: at the final task 8 eval, k=1 or 2 was chosen in 356 of 799 chunks and k=9 in 6." },
+  { id: "pi0_dist", num: "π0 d", title: "How far steering moves π0's actions", what: "Mean absolute difference between the steered action and π0's unsteered action for the same initial noise, in π0's normalized action space, over the 50 deterministic eval episodes at each eval point. One seed per line. Exp7 k=0 (dashed) moves the actions most, ending at 0.19–0.28. The exp9 low-frequency runs settle at 0.13–0.19. Exp9 structured noise with the ±1 bound barely moves them (0.04–0.06 at the end) yet still ends at 0.85–0.87 success, above plain π0." },
+  { id: "pi0_noise_pattern", num: "π0 e", title: "Noise layout with no training", what: "No training. Success when π0 is steered at step k = 0, 3, 6 or 8 with noise drawn four ways, 100 episodes per point, ±1 binomial SE; points are offset slightly in x. Fresh Gaussian noise at every step of the chunk matches plain π0 (dotted line and band, 200 episodes). Repeating one 32-number Gaussian row over all 50 steps, the exp7 layout, drops success to 0.01–0.30 on every task. The untrained agent's own noise, repeated, scores 0.13–0.61. The same distribution drawn fresh at every step scores 0.78–0.87 on tasks 4 and 6 and 0.48–0.51 on task 8. This is why exp8 and exp9 replaced the repeated layout." },
+  { id: "pi0_zero_noise", num: "π0 f", title: "Zero noise at each step, no training", what: "No training. Success of π0 when denoising restarts at step k from its own clean-action estimate with zero added noise (for k=0, the starting noise is all zeros). 200 episodes per point, ±1 binomial SE. The dotted line and grey band are plain π0 (200 episodes): 0.76, 0.78 and 0.655. On tasks 4 and 6, zero noise is at or above plain π0 at every k (0.81–0.88 and 0.80–0.875), so an agent can gain there just by learning to output little noise. On task 8, zero noise is worse at every k (0.365–0.53)." }
+];
+const X13_FIGS = [
+  { id: "exp13_headroom", num: "X13 a", title: "Headroom: critic-chosen step vs best-of-N at k=0", what: "Uniform-random-k agent at 6M, no further training; 200 episodes per seed, 3 seeds (dots), bars pooled over 600 episodes with ±1 binomial SE. Left two bars: the agent's own actor with its mean or sampled noise. Right two: the critic picks the best of 640 noises at k=0, or the best (k, noise) over 20 steps × 32 noises; both use 640 critic calls per chunk." },
+  { id: "exp13_dip", num: "X13 b", title: "Early-dip ablation", wide: true, what: "Det. success over the first 1.7M env steps, 3 seeds per arm (thin) and their mean (thick). Evals every 64k steps (50 episodes) from 704k; the exp10 baseline has evals every 256k (200 episodes). Every arm dips below the base policy (dotted) right after the 640k-step warm start." },
+  { id: "exp13_equal_strength", num: "X13 c", title: "Equal control strength at steps 3, 5, 8 and adaptive k (seed 1)", wide: true, what: "Panels a–c: solid teal is steering at step k with the standard noise scale; dashed orange is the same step with the noise scaled per action dimension so the action spread matches step 0 (gripper dimension up to ×1.2 at k=3, ×1.4 at k=5, ×1.8 at k=8). Panel d: adaptive k (with the k-entropy fix) with the standard scale, and with per-step scales for all 20 steps (up to ×26.6 on the gripper at the last step). Black: k=0 (DSRL), the same run in every panel. The dotted vertical line marks how far the equal-strength run in that panel has trained (9M for k=3, 5 and 8; 7.0M for adaptive k, data as of Nov 20). Means of the last 3 evals at 9M: k=3 0.88 (standard 0.91), k=5 0.91 (0.90), k=8 0.85 (standard 0.82 at its 6M budget). Adaptive k at equal strength was about 10 points ahead of the standard-scale adaptive run at 5M (0.84 vs 0.73) but the two are level from 6.5M on: 0.90, 0.905 and 0.93 at 6.5–7.0M against 0.92, 0.895 and 0.90 (one seed). It continues to 9M." }
+
+];
+const SEEDS_FIGS = [
+  { id: "pi05_curves", num: "Seeds a", title: "π0.5 on LIBERO: learning curves", wide: true, what: "Deterministic success (50 episodes per eval) against env steps, three seeds per method; the dotted line is untrained π0.5 (74%, 26%, 50% and 20% success on the four tasks). All three methods climb well above it within about 200k steps and end at 92–99% on every task. All 36 runs finished 1M steps." },
+  { id: "pi05_final", num: "Seeds b", title: "π0.5 on LIBERO: final success per seed", wide: true, what: "Each dot is one seed's mean over its last 3 evals (150 episodes); the bar is the mean over seeds. The three methods are within about 2 points of each other on every task (for example 94%, 93% and 92% for k=0, k=3 and adaptive on LIBERO-10 #8, against 74% untrained). Final means (k=0 / k=3 / adaptive): LIBERO-10 #8 0.94/0.93/0.92; LIBERO-90 #14 0.95/0.95/0.94, #28 0.98/0.99/0.99, #77 0.99/0.99/0.97. All 36 runs finished 1M steps." },
+  { id: "pi0_seeds_curves", num: "Seeds c", title: "π0 on LIBERO-10: three seeds", wide: true, what: "The exp9 low-frequency setup with seed 0 (exp9) plus seeds 1 and 2 (exp10), all finished at 1M steps; the dotted line is plain π0 (76%, 78% and 65.5% success). Mean of the last 3 evals over seeds: task 4 93%, 93%, 90%; task 6 97%, 98%, 98%; task 8 97%, 94%, 94% for k=0, k=3 and adaptive, so the seed repeats confirm the one-seed result that all three tie. On task 8 every method briefly collapses at the first eval (50k steps) before recovering." },
+  { id: "transport_seeds_curves", num: "Seeds d", title: "Transport: learning curves, three seeds", wide: true, what: "Deterministic success (200 episodes per eval) against env steps up to 9M, seeds 1–3; there are no evals between step 0 and about 0.9M, so the first segment is a straight line. Thick lines are the mean over seeds. All methods have finished 9M (data as of Nov 15, 15:42). Random k and adaptive k before the fix are shown as dashed means. Base policy 0.195." },
+  { id: "transport_seeds_final", num: "Seeds e", title: "Transport: final success per seed", what: "Each dot is one seed's mean over its last 3 evals at or before 9M steps (600 episodes); the bar is the mean over seeds. k=5 averages 0.91 and k=3 0.90, against 0.83 for k=0 (DSRL), 0.84 for random k and 0.89 for adaptive k before the fix. Adaptive k with the fix averages 0.91 (seeds 0.91, 0.91, 0.91): level with k=5 (0.91) and k=3 (0.90), and 8 points above DSRL. It got there late; at 6.6M it was at 0.83, level with DSRL (0.82) and behind k=3 (0.90) and k=5 (0.91)." },
+  { id: "transport_9M", num: "Seeds f", title: "Transport: training on to 9M steps", wide: true, what: "Transport had not converged at 3M, so the main runs were trained on to 9M (data as of Nov 15, 15:42). (a) Success vs env steps: thin lines one per seed, thick lines the mean over seeds, smoothed by averaging evals within ±250k env steps. k=8 and k=11 are single-seed runs that stopped at 6M. (b) Each dot is one seed's mean of its last 3 evals (600 episodes): filled once the seed has reached 9M, hollow otherwise. Solid bars are the mean over three finished seeds; hatched bars are still training or stopped early, labelled with the least-trained seed. All fixed steps and random k have finished: k=5 0.91 and k=3 0.90 lead k=0 (DSRL, 0.83) and random k (0.84). k=8 reached 0.82 and k=11 0.73 by 6M. Adaptive k with the k-entropy fix finished at 0.91, level with k=3 and k=5, but reached that level later than they did (it was at 0.83 at 6.6M). Adaptive k before the fix is not shown. Base policy 0.195." },
+  { id: "transport_k_choice", num: "Seeds g", title: "Transport: which step adaptive k picks", wide: true, what: "Argmax step per 8-step chunk in the final deterministic eval (200 episodes × 100 chunks). Orange: adaptive k with the k-entropy fix and standard noise, 3 seeds at 9M (bars are the mean, dots single seeds). Purple: the same with equal control strength, seed 1 at 7.0M (success 0.93, still training). (a) With standard noise the policy uses all 20 steps: no step gets more than 13% of chunks on average, and each seed favours a different late step (16, 17 and 14 for seeds 1–3). At equal strength it uses mostly early steps (steps 0–5 in 66% of chunks). (b) Both versions pick later steps as the episode goes on: the mean step rises from about 7.5 in the first 40% of the episode to about 11 after the midpoint with standard noise, and from about 2 to 7 at equal strength. (c) Distance between the executed and the unsteered base action, by chosen step. With standard noise it falls from about 2 at early steps to 0.2 at step 19, so the 35–50% of chunks that pick step 14 or later are small corrections to the base action. At equal strength it stays between 0.8 and 2.3 at every step. Script: <span class=\"mono\">scripts/plots_kchoice.py</span>." },
+];
+// Figures placed inline in the sections above, keyed by their data-fig attribute.
+const SLOT_FIGS = {
+  fig_base_success: { id: "fig_base_success", num: "Base a", title: "Base-policy success", what: "Success of each base policy at the DDIM step count used for training, with ±1 binomial SE. Can uses the 1,500-episode re-check over 3 seeds (0.421 ± 0.013), which replaces the earlier 200-episode estimate of 0.375. Square uses 200 episodes and transport 600. The base policies solve can and square about half the time and transport about one time in five, which leaves room for RL on all three.", need: "" },
+  app_transport_ddim: { id: "app_transport_ddim", num: "Base b", title: "Transport success vs DDIM steps", what: "Transport base success against the number of DDIM steps K, with ±1 binomial SE and the episode count by each point (400 to 600 episodes). K=15 is left out because it does not divide the 100-step schedule. K=20 scores 0.195 against 0.210 at K=100, within the error bars, so training uses K=20, which makes each critic update 5× cheaper.", need: "" },
+  can_results: { id: "can_results", num: "Wave 0", title: "Can: final success with and without RL", what: "For each fixed steering step, the hollow circle is success with no RL and the filled circle is success after 1M env steps of RL. Final is the mean of the last 3 evals (600 episodes, SE about ±0.01, smaller than the markers). With no RL, each step uses zero noise; step 0 (DSRL) uses bounded noise instead, because zero noise there is a single constant input that always fails. Fixed steps are one seed. Adaptive, random k and residual SAC are the mean of 3 seeds, with each seed as a small dot. Fixed-noise search is one fixed noise vector found by CEM. The dashed line is the base policy (0.42). RL helps at every step, and steps 0–4, adaptive and random k all end near 0.93. The later steps end lower, and the two baselines end far below.", need: "Wave 0 can runs" },
+  norl_per_k: { id: "norl_per_k", num: "No RL", title: "Success per step with no training", what: "Success of the frozen base policy when denoising restarts at step k with zero noise (filled) or fresh Gaussian noise (hollow), with no RL. Each point is 200 episodes on can and square and 600 on transport, with ±1 binomial SE. The dashed line and band are the base policy ± SE: can 0.421 (1,500 episodes), square 0.505 (200), transport 0.195 (600, K=20). At k=0, Gaussian noise is the base policy itself. Zero noise at step 0 is one constant starting noise and fails on every task. At later steps zero noise beats the base policy on every can step and on transport from step 5 on, but on square only step 4 is above it, by less than 2 SE. So the RL gain at step k should be measured against that step's no-RL score.", need: "" },
+  bound_sweep: { id: "bound_sweep", num: "Bound", title: "Control strength under wider noise bounds", what: "Control strength at each steering step k, with the noise clipped to ±1 and then scaled to a bound of ±1, ±1.5, ±2 or ±3. Control is the spread of the final action over 64 noise draws, averaged over 500 dataset states and the action dimensions; the y axis is logarithmic. The dashed line is step 0 at the current ±1 bound. Filled markers reach it and hollow ones do not. This is a single measurement with no training and no error bars. Wider bounds let the middle steps recover step-0 control, starting at ±1.5 on all three tasks. The last step stays short on every task and comes closest on can at ±3 (0.083 against 0.084).", need: "" },
+  bound_train: { id: "bound_train", num: "Bound b", title: "Trained success under wider noise bounds (can)", what: "Panel a: final deterministic success on can (mean of the last 3 evals, 600 episodes, ±1 binomial SE) for steering steps 0, 4, 6 and 7 trained with the noise bound at ±1 (the Wave 0 runs), ±1.5, ±2 or ±3; points are offset slightly in x to avoid overlap. Panel b: the learning curves behind each point. One seed. Step 0 is best at ±1 to ±2 and fails completely at ±3 (0.00 for the whole run). Later steps improve with a wider bound: step 4 reaches 0.97 at ±2, step 6 0.92 and step 7 0.85 at ±3, against 0.90, 0.84 and 0.77 at ±1. Wider bounds slow the early learning of steps 4 and 6 (panel b) but end higher.", need: "" }
+};
+
+function el(tag, attrs = {}, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v; else if (k === "text") n.textContent = v; else n.setAttribute(k, v);
+  }
+  for (const k of kids) if (k != null) n.append(k);
+  return n;
+}
+
+function renderFigure(fig, spec) {
+  fig.replaceChildren();
+  const cap = el("figcaption", {},
+    el("div", { class: "t" }, el("span", { class: "eyebrow", text: spec.num }), el("b", { text: spec.title })),
+    el("span", { class: "muted", text: spec.what }));
+  const pending = el("div", { class: "pending" },
+    el("span", { text: "Pending" }),
+    spec.need ? el("span", { class: "need", text: "needs: " + spec.need }) : null);
+  const img = el("img", { src: "assets/figs/" + spec.id + ".png", alt: spec.num + ": " + spec.title, loading: "lazy" });
+  const plate = el("div", { class: "plate" }, img);
+  img.addEventListener("error", () => plate.replaceWith(pending));
+  fig.append(plate, cap);
+}
+
+function figureSlots(containerId, specs) {
+  const box = document.getElementById(containerId);
+  for (const s of specs) { const f = el("figure"); if (s.wide) f.style.gridColumn = "1 / -1"; box.append(f); renderFigure(f, s); }
+}
+
+const pct = x => (100 * x).toFixed(1) + "%";
+const pts = x => (100 * x).toFixed(1);
+
+async function loadJSON(path) {
+  try { const r = await fetch(path); if (!r.ok) return null; return await r.json(); } catch { return null; }
+}
+
+function key() {
+  const k = document.getElementById("key");
+  for (const m of METHODS) {
+    const sw = el("i", { class: "swatch" });
+    sw.style.background = m.dash ? `repeating-linear-gradient(90deg, ${m.color} 0 5px, transparent 5px 8px)` : m.color;
+    k.append(el("span", {}, sw, m.label));
+  }
+}
+
+let manifest = [];
+let currentTask = "can";
+
+function renderRollouts() {
+  const box = document.getElementById("methods");
+  box.replaceChildren();
+  const cap = document.getElementById("task-cap");
+  cap.textContent = ROLL_CAPTIONS[currentTask] || "";
+  cap.hidden = !ROLL_CAPTIONS[currentTask];
+  for (const m of (ROLL_METHODS[currentTask] || METHODS)) {
+    const clips = manifest.filter(c => c.task === currentTask && c.method === m.id)
+      .sort((a, b) => (b.success - a.success) || (a.seed - b.seed));
+    const nSucc = clips.filter(c => c.success).length;
+    const head = el("div", { class: "mhead" }, el("h3", { text: m.label }),
+      clips.length ? el("span", { class: "pill done", text: clips.length + " clips" }) : el("span", { class: "pill wait", text: "not trained yet" }),
+      m.note ? el("span", { class: "mono muted", style: "overflow-wrap: anywhere; font-size: 0.78rem; min-width: 0;", text: m.note }) : null);
+    const grid = el("div", { class: "clips" });
+    if (!clips.length) {
+      grid.append(el("div", { class: "clip-pending", text: "Clips appear once this method's runs finish." }));
+    } else {
+      for (const c of clips) {
+        const v = el("video", { src: "assets/videos/" + c.file, controls: "", muted: "", loop: "", playsinline: "", preload: "metadata" });
+        v.muted = true;
+        const meta = el("div", { class: "meta" },
+          el("span", { class: "tag " + (c.success ? "s" : "f"), text: c.success ? "success" : "fail" }),
+          el("span", { class: "mono", text: (c.task.startsWith("libero") ? "init state " : "seed ") + c.seed }),
+          el("span", { text: c.success ? "solved at step " + c.steps_to_success : c.episode_length + " steps, timed out" }),
+          dlButton(c.file));
+        grid.append(el("div", { class: "clip" }, v, meta));
+      }
+    }
+    box.append(el("div", { class: "mrow" }, head, grid));
+  }
+}
+
+let downloadsApi = null;
+(async () => { try { downloadsApi = await window.claude?.use?.("downloads"); } catch (e) { downloadsApi = null; }
+  document.querySelectorAll(".clip .meta .dl").forEach(b => { b.hidden = !downloadsApi; }); })();
+function dlButton(file) {
+  const b = el("button", { type: "button", class: "dl", text: "Download" });
+  b.hidden = !downloadsApi;
+  b.addEventListener("click", async () => {
+    if (!downloadsApi) return;
+    b.disabled = true; b.textContent = "Preparing…";
+    try {
+      const res = await fetch("assets/videos/" + file);
+      if (!res.ok) throw new Error("fetch " + res.status);
+      await downloadsApi.save({ filename: file, data: await res.blob() });
+      b.textContent = "Saved";
+    } catch (e) {
+      b.textContent = (e && e.code === "declined") ? "Download" : "Download failed";
+    } finally { b.disabled = false; }
+  });
+  return b;
+}
+
+function tabs() {
+  const t = document.getElementById("task-tabs");
+  for (const task of TASKS) {
+    const b = el("button", { role: "tab", id: "tab-" + task.id, "aria-selected": String(task.id === currentTask), text: task.label });
+    b.addEventListener("click", () => {
+      currentTask = task.id;
+      for (const x of t.children) x.setAttribute("aria-selected", String(x.id === "tab-" + task.id));
+      renderRollouts();
+    });
+    t.append(b);
+  }
+}
+
+(async function init() {
+  key();
+  for (const f of document.querySelectorAll("[data-fig]")) renderFigure(f, SLOT_FIGS[f.dataset.fig]);
+  figureSlots("main-figs", MAIN_FIGS);
+  figureSlots("pi0-figs", PI0_FIGS);
+  figureSlots("seeds-figs", SEEDS_FIGS);
+  figureSlots("x13-figs", X13_FIGS);
+  figureSlots("app-figs", APP_FIGS);
+  tabs();
+  renderRollouts();
+  manifest = (await loadJSON("assets/videos/manifest.json")) || [];
+  renderRollouts();
+})();
+</script>

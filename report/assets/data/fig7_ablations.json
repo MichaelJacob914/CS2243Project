@@ -1,0 +1,17 @@
+{
+ "figure": "fig7_ablations",
+ "description": "Final success minus the mean final success of adaptive k (rho=0.5, all k), per seed.",
+ "rows": [
+  {
+   "ablation": "rho_0.25",
+   "label": "\u03c1 = 0.25",
+   "task": "can",
+   "seed": 1,
+   "delta": 0.011666666666666603
+  }
+ ],
+ "pending": [
+  "noise trust region on/off",
+  "best-of-N at eval"
+ ]
+}

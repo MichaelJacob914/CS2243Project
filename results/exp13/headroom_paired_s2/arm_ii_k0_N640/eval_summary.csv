@@ -1,0 +1,2 @@
+env_steps,mode,wall_s,gpu_s,success,reward,mean_ep_len_success,mean_a_minus_base,k_entropy,pi_k_entropy,episodes
+6000000,stoch,441.8,441.8,0.945,-3.0304,283.13227513227514,1.5230964422225952,-0.0,nan,200

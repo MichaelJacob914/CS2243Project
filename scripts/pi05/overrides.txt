@@ -1,0 +1,8 @@
+# upstream openpi's own uv overrides
+ml-dtypes==0.4.1
+tensorstore==0.1.74
+mujoco==3.3.1
+# Drop lerobot (training data loader only; its rerun-sdk needs glibc 2.31 wheels, the cluster has 2.28 / RHEL8) and
+# gym-aloha (unused; pins mujoco<3). The impossible marker removes them from the resolution.
+lerobot ; python_version < "0"
+gym-aloha ; python_version < "0"

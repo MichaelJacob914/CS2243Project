@@ -1,0 +1,309 @@
+{
+ "figure": "fig3a_authority",
+ "description": "Authority diagnostic (scripts/authority.py, dataset states): for each steering step k, the per-dim std of the final action over w ~ N(0, I) with x_T fixed, and the mean ||a - a_base||. k is normalized by K-1 so tasks with different K share an axis.",
+ "n_states": {
+  "can": 500,
+  "square": 500,
+  "transport": 500
+ },
+ "n_w": {
+  "can": 64,
+  "square": 64,
+  "transport": 64
+ },
+ "sources": {
+  "can": "results/authority/authority_can_K8_dataset.json",
+  "square": "results/authority/authority_square_K8_dataset.json",
+  "transport": "results/authority/authority_transport_K20_dataset.json"
+ },
+ "rows": [
+  {
+   "task": "can",
+   "K": 8,
+   "k": 0,
+   "k_norm": 0.0,
+   "action_std": 0.13137874007225037,
+   "dist_to_base": 1.2246137857437134
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 1,
+   "k_norm": 0.14285714285714285,
+   "action_std": 0.09616031497716904,
+   "dist_to_base": 0.984113335609436
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 2,
+   "k_norm": 0.2857142857142857,
+   "action_std": 0.08971905708312988,
+   "dist_to_base": 0.8785579800605774
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 3,
+   "k_norm": 0.42857142857142855,
+   "action_std": 0.08030698448419571,
+   "dist_to_base": 0.7655764818191528
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 4,
+   "k_norm": 0.5714285714285714,
+   "action_std": 0.07084602862596512,
+   "dist_to_base": 0.6667795777320862
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 5,
+   "k_norm": 0.7142857142857143,
+   "action_std": 0.06082257628440857,
+   "dist_to_base": 0.5537381768226624
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 6,
+   "k_norm": 0.8571428571428571,
+   "action_std": 0.05066904425621033,
+   "dist_to_base": 0.43858760595321655
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 7,
+   "k_norm": 1.0,
+   "action_std": 0.035617005079984665,
+   "dist_to_base": 0.2758631706237793
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 0,
+   "k_norm": 0.0,
+   "action_std": 0.07774391025304794,
+   "dist_to_base": 0.7180949449539185
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 1,
+   "k_norm": 0.14285714285714285,
+   "action_std": 0.0670853778719902,
+   "dist_to_base": 0.6331042051315308
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 2,
+   "k_norm": 0.2857142857142857,
+   "action_std": 0.06272150576114655,
+   "dist_to_base": 0.5774813294410706
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 3,
+   "k_norm": 0.42857142857142855,
+   "action_std": 0.055651817470788956,
+   "dist_to_base": 0.5068689584732056
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 4,
+   "k_norm": 0.5714285714285714,
+   "action_std": 0.04704910144209862,
+   "dist_to_base": 0.4395374655723572
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 5,
+   "k_norm": 0.7142857142857143,
+   "action_std": 0.041038088500499725,
+   "dist_to_base": 0.38025879859924316
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 6,
+   "k_norm": 0.8571428571428571,
+   "action_std": 0.03355621173977852,
+   "dist_to_base": 0.29934433102607727
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 7,
+   "k_norm": 1.0,
+   "action_std": 0.01302291639149189,
+   "dist_to_base": 0.10695639997720718
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 0,
+   "k_norm": 0.0,
+   "action_std": 0.0832119807600975,
+   "dist_to_base": 1.8114392757415771
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 1,
+   "k_norm": 0.05263157894736842,
+   "action_std": 0.08013379573822021,
+   "dist_to_base": 1.7645716667175293
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 2,
+   "k_norm": 0.10526315789473684,
+   "action_std": 0.07903953641653061,
+   "dist_to_base": 1.7260738611221313
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 3,
+   "k_norm": 0.15789473684210525,
+   "action_std": 0.07741647213697433,
+   "dist_to_base": 1.6744017601013184
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 4,
+   "k_norm": 0.21052631578947367,
+   "action_std": 0.07548069953918457,
+   "dist_to_base": 1.6162328720092773
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 5,
+   "k_norm": 0.2631578947368421,
+   "action_std": 0.07298789173364639,
+   "dist_to_base": 1.5479614734649658
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 6,
+   "k_norm": 0.3157894736842105,
+   "action_std": 0.07012710720300674,
+   "dist_to_base": 1.4714078903198242
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 7,
+   "k_norm": 0.3684210526315789,
+   "action_std": 0.06674046814441681,
+   "dist_to_base": 1.387995719909668
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 8,
+   "k_norm": 0.42105263157894735,
+   "action_std": 0.06322403997182846,
+   "dist_to_base": 1.3063714504241943
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 9,
+   "k_norm": 0.47368421052631576,
+   "action_std": 0.059885114431381226,
+   "dist_to_base": 1.2290208339691162
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 10,
+   "k_norm": 0.5263157894736842,
+   "action_std": 0.05671880766749382,
+   "dist_to_base": 1.1516444683074951
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 11,
+   "k_norm": 0.5789473684210527,
+   "action_std": 0.053616635501384735,
+   "dist_to_base": 1.079298496246338
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 12,
+   "k_norm": 0.631578947368421,
+   "action_std": 0.05071413144469261,
+   "dist_to_base": 1.0102962255477905
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 13,
+   "k_norm": 0.6842105263157895,
+   "action_std": 0.04780889302492142,
+   "dist_to_base": 0.9369270205497742
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 14,
+   "k_norm": 0.7368421052631579,
+   "action_std": 0.04471392557024956,
+   "dist_to_base": 0.8590965270996094
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 15,
+   "k_norm": 0.7894736842105263,
+   "action_std": 0.04122006148099899,
+   "dist_to_base": 0.7756333351135254
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 16,
+   "k_norm": 0.8421052631578947,
+   "action_std": 0.03713694214820862,
+   "dist_to_base": 0.6840117573738098
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 17,
+   "k_norm": 0.8947368421052632,
+   "action_std": 0.03202857822179794,
+   "dist_to_base": 0.5752953290939331
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 18,
+   "k_norm": 0.9473684210526315,
+   "action_std": 0.024825444445014,
+   "dist_to_base": 0.4296141266822815
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 19,
+   "k_norm": 1.0,
+   "action_std": 0.01132770162075758,
+   "dist_to_base": 0.18031786382198334
+  }
+ ]
+}

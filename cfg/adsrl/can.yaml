@@ -1,0 +1,136 @@
+# Copied from dsrl/cfg/robomimic/dsrl_can.yaml; adsrl additions are marked "adsrl".
+# Relative data paths are relative to dsrl/ (train_adsrl.py makes them absolute);
+# log_dir is relative to the project root.
+defaults:
+  - _self_
+hydra:
+  run:
+    dir: ${logdir}
+
+# adsrl: deterministic name/logdir so resume=true finds the run. Override name= for sweeps.
+name: ${env_name}_${steer.mode}_k${steer.k}_s${seed}
+logdir: ${log_dir}/adsrl/${env_name}/${name}
+resume: False # adsrl: continue from ${logdir}/checkpoint/latest.pt
+base_policy_path: ./dppo/log/robomimic-pretrain/can/can_pre_diffusion_mlp_ta4_td20/2024-06-28_13-29-54/checkpoint/state_5000.pt
+offline_data_path: ./dppo/log/robomimic/can_test/train_offline.npz
+dppo_path: ./dppo
+normalization_path: ./dppo/log/robomimic/${env_name}/normalization.npz
+
+algorithm: dsrl_na # train_adsrl.py supports dsrl_na only
+
+seed: 1
+device: cuda:0
+use_wandb: True
+env_name: can
+log_dir: ./logs
+obs_dim: 23
+action_dim: 7
+cond_steps: 1
+act_steps: 4 # action chunk size of base policy
+load_offline_data: False # not supported by train_adsrl.py (offline data has no x_T)
+deterministic_eval: True # adsrl: plan protocol; runs both stochastic and deterministic eval
+
+eval_interval: 3000 # in vec-env steps (chunks per env)
+num_evals: 200
+checkpoint_every_evals: 1 # adsrl: save model + replay buffer every N evals
+checkpoint_every_min: 0 # adsrl: also save latest.pt (+ buffer) when this many minutes passed since the last save; 0 = off
+eval_dump_every: 1 # adsrl: save eval_rollouts/*.npz every N evals (final eval always)
+
+# adsrl: steering
+steer:
+  mode: fixed # fixed | adaptive | residual
+  k: 0 # fixed mode: steering step in [0, K-1]; k=0 is standard DSRL
+  rho: 0.5 # adaptive: target entropy of pi(k) = rho * log K'
+  k_ent_coef: auto # adaptive: alpha_k ("auto", "auto_<init>", or a float)
+  freeze_k_uniform: False # adaptive: uniform-random-k control (pi(k) fixed, no alpha_k)
+  k_entropy_bias: keep # adaptive: keep | detach (stop-grad pi(k) in the a_w log pi(w|k) term)
+  k_subset: null # adaptive: list of allowed k, e.g. [0,3,5]; null = all K
+  xT_inputs: auto # which networks see x_T: none | actor_noise_critic | all | auto (= none at fixed k=0, else actor_noise_critic). Q(s,a) never needs it.
+  residual_beta: 0.1 # residual mode: residual SAC action da in [-beta, beta]^(H*A), env executes clip(a_base + da)
+  w_scale: 1.0 # fixed/adaptive: the sampler decodes w_scale * w (actor and noise critic stay in [-1, 1]); residual requires 1.0
+  w_scale_dims: null # fixed/adaptive: path (from project root) to a per-dim noise scale (.npy/.json, H*A or A values tiled over H), applied on top of w_scale
+  param: absolute # fixed/adaptive: absolute (actor w is the step-k noise) | kick (noise = eps_hat_k + w_scale * w; w = 0 is the base action at every k)
+  actor_zero_init: False # fixed/adaptive: zero the actor mean output layer (with kick, the untrained det actor = base policy)
+  actor_log_std_init: null # fixed/adaptive: init the actor log_std head to this constant (weight 0, bias = value); null = default init. e.g. -1.4 (std 0.24)
+
+env:
+  n_envs:  4
+  n_eval_envs: 25
+  name: ${env_name}
+  max_episode_steps: 300
+  reset_at_iteration: False
+  save_video: False
+  best_reward_threshold_for_success: 1
+  reward_offset: 1
+  wrappers:
+    robomimic_lowdim:
+      normalization_path: ${normalization_path}
+      low_dim_keys: ['robot0_eef_pos',
+                    'robot0_eef_quat',
+                    'robot0_gripper_qpos',
+                    'object'] # same order of preprocessed observations
+    multi_step:
+      n_obs_steps: ${cond_steps}
+      n_action_steps: ${act_steps}
+      max_episode_steps: ${env.max_episode_steps}
+      reset_within_step: True
+
+wandb:
+  project: adsrl
+  group: robomimic-${env_name}
+  mode: online # online | offline | disabled
+
+train:
+  total_timesteps: 1000000 # adsrl: raw env steps, incl. warm-start rollouts
+  buffer_size: 300000 # adsrl: transitions (chunks); >= total_timesteps / act_steps
+  tf32: False # adsrl: TF32 matmuls
+  compile: False # adsrl: torch.compile the RL networks in place
+  compile_mode: default # adsrl: default | reduce-overhead | max-autotune
+  tau: 0.005 # Target update rate
+  actor_lr: 3e-4
+  batch_size: 256
+  train_freq: 1 # Update model after this many environment steps
+  utd: 20 # Number of gradient steps to take per update
+  noise_critic_grad_steps: 10 # Number of gradient steps to take per update when fitting noise critic
+  use_layer_norm: True
+  layer_size: 2048 # Layer size for actor and critic
+  num_layers: 3 # Number of layers for actor and critic
+  discount: 0.99
+  ent_coef: -1 # -1 = auto (learned, init 1.0) | auto_<init> | fixed float
+  early_eval_every: null # adsrl: extra det-only evals every this many env steps (null = off), on top of eval_interval
+  early_eval_until: null # adsrl: last env step of the early-eval window (required with early_eval_every)
+  early_eval_episodes: 50 # adsrl: episodes per early eval (rounded down to a multiple of n_eval_envs)
+  target_ent: 0.0
+  init_rollout_steps: 1501 # Number of rollout steps of standard diffusion policy to collect for replay buffer before training starts
+  action_magnitude: 1.5 # Maximum action magnitude in noise action space (dsrl_sac only; unused)
+  n_critics: 2 # Number of critic Q networks
+  critic_backup_combine_type: min
+  trust_region: # adsrl: noise trust region E||w||^2/D <= bound via a Lagrange multiplier (LP-DS); fixed/adaptive only
+    enabled: False
+    bound: 0.3 # E[w_i^2] of N(0,1) clipped to [-1,1] is ~0.29
+    lr: 1e-3 # dual ascent step on lambda per actor update
+    init: 0.0 # initial lambda
+
+model:
+  _target_: model.diffusion.diffusion_eval.DiffusionEval
+  ft_denoising_steps: 0
+  predict_epsilon: True
+  denoised_clip_value: 1.0
+  randn_clip_value: 3
+  network_path: ${base_policy_path}
+  network:
+    _target_: model.diffusion.mlp_diffusion.DiffusionMLP
+    time_dim: 16
+    mlp_dims: [512, 512, 512]
+    residual_style: True
+    cond_dim: ${eval:'${obs_dim} * ${cond_steps}'}
+    horizon_steps: ${act_steps}
+    action_dim: ${action_dim}
+  horizon_steps: ${act_steps}
+  obs_dim: ${obs_dim}
+  action_dim: ${action_dim}
+  denoising_steps: 20
+  device: ${device}
+  use_ddim: True
+  ddim_steps: 8
+  controllable_noise: True

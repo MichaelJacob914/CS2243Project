@@ -1,0 +1,150 @@
+{
+ "figure": "bound_train",
+ "description": "can, seed 1, deterministic eval (200 episodes each). Final = mean of the last 3 evals; SE is binomial over the pooled episodes. Bound c scales the tanh-bounded noise w.",
+ "rows": [
+  {
+   "task": "can",
+   "k": 0,
+   "bound_c": 1.0,
+   "final_success": 0.9316666666666666,
+   "se": 0.010300800040845446,
+   "n_episodes": 600,
+   "run": "fixed_k0_s1"
+  },
+  {
+   "task": "can",
+   "k": 4,
+   "bound_c": 1.0,
+   "final_success": 0.9016666666666667,
+   "se": 0.012156197931431854,
+   "n_episodes": 600,
+   "run": "fixed_k4_s1"
+  },
+  {
+   "task": "can",
+   "k": 6,
+   "bound_c": 1.0,
+   "final_success": 0.84,
+   "se": 0.014966629547095767,
+   "n_episodes": 600,
+   "run": "fixed_k6_s1"
+  },
+  {
+   "task": "can",
+   "k": 7,
+   "bound_c": 1.0,
+   "final_success": 0.7733333333333333,
+   "se": 0.017092341798248367,
+   "n_episodes": 600,
+   "run": "fixed_k7_s1"
+  },
+  {
+   "task": "can",
+   "k": 0,
+   "bound_c": 1.5,
+   "final_success": 0.9266666666666667,
+   "se": 0.010642333355954377,
+   "n_episodes": 600,
+   "run": "fixed_k0_c1.5_s1"
+  },
+  {
+   "task": "can",
+   "k": 4,
+   "bound_c": 1.5,
+   "final_success": 0.9016666666666667,
+   "se": 0.012156197931431854,
+   "n_episodes": 600,
+   "run": "fixed_k4_c1.5_s1"
+  },
+  {
+   "task": "can",
+   "k": 6,
+   "bound_c": 1.5,
+   "final_success": 0.8583333333333334,
+   "se": 0.014235941733409734,
+   "n_episodes": 600,
+   "run": "fixed_k6_c1.5_s1"
+  },
+  {
+   "task": "can",
+   "k": 7,
+   "bound_c": 1.5,
+   "final_success": 0.765,
+   "se": 0.01730967937311376,
+   "n_episodes": 600,
+   "run": "fixed_k7_c1.5_s1"
+  },
+  {
+   "task": "can",
+   "k": 0,
+   "bound_c": 2.0,
+   "final_success": 0.9316666666666666,
+   "se": 0.010300800040845446,
+   "n_episodes": 600,
+   "run": "fixed_k0_c2_s1"
+  },
+  {
+   "task": "can",
+   "k": 4,
+   "bound_c": 2.0,
+   "final_success": 0.965,
+   "se": 0.00750277726356492,
+   "n_episodes": 600,
+   "run": "fixed_k4_c2_s1"
+  },
+  {
+   "task": "can",
+   "k": 6,
+   "bound_c": 2.0,
+   "final_success": 0.8683333333333333,
+   "se": 0.013804018470210984,
+   "n_episodes": 600,
+   "run": "fixed_k6_c2_s1"
+  },
+  {
+   "task": "can",
+   "k": 7,
+   "bound_c": 2.0,
+   "final_success": 0.8133333333333334,
+   "se": 0.015907137927265138,
+   "n_episodes": 600,
+   "run": "fixed_k7_c2_s1"
+  },
+  {
+   "task": "can",
+   "k": 0,
+   "bound_c": 3.0,
+   "final_success": 0.0,
+   "se": 0.0,
+   "n_episodes": 600,
+   "run": "fixed_k0_c3_s1"
+  },
+  {
+   "task": "can",
+   "k": 4,
+   "bound_c": 3.0,
+   "final_success": 0.9333333333333332,
+   "se": 0.010183501544346317,
+   "n_episodes": 600,
+   "run": "fixed_k4_c3_s1"
+  },
+  {
+   "task": "can",
+   "k": 6,
+   "bound_c": 3.0,
+   "final_success": 0.9233333333333333,
+   "se": 0.010861928073849572,
+   "n_episodes": 600,
+   "run": "fixed_k6_c3_s1"
+  },
+  {
+   "task": "can",
+   "k": 7,
+   "bound_c": 3.0,
+   "final_success": 0.8516666666666666,
+   "se": 0.014510373045718915,
+   "n_episodes": 600,
+   "run": "fixed_k7_c3_s1"
+  }
+ ]
+}

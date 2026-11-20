@@ -1,0 +1,3 @@
+env_steps,mode,wall_s,gpu_s,success,reward,mean_ep_len_success,mean_a_minus_base,k_entropy,pi_k_entropy
+0,det,3113.4,3113.4,0.285,-7.64435,686.3157894736842,1.1268404722213745,-0.0,nan
+0,det,6186.6,6186.6,0.27,-7.439116666666667,602.2222222222222,1.6761218309402466,-0.0,nan

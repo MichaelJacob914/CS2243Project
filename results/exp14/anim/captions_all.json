@@ -1,0 +1,337 @@
+{
+ "duration": 333.33,
+ "scenes": [
+  [
+   "S01Question",
+   0.0,
+   31.4
+  ],
+  [
+   "S02Toy",
+   31.4,
+   56.07
+  ],
+  [
+   "S03Measure",
+   56.07,
+   115.3
+  ],
+  [
+   "S04Control",
+   115.3,
+   158.32999999999998
+  ],
+  [
+   "S05Transport",
+   158.32999999999998,
+   178.42999999999998
+  ],
+  [
+   "S06Finding1",
+   178.42999999999998,
+   216.72999999999996
+  ],
+  [
+   "S07Finding2",
+   216.72999999999996,
+   246.32999999999996
+  ],
+  [
+   "S08Finding3",
+   246.32999999999996,
+   272.12999999999994
+  ],
+  [
+   "S09Finding4",
+   272.12999999999994,
+   299.72999999999996
+  ],
+  [
+   "S10Recommend",
+   299.72999999999996,
+   333.33
+  ]
+ ],
+ "captions": [
+  {
+   "scene": "S01Question",
+   "t": 4.8,
+   "text": "A diffusion policy controls the robot one action chunk at a time."
+  },
+  {
+   "scene": "S01Question",
+   "t": 8.3,
+   "text": "Each chunk starts as random noise. The policy removes the noise in 20 denoising steps, numbered 0 to 19."
+  },
+  {
+   "scene": "S01Question",
+   "t": 12.3,
+   "text": "DSRL trains an RL agent to steer the policy by choosing the noise it starts from, at step 0."
+  },
+  {
+   "scene": "S01Question",
+   "t": 17.5,
+   "text": "Our variant runs the policy's own denoising up to a later step k, then swaps in the agent's noise there. The adaptive version picks k anew for every chunk."
+  },
+  {
+   "scene": "S01Question",
+   "t": 22.8,
+   "text": "Picking k per chunk only helps if the best step to steer at changes from chunk to chunk."
+  },
+  {
+   "scene": "S01Question",
+   "t": 26.8,
+   "text": "If the policy has such windows and they move between chunks, picking k per chunk makes sense. If they sit at one step, a fixed k is enough."
+  },
+  {
+   "scene": "S02Toy",
+   "t": 32.4,
+   "text": "First, a toy problem with a known choice. A point moves from the white dot to the star, going above or below the disc."
+  },
+  {
+   "scene": "S02Toy",
+   "t": 37.4,
+   "text": "A small diffusion policy, trained on such demos, outputs the next 8 moves as one chunk. These are chunks it produced: some go above, some below."
+  },
+  {
+   "scene": "S02Toy",
+   "t": 44.9,
+   "text": "How the policy makes a chunk: at step 0 the chunk is pure noise, and each denoising step removes some of it."
+  },
+  {
+   "scene": "S02Toy",
+   "t": 52.5,
+   "text": "Somewhere between step 0 and step 19, the policy decides: above or below. The question is where."
+  },
+  {
+   "scene": "S03Measure",
+   "t": 57.1,
+   "text": "How do we find where it decides? Take a finished chunk (here, one that goes above the disc) ..."
+  },
+  {
+   "scene": "S03Measure",
+   "t": 61.2,
+   "text": "... add noise back to it, up to some step k (here k = 5), so it is partly undone ..."
+  },
+  {
+   "scene": "S03Measure",
+   "t": 65.5,
+   "text": "... and let the policy denoise it again, 32 times, from step k to the end."
+  },
+  {
+   "scene": "S03Measure",
+   "t": 69.5,
+   "text": "Redraws are coloured by where they end: orange above, blue below. If they disagree, the route was still open at step k; if all agree, it was decided."
+  },
+  {
+   "scene": "S03Measure",
+   "t": 86.4,
+   "text": "Noise back to step 0: the redraws split between the routes. Noise back to a late step: they keep the original route. (32 redraws, so the count is noisy.)"
+  },
+  {
+   "scene": "S03Measure",
+   "t": 91.4,
+   "text": "Now do this for many chunks, coloured by chunk (4 shown; the measurement uses 64), and ask how the variation in route splits up."
+  },
+  {
+   "scene": "S03Measure",
+   "t": 95.4,
+   "text": "The resolved fraction is the share of that variation that lies between chunks. 0: nothing is decided yet. 1: the route is fully decided."
+  },
+  {
+   "scene": "S03Measure",
+   "t": 100.8,
+   "text": "Sweep k from 0 to 19 and plot the resolved fraction at each step."
+  },
+  {
+   "scene": "S03Measure",
+   "t": 111.2,
+   "text": "For this policy, the route goes from 10% to 90% decided between steps 2 and 10."
+  },
+  {
+   "scene": "S04Control",
+   "t": 116.3,
+   "text": "But the resolved fraction rises from 0 to 1 for any distribution, so a rise alone proves nothing."
+  },
+  {
+   "scene": "S04Control",
+   "t": 120.3,
+   "text": "So we compare with a control: a Gaussian with the same mean and spread as the policy's chunks, run through the same sampler code. It has no two routes to choose between."
+  },
+  {
+   "scene": "S04Control",
+   "t": 131.8,
+   "text": "The control's redraws fan out and settle gradually, and its curve rises slowly."
+  },
+  {
+   "scene": "S04Control",
+   "t": 135.8,
+   "text": "A critical window is a rise clearly steeper than the control's. From 10% to 90% decided: about 8 steps for the policy, 15 for the control."
+  },
+  {
+   "scene": "S04Control",
+   "t": 141.9,
+   "text": "Past the disc, no route is left to choose. The curve now tracks the chunk's main direction of variation; policy and control should match."
+  },
+  {
+   "scene": "S04Control",
+   "t": 151.2,
+   "text": "They do: both settle gradually, and the two curves overlap."
+  },
+  {
+   "scene": "S04Control",
+   "t": 154.2,
+   "text": "The method passed this toy check in 8 of 9 repeats with fresh random seeds, all run before any robot data were collected."
+  },
+  {
+   "scene": "S05Transport",
+   "t": 160.3,
+   "text": "Now the robot. The policy is the frozen diffusion policy for robomimic transport: two arms pass an object from one bin to another."
+  },
+  {
+   "scene": "S05Transport",
+   "t": 164.8,
+   "text": "We measured 319 robot states, from demos and policy rollouts, labelled by task phase."
+  },
+  {
+   "scene": "S05Transport",
+   "t": 170.8,
+   "text": "For each property we measured the resolved-fraction curve of the policy and of its Gaussian control: 128 chunks \u00d7 16 redraws at every step."
+  },
+  {
+   "scene": "S05Transport",
+   "t": 174.8,
+   "text": "The tests and their thresholds were written down before any robot data were collected."
+  },
+  {
+   "scene": "S06Finding1",
+   "t": 181.4,
+   "text": "Each dot is one state, coloured by task phase: the width of the policy's rise (up) against the control's (across). Below the diagonal, the policy decides faster."
+  },
+  {
+   "scene": "S06Finding1",
+   "t": 185.4,
+   "text": "Widths here are measured on the log-SNR noise scale, not in steps: the distance from 10% to 90% decided."
+  },
+  {
+   "scene": "S06Finding1",
+   "t": 195.6,
+   "text": "Action groups: 44 of 77 states have a clear window. Grippers: 60 and 71 of 319."
+  },
+  {
+   "scene": "S06Finding1",
+   "t": 199.1,
+   "text": "'Clearly narrower' means the policy's 95% interval for the width lies wholly below the control's. Gripper dots appear only where the control's gripper ever flips."
+  },
+  {
+   "scene": "S06Finding1",
+   "t": 204.6,
+   "text": "Run the same test with a second Gaussian in place of the policy and almost nothing passes (0 of 77 for action groups), so these are not false positives."
+  },
+  {
+   "scene": "S06Finding1",
+   "t": 209.6,
+   "text": "The critic's value has no window: its dots sit on the diagonal, and only 11 of 319 states pass, which does not beat the control-vs-control rate by the 10 points the test required."
+  },
+  {
+   "scene": "S06Finding1",
+   "t": 213.6,
+   "text": "So at many states the policy makes its discrete choices inside a narrow window. The critic's value has none."
+  },
+  {
+   "scene": "S07Finding2",
+   "t": 218.7,
+   "text": "For every state we read off the step where each property is half decided, and group the states by task phase."
+  },
+  {
+   "scene": "S07Finding2",
+   "t": 227.7,
+   "text": "White bars are phase medians. The discrete choices sit near step 5\u20136 in every phase. The critic value settles late, near step 16\u201317, also in every phase."
+  },
+  {
+   "scene": "S07Finding2",
+   "t": 233.2,
+   "text": "To count as moving, two phases had to differ by more than one step, with p < 0.01 (both needed). Action groups: 0.42 steps; gripper arm 1: 0.62."
+  },
+  {
+   "scene": "S07Finding2",
+   "t": 237.7,
+   "text": "Gripper arm 0 shows a 3.6-step gap, but it comes from the place phase, where only 3 states had a curve, and p = 0.044 misses the bar."
+  },
+  {
+   "scene": "S07Finding2",
+   "t": 242.2,
+   "text": "So choosing the step by task phase has nothing to gain. States within a phase still spread out, so section 4 tests per-chunk choice directly."
+  },
+  {
+   "scene": "S08Finding3",
+   "t": 249.9,
+   "text": "Steering at step k can only change what is still undecided at k. Green: the share of the critic's value still open, median of 319 states."
+  },
+  {
+   "scene": "S08Finding3",
+   "t": 255.5,
+   "text": "Yellow: gain in success rate from RL at that fixed step after about 6M env steps (0.6 means +60 points over no RL)."
+  },
+  {
+   "scene": "S08Finding3",
+   "t": 259.0,
+   "text": "The two rank the eight steps almost the same way (Spearman \u03c1 = 0.95)."
+  },
+  {
+   "scene": "S08Finding3",
+   "t": 263.0,
+   "text": "But the agreement comes from the late steps. From step 14 on, little is left to change, and the RL gain drops."
+  },
+  {
+   "scene": "S08Finding3",
+   "t": 267.5,
+   "text": "Among steps 0\u201311 the RL gain barely changes (0.52 to 0.64). So this explains why late steering fails, but it does not pick a best early step."
+  },
+  {
+   "scene": "S09Finding4",
+   "t": 273.1,
+   "text": "So far we trusted the critic. Now real outcomes: at 20 states, regenerate only the first chunk from step 4, 9, 12, 15 or 18 (32 noised chunks, 8 redraws each), then let the policy finish: 25,600 episodes."
+  },
+  {
+   "scene": "S09Finding4",
+   "t": 280.6,
+   "text": "The success rate was 0.47\u20130.49 at every step, and the chunk drawn decided almost none of it (yellow, near 0)."
+  },
+  {
+   "scene": "S09Finding4",
+   "t": 285.6,
+   "text": "Same split as before: between the 32 noised chunks against among their redraws, each run to the end. For the critic's value it is 17% to 87% (green)."
+  },
+  {
+   "scene": "S09Finding4",
+   "t": 291.1,
+   "text": "The critic tells easy states from hard ones well (AUC 0.86), but ranks chunks within a state barely better than chance (0.57; 0.5 is chance)."
+  },
+  {
+   "scene": "S09Finding4",
+   "t": 295.6,
+   "text": "Picking the critic's top quarter of chunks raised success by at most 3 points, and most at the earliest step."
+  },
+  {
+   "scene": "S10Recommend",
+   "t": 302.7,
+   "text": "Steer at one fixed early step, k \u2248 3\u20138: around the window, which sits at the same place in every phase, and where RL gains are high and flat."
+  },
+  {
+   "scene": "S10Recommend",
+   "t": 309.2,
+   "text": "Drop the learned per-chunk choice of step. The window does not move, and the critic cannot tell an adaptive agent which step to use."
+  },
+  {
+   "scene": "S10Recommend",
+   "t": 316.7,
+   "text": "Longer RL runs (8\u20139M env steps) agree: fixed k = 3 or 5 reach 0.91\u20130.92, against 0.87 for adaptive k (run before its entropy fix) and 0.82 at k = 0."
+  },
+  {
+   "scene": "S10Recommend",
+   "t": 323.2,
+   "text": "The main limit: the simulator test changed only the first chunk. That full test has not been run."
+  }
+ ]
+}

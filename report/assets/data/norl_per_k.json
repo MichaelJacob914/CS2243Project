@@ -1,0 +1,455 @@
+{
+ "figure": "norl_per_k",
+ "description": "Frozen base policy restarted at step k from its clean-action estimate with noise w (w=0 or w~N(0,I)), no RL; binomial SE. k=0 with w~N(0,I) is the base policy itself.",
+ "base": {
+  "can": {
+   "success": 0.42133333333333334,
+   "se": 0.01274915828739439,
+   "n": 1500
+  },
+  "square": {
+   "success": 0.505,
+   "se": 0.03535357124817803,
+   "n": 200
+  },
+  "transport": {
+   "success": 0.195,
+   "se": 0.016174826119621812,
+   "n": 600
+  }
+ },
+ "rows": [
+  {
+   "task": "can",
+   "K": 8,
+   "k": 0,
+   "w_mode": "gauss",
+   "success": 0.485,
+   "se": 0.0353394255754108,
+   "n": 200
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 1,
+   "w_mode": "gauss",
+   "success": 0.665,
+   "se": 0.0333747659167821,
+   "n": 200
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 2,
+   "w_mode": "gauss",
+   "success": 0.635,
+   "se": 0.0340422531569225,
+   "n": 200
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 3,
+   "w_mode": "gauss",
+   "success": 0.525,
+   "se": 0.0353111172295638,
+   "n": 200
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 4,
+   "w_mode": "gauss",
+   "success": 0.525,
+   "se": 0.0353111172295638,
+   "n": 200
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 5,
+   "w_mode": "gauss",
+   "success": 0.51,
+   "se": 0.0353482672842672,
+   "n": 200
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 6,
+   "w_mode": "gauss",
+   "success": 0.51,
+   "se": 0.0353482672842672,
+   "n": 200
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 7,
+   "w_mode": "gauss",
+   "success": 0.455,
+   "se": 0.0352118587978538,
+   "n": 200
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 0,
+   "w_mode": "zero",
+   "success": 0.055,
+   "se": 0.0161206389451535,
+   "n": 200
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 1,
+   "w_mode": "zero",
+   "success": 0.815,
+   "se": 0.0274567842253968,
+   "n": 200
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 2,
+   "w_mode": "zero",
+   "success": 0.76,
+   "se": 0.030199337741083,
+   "n": 200
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 3,
+   "w_mode": "zero",
+   "success": 0.735,
+   "se": 0.0312069703752222,
+   "n": 200
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 4,
+   "w_mode": "zero",
+   "success": 0.615,
+   "se": 0.0344074846508721,
+   "n": 200
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 5,
+   "w_mode": "zero",
+   "success": 0.615,
+   "se": 0.0344074846508721,
+   "n": 200
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 6,
+   "w_mode": "zero",
+   "success": 0.545,
+   "se": 0.0352118587978538,
+   "n": 200
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 7,
+   "w_mode": "zero",
+   "success": 0.53,
+   "se": 0.0352916420700425,
+   "n": 200
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 0,
+   "w_mode": "gauss",
+   "success": 0.525,
+   "se": 0.0353111172295638,
+   "n": 200
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 1,
+   "w_mode": "gauss",
+   "success": 0.645,
+   "se": 0.0338360015368246,
+   "n": 200
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 2,
+   "w_mode": "gauss",
+   "success": 0.6,
+   "se": 0.0346410161513775,
+   "n": 200
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 3,
+   "w_mode": "gauss",
+   "success": 0.565,
+   "se": 0.0350553134346278,
+   "n": 200
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 4,
+   "w_mode": "gauss",
+   "success": 0.515,
+   "se": 0.0353394255754108,
+   "n": 200
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 5,
+   "w_mode": "gauss",
+   "success": 0.55,
+   "se": 0.0351781181986757,
+   "n": 200
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 6,
+   "w_mode": "gauss",
+   "success": 0.545,
+   "se": 0.0352118587978538,
+   "n": 200
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 7,
+   "w_mode": "gauss",
+   "success": 0.52,
+   "se": 0.0353270434653113,
+   "n": 200
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 0,
+   "w_mode": "zero",
+   "success": 0.185,
+   "se": 0.0274567842253968,
+   "n": 200
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 1,
+   "w_mode": "zero",
+   "success": 0.36,
+   "se": 0.0339411254969542,
+   "n": 200
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 2,
+   "w_mode": "zero",
+   "success": 0.48,
+   "se": 0.0353270434653113,
+   "n": 200
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 3,
+   "w_mode": "zero",
+   "success": 0.46,
+   "se": 0.0352420203734121,
+   "n": 200
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 4,
+   "w_mode": "zero",
+   "success": 0.57,
+   "se": 0.0350071421284285,
+   "n": 200
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 5,
+   "w_mode": "zero",
+   "success": 0.485,
+   "se": 0.0353394255754108,
+   "n": 200
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 6,
+   "w_mode": "zero",
+   "success": 0.505,
+   "se": 0.035353571248178,
+   "n": 200
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 7,
+   "w_mode": "zero",
+   "success": 0.515,
+   "se": 0.0353394255754108,
+   "n": 200
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 0,
+   "w_mode": "gauss",
+   "success": 0.185,
+   "se": 0.0158521817636143,
+   "n": 600
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 3,
+   "w_mode": "gauss",
+   "success": 0.2483333333333333,
+   "se": 0.0176382108356114,
+   "n": 600
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 5,
+   "w_mode": "gauss",
+   "success": 0.27,
+   "se": 0.0181245689603918,
+   "n": 600
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 8,
+   "w_mode": "gauss",
+   "success": 0.2366666666666666,
+   "se": 0.0173520198418683,
+   "n": 600
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 11,
+   "w_mode": "gauss",
+   "success": 0.215,
+   "se": 0.0167717520452297,
+   "n": 600
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 14,
+   "w_mode": "gauss",
+   "success": 0.2333333333333333,
+   "se": 0.0172669669643556,
+   "n": 600
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 16,
+   "w_mode": "gauss",
+   "success": 0.2366666666666666,
+   "se": 0.0173520198418683,
+   "n": 600
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 19,
+   "w_mode": "gauss",
+   "success": 0.2216666666666666,
+   "se": 0.0169573266149451,
+   "n": 600
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 0,
+   "w_mode": "zero",
+   "success": 0.0316666666666666,
+   "se": 0.0071488797361182,
+   "n": 600
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 3,
+   "w_mode": "zero",
+   "success": 0.15,
+   "se": 0.0145773797371132,
+   "n": 600
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 5,
+   "w_mode": "zero",
+   "success": 0.285,
+   "se": 0.0184289174939821,
+   "n": 600
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 8,
+   "w_mode": "zero",
+   "success": 0.265,
+   "se": 0.0180173527467272,
+   "n": 600
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 11,
+   "w_mode": "zero",
+   "success": 0.27,
+   "se": 0.0181245689603918,
+   "n": 600
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 14,
+   "w_mode": "zero",
+   "success": 0.3,
+   "se": 0.0187082869338697,
+   "n": 600
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 16,
+   "w_mode": "zero",
+   "success": 0.3,
+   "se": 0.0187082869338697,
+   "n": 600
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 19,
+   "w_mode": "zero",
+   "success": 0.235,
+   "se": 0.0173096793731137,
+   "n": 600
+  }
+ ]
+}

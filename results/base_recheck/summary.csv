@@ -1,0 +1,5 @@
+mode,success,se_binom,se_between_seed,n,seeds
+base,0.4213,0.0127,0.0067,1500,3
+tanh_k0,0.7047,0.0118,0.0114,1500,3
+zero_k1,0.826,0.0098,0.0042,1500,3
+upstream_init_stoch,0.5333,0.0129,0.1138,1500,3

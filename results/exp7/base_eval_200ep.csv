@@ -1,0 +1,4 @@
+suite,task_id,task,noise,query_freq,episodes,success,mean_ep_len_success,env_steps,wall_s,pi0_calls,pi0_s_per_call,mean_batch,env_s,sim_s_per_step,env_steps_per_s,n_envs,gpu
+libero_10,4,put the white mug on the left plate and put the yellow and white mug on the right plate,full,20,200,0.72,243.4,64167,254.6,283,0.2051,11.58,196.4,0.01516,252.0,12,NVIDIA H100 80GB HBM3
+libero_10,8,put both moka pots on the stove,full,20,200,0.675,405.7,88568,418.1,386,0.1671,11.65,353.5,0.03359,211.8,12,NVIDIA H100 80GB HBM3
+libero_10,6,put the white mug on the plate and put the chocolate pudding to the right of the plate,full,20,200,0.79,266.3,63908,230.1,284,0.163,11.53,183.7,0.01441,277.7,12,NVIDIA H100 80GB HBM3

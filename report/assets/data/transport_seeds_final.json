@@ -1,0 +1,349 @@
+{
+ "figure": "transport_seeds_final",
+ "description": "Transport final det success per seed = mean of its last 3 det evals at <= 9M env steps (200 episodes each); bar = mean over seeds. Hollow = run still training, read at its latest evals.",
+ "base": [
+  0.195,
+  600
+ ],
+ "rows": [
+  {
+   "method": "k0",
+   "seed": 1,
+   "final": 0.8316666666666667,
+   "last_evals": [
+    0.845,
+    0.8,
+    0.85
+   ],
+   "last_env_steps": [
+    8560000,
+    8816000,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "k0",
+   "seed": 2,
+   "final": 0.8416666666666668,
+   "last_evals": [
+    0.78,
+    0.9,
+    0.845
+   ],
+   "last_env_steps": [
+    8632000,
+    8888000,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "k0",
+   "seed": 3,
+   "final": 0.8216666666666667,
+   "last_evals": [
+    0.75,
+    0.85,
+    0.865
+   ],
+   "last_env_steps": [
+    8632000,
+    8888000,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "k3",
+   "seed": 1,
+   "final": 0.9083333333333333,
+   "last_evals": [
+    0.925,
+    0.905,
+    0.895
+   ],
+   "last_env_steps": [
+    8560000,
+    8816000,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "k3",
+   "seed": 2,
+   "final": 0.8966666666666668,
+   "last_evals": [
+    0.915,
+    0.89,
+    0.885
+   ],
+   "last_env_steps": [
+    8632000,
+    8888000,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "k3",
+   "seed": 3,
+   "final": 0.8833333333333334,
+   "last_evals": [
+    0.895,
+    0.89,
+    0.865
+   ],
+   "last_env_steps": [
+    8632000,
+    8888000,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "k5",
+   "seed": 1,
+   "final": 0.9033333333333333,
+   "last_evals": [
+    0.87,
+    0.92,
+    0.92
+   ],
+   "last_env_steps": [
+    8560000,
+    8816000,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "k5",
+   "seed": 2,
+   "final": 0.9199999999999999,
+   "last_evals": [
+    0.865,
+    0.935,
+    0.96
+   ],
+   "last_env_steps": [
+    8632000,
+    8888000,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "k5",
+   "seed": 3,
+   "final": 0.9083333333333333,
+   "last_evals": [
+    0.93,
+    0.915,
+    0.88
+   ],
+   "last_env_steps": [
+    8632000,
+    8888000,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "adaptive",
+   "seed": 1,
+   "final": 0.9100000000000001,
+   "last_evals": [
+    0.895,
+    0.93,
+    0.905
+   ],
+   "last_env_steps": [
+    8515616,
+    8771616,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "adaptive",
+   "seed": 2,
+   "final": 0.9083333333333333,
+   "last_evals": [
+    0.895,
+    0.91,
+    0.92
+   ],
+   "last_env_steps": [
+    8515680,
+    8771680,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "adaptive",
+   "seed": 3,
+   "final": 0.9066666666666666,
+   "last_evals": [
+    0.935,
+    0.86,
+    0.925
+   ],
+   "last_env_steps": [
+    8516128,
+    8772128,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "adaptive_old",
+   "seed": 1,
+   "final": 0.8866666666666667,
+   "last_evals": [
+    0.885,
+    0.865,
+    0.91
+   ],
+   "last_env_steps": [
+    8560000,
+    8816000,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "adaptive_old",
+   "seed": 2,
+   "final": 0.8683333333333333,
+   "last_evals": [
+    0.84,
+    0.845,
+    0.92
+   ],
+   "last_env_steps": [
+    8560000,
+    8816000,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "adaptive_old",
+   "seed": 3,
+   "final": 0.9249999999999999,
+   "last_evals": [
+    0.94,
+    0.87,
+    0.965
+   ],
+   "last_env_steps": [
+    8560000,
+    8816000,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "uniform",
+   "seed": 1,
+   "final": 0.805,
+   "last_evals": [
+    0.85,
+    0.74,
+    0.825
+   ],
+   "last_env_steps": [
+    8560000,
+    8816000,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "uniform",
+   "seed": 2,
+   "final": 0.9,
+   "last_evals": [
+    0.91,
+    0.9,
+    0.89
+   ],
+   "last_env_steps": [
+    8560000,
+    8816000,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  },
+  {
+   "method": "uniform",
+   "seed": 3,
+   "final": 0.8283333333333335,
+   "last_evals": [
+    0.81,
+    0.805,
+    0.87
+   ],
+   "last_env_steps": [
+    8560000,
+    8816000,
+    9000000
+   ],
+   "latest_step": 9000000,
+   "in_progress": false
+  }
+ ],
+ "means": [
+  {
+   "method": "k0",
+   "mean": 0.8316666666666667,
+   "n_seeds": 3
+  },
+  {
+   "method": "k3",
+   "mean": 0.8961111111111112,
+   "n_seeds": 3
+  },
+  {
+   "method": "k5",
+   "mean": 0.9105555555555555,
+   "n_seeds": 3
+  },
+  {
+   "method": "adaptive",
+   "mean": 0.9083333333333333,
+   "n_seeds": 3
+  },
+  {
+   "method": "adaptive_old",
+   "mean": 0.8933333333333332,
+   "n_seeds": 3
+  },
+  {
+   "method": "uniform",
+   "mean": 0.8444444444444446,
+   "n_seeds": 3
+  }
+ ],
+ "data_as_of": "2026-11-15 15:42"
+}

@@ -1,0 +1,80 @@
+{
+ "figure": "app_transport_ddim",
+ "description": "Transport base-policy success vs DDIM steps (pooled eval seeds, binomial SE).",
+ "rows": [
+  {
+   "K": 10,
+   "success": 0.16833333333333333,
+   "se": 0.015275100775566219,
+   "n": 600,
+   "eval_seeds": [
+    0,
+    1
+   ],
+   "sources": [
+    "results/base_eval/transport_K10/result.json",
+    "results/base_eval_seed1/transport_K10/result.json"
+   ]
+  },
+  {
+   "K": 20,
+   "success": 0.195,
+   "se": 0.016174826119621812,
+   "n": 600,
+   "eval_seeds": [
+    0,
+    1
+   ],
+   "sources": [
+    "results/base_eval/transport_K20/result.json",
+    "results/base_eval_seed1/transport_K20/result.json"
+   ]
+  },
+  {
+   "K": 25,
+   "success": 0.1825,
+   "se": 0.019312803395675107,
+   "n": 400,
+   "eval_seeds": [
+    1
+   ],
+   "sources": [
+    "results/base_eval_seed1/transport_K25/result.json"
+   ]
+  },
+  {
+   "K": 50,
+   "success": 0.2025,
+   "se": 0.02009314248692822,
+   "n": 400,
+   "eval_seeds": [
+    1
+   ],
+   "sources": [
+    "results/base_eval_seed1/transport_K50/result.json"
+   ]
+  },
+  {
+   "K": 100,
+   "success": 0.21,
+   "se": 0.016628289148315892,
+   "n": 600,
+   "eval_seeds": [
+    0,
+    1
+   ],
+   "sources": [
+    "results/base_eval/transport_K100/result.json",
+    "results/base_eval_seed1/transport_K100/result.json"
+   ]
+  }
+ ],
+ "excluded": [
+  {
+   "K": 15,
+   "success": 0.085,
+   "n": 200,
+   "reason": "K does not divide 100: DDIM schedule truncated (t stops at 84)"
+  }
+ ]
+}

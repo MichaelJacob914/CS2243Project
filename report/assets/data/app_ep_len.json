@@ -1,0 +1,258 @@
+{
+ "figure": "app_ep_len",
+ "description": "mean_ep_len_success at the final eval (successful episodes only).",
+ "rows": [
+  {
+   "task": "can",
+   "method": "cem",
+   "seed": 1,
+   "ep_len_success": 213.33333333333331,
+   "run": "cem/seed1"
+  },
+  {
+   "task": "can",
+   "method": "dsrl",
+   "seed": 1,
+   "ep_len_success": 85.74468085106383,
+   "run": "fixed_k0_s1"
+  },
+  {
+   "task": "can",
+   "method": "best_fixed",
+   "seed": 1,
+   "ep_len_success": 86.50256410256411,
+   "run": "fixed_k1_s1"
+  },
+  {
+   "task": "can",
+   "method": "adaptive",
+   "seed": 2,
+   "ep_len_success": 89.1063829787234,
+   "run": "adaptive_rho0.5_s2"
+  },
+  {
+   "task": "can",
+   "method": "uniform_k",
+   "seed": 3,
+   "ep_len_success": 102.48936170212764,
+   "run": "uniformk_s3"
+  },
+  {
+   "task": "can",
+   "method": "residual_sac",
+   "seed": 2,
+   "ep_len_success": 125.88235294117646,
+   "run": "residual_b0.3_s2"
+  },
+  {
+   "task": "can",
+   "method": "residual_sac",
+   "seed": 1,
+   "ep_len_success": 115.77142857142856,
+   "run": "residual_b0.3/seed1"
+  },
+  {
+   "task": "can",
+   "method": "uniform_k",
+   "seed": 2,
+   "ep_len_success": 102.12154696132596,
+   "run": "uniformk_s2"
+  },
+  {
+   "task": "can",
+   "method": "uniform_k",
+   "seed": 1,
+   "ep_len_success": 104.02139037433156,
+   "run": "uniformk_s1"
+  },
+  {
+   "task": "can",
+   "method": "residual_sac",
+   "seed": 3,
+   "ep_len_success": 129.44761904761904,
+   "run": "residual_b0.3_s3"
+  },
+  {
+   "task": "can",
+   "method": "adaptive",
+   "seed": 1,
+   "ep_len_success": 87.8936170212766,
+   "run": "adaptive_rho0.5_s1"
+  },
+  {
+   "task": "can",
+   "method": "adaptive",
+   "seed": 3,
+   "ep_len_success": 89.72631578947369,
+   "run": "adaptive_rho0.5_s3"
+  },
+  {
+   "task": "square",
+   "method": "residual_sac",
+   "seed": 3,
+   "ep_len_success": 274.0,
+   "run": "residual_b0.3_s3"
+  },
+  {
+   "task": "square",
+   "method": "residual_sac",
+   "seed": 1,
+   "ep_len_success": 400.0,
+   "run": "residual_b0.3_s1"
+  },
+  {
+   "task": "square",
+   "method": "residual_sac",
+   "seed": 2,
+   "ep_len_success": 252.0,
+   "run": "residual_b0.3_s2"
+  },
+  {
+   "task": "square",
+   "method": "adaptive",
+   "seed": 2,
+   "ep_len_success": 103.48979591836736,
+   "run": "adaptive_rho0.5_s2"
+  },
+  {
+   "task": "square",
+   "method": "dsrl",
+   "seed": 1,
+   "ep_len_success": 100.62176165803108,
+   "run": "fixed_k0_s1"
+  },
+  {
+   "task": "square",
+   "method": "uniform_k",
+   "seed": 2,
+   "ep_len_success": 119.64948453608248,
+   "run": "uniformk_s2"
+  },
+  {
+   "task": "square",
+   "method": "adaptive",
+   "seed": 3,
+   "ep_len_success": 99.6701030927835,
+   "run": "adaptive_rho0.5_s3"
+  },
+  {
+   "task": "square",
+   "method": "uniform_k",
+   "seed": 3,
+   "ep_len_success": 118.79591836734694,
+   "run": "uniformk_s3"
+  },
+  {
+   "task": "square",
+   "method": "best_fixed",
+   "seed": 1,
+   "ep_len_success": 102.46938775510203,
+   "run": "fixed_k1_s1"
+  },
+  {
+   "task": "square",
+   "method": "adaptive",
+   "seed": 1,
+   "ep_len_success": 102.96907216494846,
+   "run": "adaptive_rho0.5_s1"
+  },
+  {
+   "task": "square",
+   "method": "uniform_k",
+   "seed": 1,
+   "ep_len_success": 117.25,
+   "run": "uniformk_s1"
+  },
+  {
+   "task": "transport",
+   "method": "residual_sac",
+   "seed": 3,
+   "ep_len_success": 652.0,
+   "run": "residual_b0.3_s3"
+  },
+  {
+   "task": "transport",
+   "method": "uniform_k",
+   "seed": 3,
+   "ep_len_success": 315.1264367816092,
+   "run": "uniformk_s3"
+  },
+  {
+   "task": "transport",
+   "method": "dsrl",
+   "seed": 1,
+   "ep_len_success": 262.8705882352941,
+   "run": "fixed_k0_s1"
+  },
+  {
+   "task": "transport",
+   "method": "dsrl",
+   "seed": 2,
+   "ep_len_success": 266.9349112426036,
+   "run": "fixed_k0_s2"
+  },
+  {
+   "task": "transport",
+   "method": "dsrl",
+   "seed": 3,
+   "ep_len_success": 261.5028901734104,
+   "run": "fixed_k0_s3"
+  },
+  {
+   "task": "transport",
+   "method": "uniform_k",
+   "seed": 2,
+   "ep_len_success": 308.8988764044944,
+   "run": "uniformk_s2"
+  },
+  {
+   "task": "transport",
+   "method": "adaptive",
+   "seed": 3,
+   "ep_len_success": 275.5027027027027,
+   "run": "adaptivedetach_rho0.5_s3"
+  },
+  {
+   "task": "transport",
+   "method": "best_fixed",
+   "seed": 2,
+   "ep_len_success": 264.4583333333333,
+   "run": "fixed_k5_s2"
+  },
+  {
+   "task": "transport",
+   "method": "adaptive",
+   "seed": 1,
+   "ep_len_success": 282.5193370165746,
+   "run": "adaptivedetach_rho0.5_s1"
+  },
+  {
+   "task": "transport",
+   "method": "best_fixed",
+   "seed": 3,
+   "ep_len_success": 252.0,
+   "run": "fixed_k5_s3"
+  },
+  {
+   "task": "transport",
+   "method": "best_fixed",
+   "seed": 1,
+   "ep_len_success": 253.91304347826087,
+   "run": "fixed_k5_s1"
+  },
+  {
+   "task": "transport",
+   "method": "uniform_k",
+   "seed": 1,
+   "ep_len_success": 310.4,
+   "run": "uniformk_s1"
+  },
+  {
+   "task": "transport",
+   "method": "adaptive",
+   "seed": 2,
+   "ep_len_success": 279.95652173913044,
+   "run": "adaptivedetach_rho0.5_s2"
+  }
+ ]
+}

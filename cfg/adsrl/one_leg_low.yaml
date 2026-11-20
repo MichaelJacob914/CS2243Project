@@ -1,0 +1,126 @@
+# adsrl exp_6: Furniture-Bench one_leg_low (DPPO low randomness), derived from transport.yaml.
+# Needs .venv-furniture (Python 3.8 + IsaacGym). Relative data paths are relative to dsrl/;
+# log_dir is relative to the project root. Base policy/normalization: dsrl/dppo/script/download_url.py.
+defaults:
+  - _self_
+hydra:
+  run:
+    dir: ${logdir}
+
+# adsrl: deterministic name/logdir so resume=true finds the run. Override name= for sweeps.
+name: ${env_name}_${steer.mode}_k${steer.k}_s${seed}
+logdir: ${log_dir}/adsrl/${env_name}/${name}
+resume: False # adsrl: continue from ${logdir}/checkpoint/latest.pt
+base_policy_path: ./dppo/log/furniture-pretrain/one_leg/one_leg_low_dim_pre_diffusion_mlp_ta8_td100/2024-07-22_20-01-16/checkpoint/state_8000.pt
+offline_data_path: null
+dppo_path: ./dppo
+normalization_path: ./dppo/log/furniture/${env_name}/normalization.pth
+
+algorithm: dsrl_na # train_adsrl.py supports dsrl_na only
+
+seed: 1
+device: cuda:0
+use_wandb: True
+env_name: one_leg_low
+log_dir: ./logs
+obs_dim: 58
+action_dim: 10
+cond_steps: 1
+act_steps: 8 # action chunk size of base policy
+load_offline_data: False # not supported by train_adsrl.py (offline data has no x_T)
+deterministic_eval: True # adsrl: plan protocol
+stochastic_eval: False # adsrl/furniture: skip the stochastic eval (train/success_rate is the stochastic policy on full episodes)
+log_train_stdout: True # adsrl: print a [train] throughput line every episode
+
+eval_interval: 880 # in vec-env steps (chunks per env); furniture: multiple of the episode length (88 chunks)
+num_evals: ${env.n_envs} # furniture: one lockstep episode per env
+checkpoint_every_evals: 5 # adsrl: save model + replay buffer every N evals
+checkpoint_every_min: 60 # adsrl: also save latest.pt (+ buffer) when this many minutes passed since the last save; 0 = off
+eval_dump_every: 10 # adsrl: save eval_rollouts/*.npz every N evals (final eval always)
+
+# adsrl: steering
+steer:
+  mode: fixed # fixed | adaptive | residual
+  k: 0 # fixed mode: steering step in [0, K-1]; k=0 is standard DSRL
+  rho: 0.5 # adaptive: target entropy of pi(k) = rho * log K'
+  k_ent_coef: auto # adaptive: alpha_k ("auto", "auto_<init>", or a float)
+  freeze_k_uniform: False # adaptive: uniform-random-k control (pi(k) fixed, no alpha_k)
+  k_entropy_bias: keep # adaptive: keep | detach (stop-grad pi(k) in the a_w log pi(w|k) term)
+  k_subset: null # adaptive: list of allowed k, e.g. [0,3,5]; null = all K. exp_6 sweep grid (K=10): [0,2,3,4,5,6,7,8] (input noise scale 0.99..0.18; k=1 ~ k=0, k=9 scale 0.025 ~ no-op), passed by scripts/furniture/launch_sweep.sh
+  xT_inputs: auto # which networks see x_T: none | actor_noise_critic | all | auto (= none at fixed k=0, else actor_noise_critic). Q(s,a) never needs it.
+  residual_beta: 0.05 # exp_6 decision (0.3 destroys the base policy here); residual mode: residual SAC action da in [-beta, beta]^(H*A), env executes clip(a_base + da)
+  w_scale: 1.0 # fixed/adaptive: the sampler decodes w_scale * w (actor and noise critic stay in [-1, 1]); residual requires 1.0
+
+env:
+  env_type: furniture # adsrl: one IsaacGym FurnitureVecEnv (adsrl/furniture_env.py), also used for evals
+  n_envs: 1024
+  n_eval_envs: ${env.n_envs} # furniture: evals use the training env (forced equal)
+  name: ${env_name}
+  max_episode_steps: 700 # DPPO; episodes are ceil(700/act_steps) = 88 chunks, all envs in lockstep
+  reward_offset: 1 # per-sim-step reward = 1[all parts assembled] - 1, as robomimic
+  furniture:
+    name: one_leg
+    randomness: low
+    gpu_id: 0
+    partial_reward: False # one_leg has a single pair: identical either way
+
+wandb:
+  project: adsrl
+  group: furniture-${env_name}
+  mode: online # online | offline | disabled
+
+train:
+  total_timesteps: 150000000 # adsrl: raw env steps, incl. warm-start rollouts; exp_6 budget (adaptive fits in 24 h), same for every method
+  buffer_size: 8000000 # adsrl: transitions (chunks), FIFO (~12 GB RAM); exp_6 stabilization pilot (stab_ags8_buf8M)
+  tf32: False # adsrl: TF32 matmuls
+  compile: False # adsrl: torch.compile the RL networks in place
+  compile_mode: default # adsrl: default | reduce-overhead | max-autotune
+  tau: 0.005 # Target update rate
+  actor_lr: 3e-4
+  batch_size: 256
+  train_freq: 1 # Update model after this many environment steps
+  utd: 64 # Number of gradient steps per vec-env step (= per 1024 chunks); exp_6 decision
+  actor_gradient_steps: 8 # adsrl/exp_6: actor updates per train() call (fixed k: alpha_w still every step; adaptive: alphas with the actor), spread over the utd critic steps;
+  # stabilization pilot winner (stab_ags8_buf8M). Not supported by residual SAC (plain SB3 SAC updates the actor every step).
+  noise_critic_grad_steps: 32 # Number of gradient steps to take per update when fitting noise critic
+  use_layer_norm: True
+  layer_size: 2048 # Layer size for actor and critic
+  num_layers: 3 # Number of layers for actor and critic
+  discount: 0.99
+  ent_coef: -1
+  target_ent: 0.0
+  init_rollout_steps: 88 # vec-env steps of base-policy rollouts before training; furniture: multiple of 88 (one episode = 88)
+  action_magnitude: 1 # Maximum action magnitude in noise action space (dsrl_sac only; unused)
+  n_critics: 2 # Number of critic Q networks
+  critic_backup_combine_type: min
+  trust_region: # adsrl: noise trust region E||w||^2/D <= bound via a Lagrange multiplier (LP-DS); fixed/adaptive only
+    enabled: False
+    bound: 0.3 # E[w_i^2] of N(0,1) clipped to [-1,1] is ~0.29
+    lr: 1e-3 # dual ascent step on lambda per actor update
+    init: 0.0 # initial lambda
+
+model:
+  _target_: model.diffusion.diffusion_eval.DiffusionEval
+  ft_denoising_steps: 0
+  predict_epsilon: True
+  denoised_clip_value: 1.0
+  randn_clip_value: 3
+  network_path: ${base_policy_path}
+  network:
+    _target_: model.diffusion.mlp_diffusion.DiffusionMLP
+    time_dim: 32
+    mlp_dims: [1024, 1024, 1024, 1024, 1024, 1024, 1024] # DPPO furniture pretrain (cfg/furniture/pretrain/*/pre_diffusion_mlp.yaml)
+    cond_mlp_dims: [512, 64]
+    use_layernorm: True
+    residual_style: True
+    cond_dim: ${eval:'${obs_dim} * ${cond_steps}'}
+    horizon_steps: ${act_steps}
+    action_dim: ${action_dim}
+  horizon_steps: ${act_steps}
+  obs_dim: ${obs_dim}
+  action_dim: ${action_dim}
+  denoising_steps: 100
+  device: ${device}
+  use_ddim: True
+  ddim_steps: 10 # DDIM step count K (= number of steering steps); exp_6 base eval: K=10 within 2 pts of K=100 on all three tasks
+  controllable_noise: True

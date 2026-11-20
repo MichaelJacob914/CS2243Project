@@ -1,0 +1,778 @@
+{
+ "figure": "pi05_final",
+ "description": "Final det success per seed = mean of its last 3 det evals (50 episodes each); bar = mean over seeds. Hollow = run still training (budget 1M env steps), read at its latest evals.",
+ "rows": [
+  {
+   "suite": "libero_10",
+   "task": 8,
+   "method": "k0",
+   "seed": 0,
+   "final": 0.9266666666666666,
+   "last_evals": [
+    0.94,
+    0.88,
+    0.96
+   ],
+   "last_env_steps": [
+    901642,
+    953608,
+    1000543
+   ],
+   "latest_step": 1000543,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_10",
+   "task": 8,
+   "method": "k0",
+   "seed": 1,
+   "final": 0.9466666666666667,
+   "last_evals": [
+    0.96,
+    0.96,
+    0.92
+   ],
+   "last_env_steps": [
+    900154,
+    950585,
+    1001325
+   ],
+   "latest_step": 1001325,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_10",
+   "task": 8,
+   "method": "k0",
+   "seed": 2,
+   "final": 0.9333333333333332,
+   "last_evals": [
+    0.92,
+    0.94,
+    0.94
+   ],
+   "last_env_steps": [
+    903031,
+    953405,
+    1000865
+   ],
+   "latest_step": 1000865,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_10",
+   "task": 8,
+   "method": "k3",
+   "seed": 0,
+   "final": 0.9333333333333332,
+   "last_evals": [
+    0.96,
+    0.92,
+    0.92
+   ],
+   "last_env_steps": [
+    901139,
+    951920,
+    1003284
+   ],
+   "latest_step": 1003284,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_10",
+   "task": 8,
+   "method": "k3",
+   "seed": 1,
+   "final": 0.8799999999999999,
+   "last_evals": [
+    0.94,
+    0.82,
+    0.88
+   ],
+   "last_env_steps": [
+    902499,
+    950551,
+    1001153
+   ],
+   "latest_step": 1001153,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_10",
+   "task": 8,
+   "method": "k3",
+   "seed": 2,
+   "final": 0.98,
+   "last_evals": [
+    0.96,
+    0.98,
+    1.0
+   ],
+   "last_env_steps": [
+    900506,
+    951572,
+    1001857
+   ],
+   "latest_step": 1001857,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_10",
+   "task": 8,
+   "method": "adaptive",
+   "seed": 0,
+   "final": 0.9266666666666666,
+   "last_evals": [
+    0.94,
+    0.92,
+    0.92
+   ],
+   "last_env_steps": [
+    900164,
+    954703,
+    1002798
+   ],
+   "latest_step": 1002798,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_10",
+   "task": 8,
+   "method": "adaptive",
+   "seed": 1,
+   "final": 0.9066666666666666,
+   "last_evals": [
+    0.86,
+    0.88,
+    0.98
+   ],
+   "last_env_steps": [
+    900229,
+    952574,
+    1000870
+   ],
+   "latest_step": 1000870,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_10",
+   "task": 8,
+   "method": "adaptive",
+   "seed": 2,
+   "final": 0.9199999999999999,
+   "last_evals": [
+    0.92,
+    0.9,
+    0.94
+   ],
+   "last_env_steps": [
+    903723,
+    951265,
+    1002824
+   ],
+   "latest_step": 1002824,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 14,
+   "method": "k0",
+   "seed": 0,
+   "final": 0.94,
+   "last_evals": [
+    0.94,
+    0.94,
+    0.94
+   ],
+   "last_env_steps": [
+    900178,
+    950550,
+    1000496
+   ],
+   "latest_step": 1000496,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 14,
+   "method": "k0",
+   "seed": 1,
+   "final": 0.94,
+   "last_evals": [
+    0.96,
+    0.94,
+    0.92
+   ],
+   "last_env_steps": [
+    901392,
+    950485,
+    1000774
+   ],
+   "latest_step": 1000774,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 14,
+   "method": "k0",
+   "seed": 2,
+   "final": 0.9733333333333333,
+   "last_evals": [
+    0.96,
+    0.96,
+    1.0
+   ],
+   "last_env_steps": [
+    900440,
+    950559,
+    1000373
+   ],
+   "latest_step": 1000373,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 14,
+   "method": "k3",
+   "seed": 0,
+   "final": 0.9266666666666666,
+   "last_evals": [
+    0.94,
+    0.92,
+    0.92
+   ],
+   "last_env_steps": [
+    900721,
+    951434,
+    1000341
+   ],
+   "latest_step": 1000341,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 14,
+   "method": "k3",
+   "seed": 1,
+   "final": 0.9466666666666667,
+   "last_evals": [
+    0.94,
+    0.92,
+    0.98
+   ],
+   "last_env_steps": [
+    900158,
+    950468,
+    1001080
+   ],
+   "latest_step": 1001080,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 14,
+   "method": "k3",
+   "seed": 2,
+   "final": 0.9733333333333333,
+   "last_evals": [
+    0.98,
+    0.96,
+    0.98
+   ],
+   "last_env_steps": [
+    900595,
+    951163,
+    1001053
+   ],
+   "latest_step": 1001053,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 14,
+   "method": "adaptive",
+   "seed": 0,
+   "final": 0.9133333333333334,
+   "last_evals": [
+    0.92,
+    0.92,
+    0.9
+   ],
+   "last_env_steps": [
+    900832,
+    951002,
+    1000437
+   ],
+   "latest_step": 1000437,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 14,
+   "method": "adaptive",
+   "seed": 1,
+   "final": 0.94,
+   "last_evals": [
+    0.94,
+    0.96,
+    0.92
+   ],
+   "last_env_steps": [
+    900786,
+    950899,
+    1000973
+   ],
+   "latest_step": 1000973,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 14,
+   "method": "adaptive",
+   "seed": 2,
+   "final": 0.9733333333333333,
+   "last_evals": [
+    0.96,
+    0.98,
+    0.98
+   ],
+   "last_env_steps": [
+    900223,
+    950774,
+    1000914
+   ],
+   "latest_step": 1000914,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 28,
+   "method": "k0",
+   "seed": 0,
+   "final": 0.9866666666666667,
+   "last_evals": [
+    0.98,
+    0.98,
+    1.0
+   ],
+   "last_env_steps": [
+    901382,
+    950297,
+    1000164
+   ],
+   "latest_step": 1000164,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 28,
+   "method": "k0",
+   "seed": 1,
+   "final": 0.98,
+   "last_evals": [
+    0.96,
+    1.0,
+    0.98
+   ],
+   "last_env_steps": [
+    900016,
+    950526,
+    1000758
+   ],
+   "latest_step": 1000758,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 28,
+   "method": "k0",
+   "seed": 2,
+   "final": 0.9866666666666667,
+   "last_evals": [
+    0.96,
+    1.0,
+    1.0
+   ],
+   "last_env_steps": [
+    900253,
+    950620,
+    1000369
+   ],
+   "latest_step": 1000369,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 28,
+   "method": "k3",
+   "seed": 0,
+   "final": 0.9933333333333333,
+   "last_evals": [
+    1.0,
+    0.98,
+    1.0
+   ],
+   "last_env_steps": [
+    900400,
+    950636,
+    1000359
+   ],
+   "latest_step": 1000359,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 28,
+   "method": "k3",
+   "seed": 1,
+   "final": 0.9866666666666667,
+   "last_evals": [
+    0.98,
+    1.0,
+    0.98
+   ],
+   "last_env_steps": [
+    900269,
+    950497,
+    1000818
+   ],
+   "latest_step": 1000818,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 28,
+   "method": "k3",
+   "seed": 2,
+   "final": 0.9933333333333333,
+   "last_evals": [
+    1.0,
+    1.0,
+    0.98
+   ],
+   "last_env_steps": [
+    900895,
+    950231,
+    1000639
+   ],
+   "latest_step": 1000639,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 28,
+   "method": "adaptive",
+   "seed": 0,
+   "final": 1.0,
+   "last_evals": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "last_env_steps": [
+    900226,
+    950145,
+    1000130
+   ],
+   "latest_step": 1000130,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 28,
+   "method": "adaptive",
+   "seed": 1,
+   "final": 1.0,
+   "last_evals": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "last_env_steps": [
+    900718,
+    950677,
+    1000656
+   ],
+   "latest_step": 1000656,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 28,
+   "method": "adaptive",
+   "seed": 2,
+   "final": 0.98,
+   "last_evals": [
+    0.98,
+    0.96,
+    1.0
+   ],
+   "last_env_steps": [
+    900821,
+    950149,
+    1000320
+   ],
+   "latest_step": 1000320,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 77,
+   "method": "k0",
+   "seed": 0,
+   "final": 0.9933333333333333,
+   "last_evals": [
+    0.98,
+    1.0,
+    1.0
+   ],
+   "last_env_steps": [
+    901244,
+    950138,
+    1001310
+   ],
+   "latest_step": 1001310,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 77,
+   "method": "k0",
+   "seed": 1,
+   "final": 0.9933333333333333,
+   "last_evals": [
+    0.98,
+    1.0,
+    1.0
+   ],
+   "last_env_steps": [
+    900233,
+    951158,
+    1000489
+   ],
+   "latest_step": 1000489,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 77,
+   "method": "k0",
+   "seed": 2,
+   "final": 0.9866666666666667,
+   "last_evals": [
+    0.98,
+    1.0,
+    0.98
+   ],
+   "last_env_steps": [
+    900188,
+    950775,
+    1001399
+   ],
+   "latest_step": 1001399,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 77,
+   "method": "k3",
+   "seed": 0,
+   "final": 0.9933333333333333,
+   "last_evals": [
+    1.0,
+    1.0,
+    0.98
+   ],
+   "last_env_steps": [
+    900862,
+    950254,
+    1000326
+   ],
+   "latest_step": 1000326,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 77,
+   "method": "k3",
+   "seed": 1,
+   "final": 0.98,
+   "last_evals": [
+    0.98,
+    1.0,
+    0.96
+   ],
+   "last_env_steps": [
+    900301,
+    951069,
+    1001105
+   ],
+   "latest_step": 1001105,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 77,
+   "method": "k3",
+   "seed": 2,
+   "final": 0.9866666666666667,
+   "last_evals": [
+    1.0,
+    0.96,
+    1.0
+   ],
+   "last_env_steps": [
+    901174,
+    950679,
+    1000445
+   ],
+   "latest_step": 1000445,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 77,
+   "method": "adaptive",
+   "seed": 0,
+   "final": 0.98,
+   "last_evals": [
+    0.98,
+    0.98,
+    0.98
+   ],
+   "last_env_steps": [
+    900066,
+    950848,
+    1000238
+   ],
+   "latest_step": 1000238,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 77,
+   "method": "adaptive",
+   "seed": 1,
+   "final": 0.96,
+   "last_evals": [
+    1.0,
+    0.94,
+    0.94
+   ],
+   "last_env_steps": [
+    900237,
+    950652,
+    1000780
+   ],
+   "latest_step": 1000780,
+   "in_progress": false
+  },
+  {
+   "suite": "libero_90",
+   "task": 77,
+   "method": "adaptive",
+   "seed": 2,
+   "final": 0.9733333333333333,
+   "last_evals": [
+    0.96,
+    0.98,
+    0.98
+   ],
+   "last_env_steps": [
+    900302,
+    951115,
+    1000591
+   ],
+   "latest_step": 1000591,
+   "in_progress": false
+  }
+ ],
+ "means": [
+  {
+   "suite": "libero_10",
+   "task": 8,
+   "method": "k0",
+   "mean": 0.9355555555555556,
+   "n_seeds": 3
+  },
+  {
+   "suite": "libero_10",
+   "task": 8,
+   "method": "k3",
+   "mean": 0.931111111111111,
+   "n_seeds": 3
+  },
+  {
+   "suite": "libero_10",
+   "task": 8,
+   "method": "adaptive",
+   "mean": 0.9177777777777777,
+   "n_seeds": 3
+  },
+  {
+   "suite": "libero_90",
+   "task": 14,
+   "method": "k0",
+   "mean": 0.951111111111111,
+   "n_seeds": 3
+  },
+  {
+   "suite": "libero_90",
+   "task": 14,
+   "method": "k3",
+   "mean": 0.9488888888888889,
+   "n_seeds": 3
+  },
+  {
+   "suite": "libero_90",
+   "task": 14,
+   "method": "adaptive",
+   "mean": 0.9422222222222222,
+   "n_seeds": 3
+  },
+  {
+   "suite": "libero_90",
+   "task": 28,
+   "method": "k0",
+   "mean": 0.9844444444444446,
+   "n_seeds": 3
+  },
+  {
+   "suite": "libero_90",
+   "task": 28,
+   "method": "k3",
+   "mean": 0.991111111111111,
+   "n_seeds": 3
+  },
+  {
+   "suite": "libero_90",
+   "task": 28,
+   "method": "adaptive",
+   "mean": 0.9933333333333333,
+   "n_seeds": 3
+  },
+  {
+   "suite": "libero_90",
+   "task": 77,
+   "method": "k0",
+   "mean": 0.991111111111111,
+   "n_seeds": 3
+  },
+  {
+   "suite": "libero_90",
+   "task": 77,
+   "method": "k3",
+   "mean": 0.9866666666666667,
+   "n_seeds": 3
+  },
+  {
+   "suite": "libero_90",
+   "task": 77,
+   "method": "adaptive",
+   "mean": 0.971111111111111,
+   "n_seeds": 3
+  }
+ ],
+ "data_as_of": "2026-11-10 15:42",
+ "excluded_too_early": []
+}

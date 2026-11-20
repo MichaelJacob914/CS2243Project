@@ -1,0 +1,276 @@
+{
+ "figure": "fig3bc_distance",
+ "description": "Executed-action distance from the base action at the final eval, per fixed-k run. The base model's denoising loss on executed actions is not computed yet (needs the model on GPU).",
+ "rows": [
+  {
+   "task": "can",
+   "K": 8,
+   "k": 0,
+   "seed": 1,
+   "success": 0.94,
+   "dist_to_base": 1.0702309608459473,
+   "authority_std": 0.13137874007225037
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 1,
+   "seed": 1,
+   "success": 0.975,
+   "dist_to_base": 0.9949569702148438,
+   "authority_std": 0.09616031497716904
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 7,
+   "seed": 1,
+   "success": 0.795,
+   "dist_to_base": 0.23760481178760529,
+   "authority_std": 0.035617005079984665
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 6,
+   "seed": 1,
+   "success": 0.84,
+   "dist_to_base": 0.44672563672065735,
+   "authority_std": 0.05066904425621033
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 3,
+   "seed": 1,
+   "success": 0.96,
+   "dist_to_base": 0.876326322555542,
+   "authority_std": 0.08030698448419571
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 4,
+   "seed": 1,
+   "success": 0.93,
+   "dist_to_base": 0.7605323195457458,
+   "authority_std": 0.07084602862596512
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 5,
+   "seed": 1,
+   "success": 0.89,
+   "dist_to_base": 0.6013311743736267,
+   "authority_std": 0.06082257628440857
+  },
+  {
+   "task": "can",
+   "K": 8,
+   "k": 2,
+   "seed": 1,
+   "success": 0.945,
+   "dist_to_base": 0.9690748453140259,
+   "authority_std": 0.08971905708312988
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 7,
+   "seed": 1,
+   "success": 0.78,
+   "dist_to_base": 0.09935901314020157,
+   "authority_std": 0.01302291639149189
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 6,
+   "seed": 1,
+   "success": 0.935,
+   "dist_to_base": 0.34826791286468506,
+   "authority_std": 0.03355621173977852
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 2,
+   "seed": 1,
+   "success": 0.95,
+   "dist_to_base": 0.4956003427505493,
+   "authority_std": 0.06272150576114655
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 4,
+   "seed": 1,
+   "success": 0.955,
+   "dist_to_base": 0.4490663707256317,
+   "authority_std": 0.04704910144209862
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 0,
+   "seed": 1,
+   "success": 0.965,
+   "dist_to_base": 0.5464205145835876,
+   "authority_std": 0.07774391025304794
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 5,
+   "seed": 1,
+   "success": 0.95,
+   "dist_to_base": 0.42203614115715027,
+   "authority_std": 0.041038088500499725
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 1,
+   "seed": 1,
+   "success": 0.98,
+   "dist_to_base": 0.5013024210929871,
+   "authority_std": 0.0670853778719902
+  },
+  {
+   "task": "square",
+   "K": 8,
+   "k": 3,
+   "seed": 1,
+   "success": 0.95,
+   "dist_to_base": 0.4808180630207062,
+   "authority_std": 0.055651817470788956
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 16,
+   "seed": 1,
+   "success": 0.59,
+   "dist_to_base": 0.7864682078361511,
+   "authority_std": 0.03713694214820862
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 19,
+   "seed": 1,
+   "success": 0.2,
+   "dist_to_base": 0.16819699108600616,
+   "authority_std": 0.01132770162075758
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 8,
+   "seed": 1,
+   "success": 0.88,
+   "dist_to_base": 1.4066041707992554,
+   "authority_std": 0.06322403997182846
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 11,
+   "seed": 1,
+   "success": 0.75,
+   "dist_to_base": 1.1473603248596191,
+   "authority_std": 0.053616635501384735
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 14,
+   "seed": 1,
+   "success": 0.46,
+   "dist_to_base": 0.9938763380050659,
+   "authority_std": 0.04471392557024956
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 0,
+   "seed": 1,
+   "success": 0.85,
+   "dist_to_base": 1.632299542427063,
+   "authority_std": 0.0832119807600975
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 0,
+   "seed": 2,
+   "success": 0.845,
+   "dist_to_base": 1.6891964673995972,
+   "authority_std": 0.0832119807600975
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 0,
+   "seed": 3,
+   "success": 0.865,
+   "dist_to_base": 1.7008941173553467,
+   "authority_std": 0.0832119807600975
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 3,
+   "seed": 1,
+   "success": 0.895,
+   "dist_to_base": 1.571685791015625,
+   "authority_std": 0.07741647213697433
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 5,
+   "seed": 2,
+   "success": 0.96,
+   "dist_to_base": 1.5043834447860718,
+   "authority_std": 0.07298789173364639
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 5,
+   "seed": 3,
+   "success": 0.88,
+   "dist_to_base": 1.597731113433838,
+   "authority_std": 0.07298789173364639
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 5,
+   "seed": 1,
+   "success": 0.92,
+   "dist_to_base": 1.5560314655303955,
+   "authority_std": 0.07298789173364639
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 3,
+   "seed": 2,
+   "success": 0.885,
+   "dist_to_base": 1.4660604000091553,
+   "authority_std": 0.07741647213697433
+  },
+  {
+   "task": "transport",
+   "K": 20,
+   "k": 3,
+   "seed": 3,
+   "success": 0.865,
+   "dist_to_base": 1.5321420431137085,
+   "authority_std": 0.07741647213697433
+  }
+ ]
+}

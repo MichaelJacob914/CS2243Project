@@ -1,0 +1,29 @@
+{
+ "task": "lamp_low",
+ "n_envs": 1024,
+ "rounds": 1,
+ "chunks_per_episode": 125,
+ "set": [],
+ "act_steps": 8,
+ "gpu": "NVIDIA A100-SXM4-40GB",
+ "per_k": {
+  "0": {
+   "success": 0.04296875,
+   "success_ci95": 0.012420683989618224,
+   "success_chunk": 0.04296875,
+   "n_episodes": 1024,
+   "env_steps_per_s": 3236.839096096447,
+   "diffusion_ms_per_chunk": 159.49911499023438,
+   "sim_ms_per_chunk": 2371.365026473999
+  },
+  "20": {
+   "success": 0.0361328125,
+   "success_ci95": 0.011430509127056118,
+   "success_chunk": 0.0361328125,
+   "n_episodes": 1024,
+   "env_steps_per_s": 3525.3360517911415,
+   "diffusion_ms_per_chunk": 38.549917221069336,
+   "sim_ms_per_chunk": 2285.2001819610596
+  }
+ }
+}

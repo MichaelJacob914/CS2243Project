@@ -1,0 +1,464 @@
+{
+ "figure": "app_stability",
+ "description": "Runs whose last eval is more than 20% below their peak.",
+ "rows": [
+  {
+   "task": "can",
+   "method": "adaptive",
+   "run": "adaptive_rho0.25_s1",
+   "seed": 1,
+   "peak": 0.955,
+   "final": 0.955,
+   "collapsed": false
+  },
+  {
+   "task": "can",
+   "method": "adaptive",
+   "run": "adaptive_rho0.5_s1",
+   "seed": 1,
+   "peak": 0.95,
+   "final": 0.94,
+   "collapsed": false
+  },
+  {
+   "task": "can",
+   "method": "adaptive",
+   "run": "adaptive_rho0.5_s2",
+   "seed": 2,
+   "peak": 0.96,
+   "final": 0.94,
+   "collapsed": false
+  },
+  {
+   "task": "can",
+   "method": "adaptive",
+   "run": "adaptive_rho0.5_s3",
+   "seed": 3,
+   "peak": 0.95,
+   "final": 0.95,
+   "collapsed": false
+  },
+  {
+   "task": "can",
+   "method": "cem",
+   "run": "seed1",
+   "seed": 1,
+   "peak": 0.09,
+   "final": 0.09,
+   "collapsed": false
+  },
+  {
+   "task": "can",
+   "method": "dsrl",
+   "run": "fixed_k0_s1",
+   "seed": 1,
+   "peak": 0.955,
+   "final": 0.94,
+   "collapsed": false
+  },
+  {
+   "task": "can",
+   "method": "best_fixed",
+   "run": "fixed_k1_s1",
+   "seed": 1,
+   "peak": 0.975,
+   "final": 0.975,
+   "collapsed": false
+  },
+  {
+   "task": "can",
+   "method": "residual_sac",
+   "run": "seed1",
+   "seed": 1,
+   "peak": 0.54,
+   "final": 0.465,
+   "collapsed": false
+  },
+  {
+   "task": "can",
+   "method": "residual_sac",
+   "run": "seed1",
+   "seed": 1,
+   "peak": 0.59,
+   "final": 0.525,
+   "collapsed": false
+  },
+  {
+   "task": "can",
+   "method": "residual_sac",
+   "run": "residual_b0.3_s2",
+   "seed": 2,
+   "peak": 0.615,
+   "final": 0.595,
+   "collapsed": false
+  },
+  {
+   "task": "can",
+   "method": "residual_sac",
+   "run": "residual_b0.3_s3",
+   "seed": 3,
+   "peak": 0.525,
+   "final": 0.525,
+   "collapsed": false
+  },
+  {
+   "task": "can",
+   "method": "uniform_k",
+   "run": "uniformk_s1",
+   "seed": 1,
+   "peak": 0.94,
+   "final": 0.935,
+   "collapsed": false
+  },
+  {
+   "task": "can",
+   "method": "uniform_k",
+   "run": "uniformk_s2",
+   "seed": 2,
+   "peak": 0.93,
+   "final": 0.905,
+   "collapsed": false
+  },
+  {
+   "task": "can",
+   "method": "uniform_k",
+   "run": "uniformk_s3",
+   "seed": 3,
+   "peak": 0.94,
+   "final": 0.94,
+   "collapsed": false
+  },
+  {
+   "task": "square",
+   "method": "adaptive",
+   "run": "adaptive_rho0.5_s1",
+   "seed": 1,
+   "peak": 0.97,
+   "final": 0.97,
+   "collapsed": false
+  },
+  {
+   "task": "square",
+   "method": "adaptive",
+   "run": "adaptive_rho0.5_s2",
+   "seed": 2,
+   "peak": 0.98,
+   "final": 0.98,
+   "collapsed": false
+  },
+  {
+   "task": "square",
+   "method": "adaptive",
+   "run": "adaptive_rho0.5_s3",
+   "seed": 3,
+   "peak": 0.985,
+   "final": 0.97,
+   "collapsed": false
+  },
+  {
+   "task": "square",
+   "method": "dsrl",
+   "run": "fixed_k0_s1",
+   "seed": 1,
+   "peak": 0.97,
+   "final": 0.965,
+   "collapsed": false
+  },
+  {
+   "task": "square",
+   "method": "best_fixed",
+   "run": "fixed_k1_s1",
+   "seed": 1,
+   "peak": 0.98,
+   "final": 0.98,
+   "collapsed": false
+  },
+  {
+   "task": "square",
+   "method": "residual_sac",
+   "run": "residual_b0.3_s1",
+   "seed": 1,
+   "peak": 0.285,
+   "final": 0.005,
+   "collapsed": true
+  },
+  {
+   "task": "square",
+   "method": "residual_sac",
+   "run": "residual_b0.3_s2",
+   "seed": 2,
+   "peak": 0.395,
+   "final": 0.015,
+   "collapsed": true
+  },
+  {
+   "task": "square",
+   "method": "residual_sac",
+   "run": "residual_b0.3_s3",
+   "seed": 3,
+   "peak": 0.255,
+   "final": 0.03,
+   "collapsed": true
+  },
+  {
+   "task": "square",
+   "method": "uniform_k",
+   "run": "uniformk_s1",
+   "seed": 1,
+   "peak": 0.975,
+   "final": 0.96,
+   "collapsed": false
+  },
+  {
+   "task": "square",
+   "method": "uniform_k",
+   "run": "uniformk_s2",
+   "seed": 2,
+   "peak": 0.975,
+   "final": 0.97,
+   "collapsed": false
+  },
+  {
+   "task": "square",
+   "method": "uniform_k",
+   "run": "uniformk_s3",
+   "seed": 3,
+   "peak": 0.98,
+   "final": 0.98,
+   "collapsed": false
+  },
+  {
+   "task": "transport",
+   "method": "adaptive",
+   "run": "adaptivedetach_rho0.5_s1",
+   "seed": 1,
+   "peak": 0.945,
+   "final": 0.905,
+   "collapsed": false
+  },
+  {
+   "task": "transport",
+   "method": "adaptive",
+   "run": "adaptivedetach_rho0.5_s2",
+   "seed": 2,
+   "peak": 0.92,
+   "final": 0.92,
+   "collapsed": false
+  },
+  {
+   "task": "transport",
+   "method": "adaptive",
+   "run": "adaptivedetach_rho0.5_s3",
+   "seed": 3,
+   "peak": 0.935,
+   "final": 0.925,
+   "collapsed": false
+  },
+  {
+   "task": "transport",
+   "method": "dsrl",
+   "run": "fixed_k0_s1",
+   "seed": 1,
+   "peak": 0.86,
+   "final": 0.85,
+   "collapsed": false
+  },
+  {
+   "task": "transport",
+   "method": "dsrl",
+   "run": "fixed_k0_s2",
+   "seed": 2,
+   "peak": 0.9,
+   "final": 0.845,
+   "collapsed": false
+  },
+  {
+   "task": "transport",
+   "method": "dsrl",
+   "run": "fixed_k0_s3",
+   "seed": 3,
+   "peak": 0.915,
+   "final": 0.865,
+   "collapsed": false
+  },
+  {
+   "task": "transport",
+   "method": "best_fixed",
+   "run": "fixed_k5_s1",
+   "seed": 1,
+   "peak": 0.95,
+   "final": 0.92,
+   "collapsed": false
+  },
+  {
+   "task": "transport",
+   "method": "best_fixed",
+   "run": "fixed_k5_s2",
+   "seed": 2,
+   "peak": 0.96,
+   "final": 0.96,
+   "collapsed": false
+  },
+  {
+   "task": "transport",
+   "method": "best_fixed",
+   "run": "fixed_k5_s3",
+   "seed": 3,
+   "peak": 0.965,
+   "final": 0.88,
+   "collapsed": false
+  },
+  {
+   "task": "transport",
+   "method": "residual_sac",
+   "run": "residual_b0.3_s1",
+   "seed": 1,
+   "peak": 0.005,
+   "final": 0.0,
+   "collapsed": false
+  },
+  {
+   "task": "transport",
+   "method": "residual_sac",
+   "run": "residual_b0.3_s2",
+   "seed": 2,
+   "peak": 0.005,
+   "final": 0.0,
+   "collapsed": false
+  },
+  {
+   "task": "transport",
+   "method": "residual_sac",
+   "run": "residual_b0.3_s3",
+   "seed": 3,
+   "peak": 0.01,
+   "final": 0.01,
+   "collapsed": false
+  },
+  {
+   "task": "transport",
+   "method": "uniform_k",
+   "run": "uniformk_s1",
+   "seed": 1,
+   "peak": 0.89,
+   "final": 0.825,
+   "collapsed": false
+  },
+  {
+   "task": "transport",
+   "method": "uniform_k",
+   "run": "uniformk_s2",
+   "seed": 2,
+   "peak": 0.92,
+   "final": 0.89,
+   "collapsed": false
+  },
+  {
+   "task": "transport",
+   "method": "uniform_k",
+   "run": "uniformk_s3",
+   "seed": 3,
+   "peak": 0.875,
+   "final": 0.87,
+   "collapsed": false
+  }
+ ],
+ "counts": [
+  {
+   "task": "can",
+   "method": "adaptive",
+   "sum": 0,
+   "count": 4
+  },
+  {
+   "task": "can",
+   "method": "best_fixed",
+   "sum": 0,
+   "count": 1
+  },
+  {
+   "task": "can",
+   "method": "cem",
+   "sum": 0,
+   "count": 1
+  },
+  {
+   "task": "can",
+   "method": "dsrl",
+   "sum": 0,
+   "count": 1
+  },
+  {
+   "task": "can",
+   "method": "residual_sac",
+   "sum": 0,
+   "count": 4
+  },
+  {
+   "task": "can",
+   "method": "uniform_k",
+   "sum": 0,
+   "count": 3
+  },
+  {
+   "task": "square",
+   "method": "adaptive",
+   "sum": 0,
+   "count": 3
+  },
+  {
+   "task": "square",
+   "method": "best_fixed",
+   "sum": 0,
+   "count": 1
+  },
+  {
+   "task": "square",
+   "method": "dsrl",
+   "sum": 0,
+   "count": 1
+  },
+  {
+   "task": "square",
+   "method": "residual_sac",
+   "sum": 3,
+   "count": 3
+  },
+  {
+   "task": "square",
+   "method": "uniform_k",
+   "sum": 0,
+   "count": 3
+  },
+  {
+   "task": "transport",
+   "method": "adaptive",
+   "sum": 0,
+   "count": 3
+  },
+  {
+   "task": "transport",
+   "method": "best_fixed",
+   "sum": 0,
+   "count": 3
+  },
+  {
+   "task": "transport",
+   "method": "dsrl",
+   "sum": 0,
+   "count": 3
+  },
+  {
+   "task": "transport",
+   "method": "residual_sac",
+   "sum": 0,
+   "count": 3
+  },
+  {
+   "task": "transport",
+   "method": "uniform_k",
+   "sum": 0,
+   "count": 3
+  }
+ ]
+}

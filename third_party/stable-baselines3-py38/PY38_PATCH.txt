@@ -1,0 +1,6 @@
+Copy of dsrl/stable-baselines3 (DSRL fork of SB3 2.7.0, commit 10e5d31) patched for Python 3.8 (IsaacGym):
+- 'from __future__ import annotations' added to every module
+- runtime builtin generics (dict[...], list[...], ...) replaced by typing.Dict/List/... (marked '# py38')
+- setup.py python_requires >=3.8
+Patch script: py38_scan.py --fix (see exp_6 notes). Do not edit by hand; re-copy and re-patch if the fork changes.
+- 'from collections.abc import X' -> 'from typing import X' (11 modules; collections.abc classes are not subscriptable on 3.8)
